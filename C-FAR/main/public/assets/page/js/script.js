@@ -13,10 +13,12 @@ $(document).ready(function(e) {
 			$(this)
 				.css('overflow', 'visible')
 				.css('backgroundColor', 'rgba(98, 82, 187, 0.6)');
+
 			$(this).find('.hover-text')
+				.stop()
 				.show()
 				.css('opacity', 0)
-				.delay(200)
+				.delay(150)
 				.animate(
 					{
 						paddingTop: '25px',
@@ -29,6 +31,7 @@ $(document).ready(function(e) {
 		function(e) {
 			var obj = $(this);
 			$(this).find('.hover-text')
+				.stop()
 				.animate(
 					{
 						paddingTop: '0',
@@ -37,7 +40,7 @@ $(document).ready(function(e) {
 					'fast',
 					'linear',
 					function() {
-						$(this).hide();
+						$(this).stop().hide();
 						$( obj ).css('overflow', 'hidden')
 								.css('backgroundColor', 'rgba(0,0,0,0)');
 					}

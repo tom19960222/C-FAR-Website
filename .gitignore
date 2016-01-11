@@ -1,7 +1,3 @@
-*.png
-*.eot
-*.ttf
-
 typings/
 C-FAR/main/public/assets/page/images/
 C-FAR/main/public/assets/page/font/
