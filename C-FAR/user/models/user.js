@@ -2,6 +2,7 @@
 /// <reference path="../../../typings/sequelize/sequelize.d.ts" />
 
 var Sequelize = require('sequelize');
+var User;
 
 /*
     VARCHAR firstName
@@ -14,43 +15,44 @@ var Sequelize = require('sequelize');
 */
 
 module.exports = function(sequelize){
-    var model = {};
-    model.User = sequelize.define('user', {
-        firstName: {
-            type: Sequelize.STRING
-        },
-        lastName: {
-            type: Sequelize.STRING
-        },
-        username: {
-            type: Sequelize.STRING  
-        },
-        email: {
-            type: Sequelize.STRING
-        },
-        password: {
-            type: Sequelize.STRING      
-        },
-        permission: {
-            type: Sequelize.INTEGER
-        },
-        last_access: {
-            type: Sequelize.DATE  
-        },
-        last_login: {
-            type: Sequelize.DATE
-        },
-        locked: {
-            type: Sequelize.BOOLEAN  
-        },
-        language: {
-            type: Sequelize.STRING  
-        },
-        uid: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        }
-    });   
-    return model;
+    if(sequelize) {
+        var User = sequelize.define('user', {
+            firstName: {
+                type: Sequelize.STRING
+            },
+            lastName: {
+                type: Sequelize.STRING
+            },
+            username: {
+                type: Sequelize.STRING  
+            },
+            email: {
+                type: Sequelize.STRING
+            },
+            password: {
+                type: Sequelize.STRING      
+            },
+            permission: {
+                type: Sequelize.INTEGER
+            },
+            last_access: {
+                type: Sequelize.DATE  
+            },
+            last_login: {
+                type: Sequelize.DATE
+            },
+            locked: {
+                type: Sequelize.BOOLEAN  
+            },
+            language: {
+                type: Sequelize.STRING  
+            },
+            uid: {
+                type: Sequelize.INTEGER,
+                primaryKey: true,
+                autoIncrement: true
+            }
+        });   
+    }
+    return User;
 }

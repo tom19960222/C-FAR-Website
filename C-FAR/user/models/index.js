@@ -1,5 +1,5 @@
-module.exports = function(sequelize){
-    var models = {}
-    models.User = require('./user')(sequelize);
-    return models;
-} 
+var sequelize = require('../../db.js');
+
+module.exports = {
+    User: require('./user')(sequelize)
+}

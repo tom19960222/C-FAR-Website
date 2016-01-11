@@ -1,12 +1,10 @@
 var Model = require('./models');
 var Express = require('express');
 var router = require('./route')();
+var action = require('./action');
 var inited = false;
-var model;
 
-var init = function(sequelize){
-    model = Model(sequelize);
-    sequelize.sync();
+var init = function(){
     inited = true;
 }
 
