@@ -1,6 +1,8 @@
 var Express = require('express');
-var router_init = require('./route.js');
-var moduleRouter = Express.Router();
+var router = require('./route.js')();
+var inited = false;
 
-router_init(moduleRouter);
-module.exports.router = moduleRouter;
+module.exports.init = function(){
+    inited = true;    
+}
+module.exports.router = router;

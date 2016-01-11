@@ -5,5 +5,9 @@ config.active_modules = [
     {
         name: 'main',
         route: '/'
+    },
+    {
+        name: 'user',
+        route: '/user'
     }
 ]
