@@ -11,3 +11,7 @@ config.active_modules = [
         route: '/user'
     }
 ]
+
+// Margan is used to be logger, visit here to get more info:
+// https://github.com/expressjs/morgan
+config.logType = 'dev';
