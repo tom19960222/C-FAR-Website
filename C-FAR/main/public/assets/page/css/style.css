@@ -335,10 +335,10 @@ body {
     padding-top: 90px;
 }
 
-#youtube {
-    background-color: #AF5014;
-    color: #e4e6e5;
-    padding-top: 90px;
+.youtube {
+    background-color: #AF5014 !important;
+    color: #e4e6e5 !important;
+    padding-top: 90px !important;
 }
 
 .title-row {

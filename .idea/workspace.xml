@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e5ca007e-4175-49de-a193-eaf036720520" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/C-FAR/main/pages/work-page.html" afterPath="$PROJECT_DIR$/C-FAR/main/pages/work-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/C-FAR/main/public/assets/page/css/style.css" afterPath="$PROJECT_DIR$/C-FAR/main/public/assets/page/css/style.css" />
     </list>
     <ignored path="C-FAR-Website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,9 +28,10 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/C-FAR/main/pages/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.064516">
-              <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+            <state vertical-scroll-proportion="-7.5409837">
+              <caret line="33" column="12" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="12" />
               <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -39,7 +41,7 @@
       <file leaf-file-name="full-style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/C-FAR/main/public/assets/index/css/full-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.557377">
+            <state vertical-scroll-proportion="-11.04918">
               <caret line="61" column="7" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="7" />
               <folding />
             </state>
@@ -49,8 +51,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/C-FAR/main/public/assets/page/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.557377">
-              <caret line="355" column="13" selection-start-line="355" selection-start-column="1" selection-end-line="355" selection-end-column="13" />
+            <state vertical-scroll-proportion="-5.639344">
+              <caret line="340" column="33" selection-start-line="340" selection-start-column="33" selection-end-line="340" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -59,9 +61,33 @@
       <file leaf-file-name="work-page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/C-FAR/main/pages/work-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6284722">
-              <caret line="317" column="25" selection-start-line="317" selection-start-column="25" selection-end-line="317" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.42206234">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/C-FAR/main/public/assets/page/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.6666665">
+              <caret line="196" column="37" selection-start-line="196" selection-start-column="37" selection-end-line="196" selection-end-column="37" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="story-page.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/C-FAR/main/pages/story-page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.508197">
+              <caret line="234" column="21" selection-start-line="172" selection-start-column="8" selection-end-line="234" selection-end-column="21" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -227,14 +253,6 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -254,11 +272,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,12 +391,12 @@
       <option name="number" value="Default" />
       <updated>1452517175100</updated>
       <workItem from="1452517180610" duration="3958000" />
-      <workItem from="1452521859949" duration="3168000" />
+      <workItem from="1452521859949" duration="7683000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7126000" />
+    <option name="totallyTimeSpent" value="11641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
@@ -441,6 +455,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="51" column="73" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="73" />
           <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -458,7 +473,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -467,9 +484,19 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/C-FAR/main/pages/story-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.508197">
+          <caret line="234" column="21" selection-start-line="172" selection-start-column="8" selection-end-line="234" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/C-FAR/main/public/assets/index/css/full-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.557377">
+        <state vertical-scroll-proportion="-11.04918">
           <caret line="61" column="7" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="7" />
           <folding />
         </state>
@@ -477,9 +504,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/C-FAR/main/pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.064516">
-          <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+        <state vertical-scroll-proportion="-7.5409837">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="12" />
           <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -487,17 +515,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/C-FAR/main/public/assets/page/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.557377">
-          <caret line="355" column="13" selection-start-line="355" selection-start-column="1" selection-end-line="355" selection-end-column="13" />
+        <state vertical-scroll-proportion="-5.639344">
+          <caret line="340" column="33" selection-start-line="340" selection-start-column="33" selection-end-line="340" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C-FAR/main/public/assets/page/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6666665">
+          <caret line="196" column="37" selection-start-line="196" selection-start-column="37" selection-end-line="196" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/C-FAR/main/pages/work-page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6284722">
-          <caret line="317" column="25" selection-start-line="317" selection-start-column="25" selection-end-line="317" selection-end-column="25" />
-          <folding />
+        <state vertical-scroll-proportion="0.42206234">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
