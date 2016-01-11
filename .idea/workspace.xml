@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5ca007e-4175-49de-a193-eaf036720520" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/C-FAR/main/pages/index.html" afterPath="$PROJECT_DIR$/C-FAR/main/pages/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/C-FAR/main/pages/something-new-page.html" afterPath="$PROJECT_DIR$/C-FAR/main/pages/something-new-page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/C-FAR/main/pages/story-page.html" afterPath="$PROJECT_DIR$/C-FAR/main/pages/story-page.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/C-FAR/main/pages/work-page.html" afterPath="$PROJECT_DIR$/C-FAR/main/pages/work-page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/C-FAR/main/public/assets/index/css/full-style.css" afterPath="$PROJECT_DIR$/C-FAR/main/public/assets/index/css/full-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/C-FAR/main/public/assets/page/css/style.css" afterPath="$PROJECT_DIR$/C-FAR/main/public/assets/page/css/style.css" />
     </list>
     <ignored path="C-FAR-Website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,8 +59,8 @@
       <file leaf-file-name="work-page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/C-FAR/main/pages/work-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19560185">
-              <caret line="147" column="27" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.6284722">
+              <caret line="317" column="25" selection-start-line="317" selection-start-column="25" selection-end-line="317" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -382,15 +377,15 @@
       <option name="number" value="Default" />
       <updated>1452517175100</updated>
       <workItem from="1452517180610" duration="3958000" />
-      <workItem from="1452521859949" duration="2879000" />
+      <workItem from="1452521859949" duration="3168000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6837000" />
+    <option name="totallyTimeSpent" value="7126000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -500,8 +495,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/C-FAR/main/pages/work-page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19560185">
-          <caret line="147" column="27" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.6284722">
+          <caret line="317" column="25" selection-start-line="317" selection-start-column="25" selection-end-line="317" selection-end-column="25" />
           <folding />
         </state>
       </provider>
