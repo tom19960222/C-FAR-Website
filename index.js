@@ -10,7 +10,12 @@ var c_far = require('./C-FAR');
 var config = require('./config');
 var logger = require('morgan');
 var helmet = require('helmet');
+var ejs = require('ejs');
 
+app.engine('.html', require('ejs').__express);
+app.set('views', __dirname + '/C-FAR/main/pages');
+app.set('view engine', 'html');
+app.set('trust proxy', config.trust_proxy);
 app.use(logger(config.logType));
 
 // Use helmet to prevent some common attack.
