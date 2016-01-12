@@ -21,6 +21,7 @@ config.session = {
     resave: false,
     saveUninitialized: true,
     cookie: {},
+    name: 'c-far-session'
 }
 
 if(process.env.NODE_ENV === 'production'){
