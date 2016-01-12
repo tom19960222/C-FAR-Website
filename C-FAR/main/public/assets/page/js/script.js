@@ -10,6 +10,7 @@ $(document).ready(function(e) {
 	***************/
 	$('.with-hover-text').hover(
 		function(e) {
+			var self = $(this);
 			$(this)
 				.css('overflow', 'visible')
 				.css('backgroundColor', 'rgba(98, 82, 187, 0.6)');

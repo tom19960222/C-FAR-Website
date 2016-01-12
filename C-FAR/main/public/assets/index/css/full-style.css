@@ -68,6 +68,7 @@ footer {
     padding-top: 30px !important;
 }
 
+
 @media (max-width: 767px) {
     #contact-row-4{
         position: relative;
@@ -109,9 +110,9 @@ footer {
 
     }
 
-    .hover-menu > * {
+    .hover-menu > p,a {
         display: block;
-        top: 40%;
+        top: 76%;
     }
 
     #contact-row-4{
