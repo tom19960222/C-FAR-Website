@@ -15,3 +15,15 @@ config.active_modules = [
 // Margan is used to be logger, visit here to get more info:
 // https://github.com/expressjs/morgan
 config.logType = 'dev';
+
+config.session = {
+    secret: "c-fAr",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {},
+}
+
+if(process.env.NODE_ENV === 'production'){
+    config.session.cookie.secure = true;
+}
+    
