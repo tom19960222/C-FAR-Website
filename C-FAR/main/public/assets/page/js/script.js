@@ -10,6 +10,7 @@ $(document).ready(function(e) {
 	***************/
 	$('.with-hover-text').hover(
 		function(e) {
+			var self = $(this);
 			$(this)
 				.css('overflow', 'visible')
 				.css('backgroundColor', 'rgba(98, 82, 187, 0.6)');
@@ -57,43 +58,49 @@ $(document).ready(function(e) {
 	* Hover text for the last slide
 	*************************/
 	$('#slide-3 img').each(function(index, element) {
+
 		var time = new Date().getTime();
 		var oldHref = $(this).attr('src');
 		var myImg = $('<img />').attr('src', oldHref + '?' + time );
 		
 		myImg.load(function(e) {
-			img_loaded += 1;;
+			img_loaded += 1;
 			if ( img_loaded == $('#slide-3 img').length ) {
-				$(function() {
-					var pause = 10;
-					$(document).scroll(function(e) {
-						delay(function() {
-							
-							var tops = [];
-							
-							$('.story').each(function(index, element) {
-								tops.push( $(element).offset().top - 200 );
-							});
-				
-							var scroll_top = $(this).scrollTop();
-							
-							var lis = $('.nav > li');
-							
-							for ( var i=tops.length-1; i>=0; i-- ) {
-								if ( scroll_top >= tops[i] ) {
-									menu_focus( lis[i], i+1 );
-									break;
-								}
-							}
-						},
-						pause);
-					});
-					$(document).scroll();
-				});
+
 			}
 		});
 	});
 	
+});
+
+
+//scrolling for the nav bar scaling
+//from myImg.load(function)
+$(function() {
+	var pause = 10;
+	$(document).scroll(function(e) {
+		delay(function() {
+
+				var tops = [];
+
+				$('.story').each(function(index, element) {
+					tops.push( $(element).offset().top - 200 );
+				});
+				console.log(tops.length);
+				var scroll_top = $(this).scrollTop();
+
+				var lis = $('.nav > li');
+
+				for ( var i=tops.length-1; i>=0; i-- ) {
+					if ( scroll_top >= tops[i] ) {
+						menu_focus( lis[i], i+1, tops.length );
+						break;
+					}
+				}
+			},
+			pause);
+	});
+	$(document).scroll();
 });
 
 /******************
@@ -140,7 +147,10 @@ var delay = (function(){
 	};
 })();
 
-function menu_focus( element, i ) {
+
+
+function menu_focus( element, i, length ) {
+	//console.log(i);
 	if ( $(element).hasClass('active') ) {
 		if ( i == 6 ) {
 			if ( $('.navbar').hasClass('inv') == false )
@@ -150,9 +160,9 @@ function menu_focus( element, i ) {
 		}
 	}
 	
-	enable_arrows( i );
+	enable_arrows( i, length );
 		
-	if ( i == 1 || i == 6 )
+	if ( i == 1 || i == 7 )
 		$('.navbar').removeClass('inv');
 	else
 		$('.navbar').addClass('inv');
@@ -175,12 +185,12 @@ function menu_focus( element, i ) {
 	);
 }
 
-function enable_arrows( dataslide ) {
+function enable_arrows( dataslide, length ) {
 	$('#arrows div').addClass('disabled');
 	if ( dataslide != 1 ) {
 		$('#arrow-up').removeClass('disabled');
 	}
-	if ( dataslide != 6 ) {
+	if ( dataslide != length ) {
 		$('#arrow-down').removeClass('disabled');
 	}
 	if ( dataslide == 3 ) {

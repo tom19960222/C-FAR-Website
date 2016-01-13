@@ -6,19 +6,27 @@ module.exports = function(){
     router.use('/assets', Express.static(__dirname + '/public/assets'));
     
     router.get('/', function(req, res){
-        res.sendFile(__dirname + '/pages/index.html');
+        res.render('index');
     });
 
     router.get('/work', function(req, res){
-        res.sendFile(__dirname + '/pages/work-page.html');
+        res.render('work-page');
     });
 
     router.get('/story', function(req, res){
-        res.sendFile(__dirname + '/pages/story-page.html');
+        res.render('story-page');
     });
 
     router.get('/new-things', function(req, res){
-        res.sendFile(__dirname + '/pages/something-new-page.html');
+        res.render('new-things-page');
+    });
+
+    router.get('/future', function(req, res){
+        res.render('future-page');
+    });
+
+    router.get('/information', function(req, res){
+        res.render('information-page');
     });
     
     return router;

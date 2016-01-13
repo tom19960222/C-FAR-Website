@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="JasonXDD">
 
     <title>C-FAR</title>
 
@@ -32,14 +32,22 @@
 
 <body>
 <!-- === Nav === -->
-<div class="slide story" id="slide-6" data-slide="6">
-    <div class="container">
-        <div class="row title-row">
-            <div class="col-12 font-light">TKU Center for Future intelligence and Research</div>
-            <div class="col-12 font-light"><span class="font-semibold">C-FAR</span></div>
+<div class="slide story" id="slide-6">
+    <div class="container" style="z-index: -1; height: 100%;">
+        <div class="row title-row" style="height: 100%">
+            <div class="col-12 font-light" style="position: absolute; top: 20%; width: 100%; font-size: 70px;">
+                策略遠見，未來浮現
+
+                <div class="col-12 font-light" style="width: 100%; font-size: 35px; letter-spacing: 0.55em; text-indent: 0.55em;">
+                    專業團隊，領你創造未來
+                </div>
+            </div>
+
+            <div class="col-12 font-light" style="position: absolute; bottom: 35%; width: 100% ">TKU Center for Future intelligence and Research</div>
+            <div class="col-12 font-light" style="position: absolute; bottom: 25%; width: 100% "><span class="font-semibold">C-FAR</span></div>
         </div><!-- /row -->
 
-        <div class="row line-row">
+        <div class="row line-row" style="position: absolute; bottom: 20%; width: 100% ">
             <div class="hr">&nbsp;</div>
         </div><!-- /row -->
     </div>
@@ -49,23 +57,23 @@
             <!--<div class="col-sm-1 hidden-sm">&nbsp;</div>-->
 
             <div class="col-12 col-sm-3 with-hover-text hover-menu">
-                <p><a href="/work" class="font-link"><i class="small-text">我們的</i>本事</a></p>
-                <a><span class="hover-text font-light">本事-可以打些敘述</span></a>
-            </div><!-- /col12 -->
-
-            <div class="col-12 col-sm-3 with-hover-text hover-menu">
                 <p><a href="/story" class="font-link"><i class="small-text">我們的</i>故事</a></p>
                 <a><span class="hover-text font-light ">故事-可以打些敘述</span></a>
             </div><!-- /col12 -->
 
             <div class="col-12 col-sm-3 with-hover-text hover-menu">
-                <p><a href="/new-things" class="font-link"><i class="small-text">我們的</i>新鮮事</a></p>
-                <a><span class="hover-text font-light ">新鮮事-可以打些敘述</span></a>
+                <p><a href="/work" class="font-link"><i class="small-text">我們的</i>本事</a></p>
+                <a><span class="hover-text font-light">本事-可以打些敘述</span></a>
             </div><!-- /col12 -->
 
             <div class="col-12 col-sm-3 with-hover-text hover-menu">
-                <p><a href="/new-things" class="font-link"><i class="small-text">我們的</i>未來事</a></p>
+                <p><a href="/future" class="font-link">未來事</a></p>
                 <a><span class="hover-text font-light ">未來事，早安</span></a>
+            </div><!-- /col12 -->
+
+            <div class="col-12 col-sm-3 with-hover-text hover-menu">
+                <p><a href="/new-things" class="font-link">新鮮事</a></p>
+                <a><span class="hover-text font-light ">新鮮事-可以打些敘述</span></a>
             </div><!-- /col12 -->
 
             <!--<div class="col-sm-1 hidden-sm">&nbsp;</div>-->
@@ -85,7 +93,7 @@
     </ol>
 
     <div style="
-        background-image: url(assets/index/img/background.jpg);
+        background-image: url(/assets/index/img/background.jpg);
         background-size: cover;
         background-position: center;
         height: 100%;
@@ -145,7 +153,7 @@
 
 <script src="assets/page/js/html5shiv.js"></script>
 <script src="assets/page/js/script.js"></script>
-
+<% include google-ga.ejs %>
 
 </body>
 
