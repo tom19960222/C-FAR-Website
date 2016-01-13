@@ -18,7 +18,7 @@ module.exports = function(){
     });
 
     router.get('/new-things', function(req, res){
-        res.render('something-new-page');
+        res.render('new-things-page');
     });
 
     router.get('/future', function(req, res){
