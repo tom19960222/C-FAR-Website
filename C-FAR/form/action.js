@@ -71,6 +71,39 @@ var getAllForms = function(){
     return Form.findAll();
 }
 
+var addAnswer = function(qid, answer){
+    var question;
+    return FormQuestion.findById(qid)
+    .then(function(_question){
+        question = _question;
+        var ans = QuestionAnswer.build({});
+        
+        console.log(question.questionType);
+        if(question.questionType === 'textbox')
+            ans.textbox = answer;
+        else if(question.questionType === 'textarea')
+            ans.textarea = answer;
+        else if(question.questionType === 'singleChoice')
+            ans.singleChoice = answer;
+        else if(question.questionType === 'multipleChoice')
+            ans.multipleChoice = answer;
+        else if(question.questionType === 'dropdown')
+            ans.dropdown = answer;
+        else if(question.questionType === 'score')
+            ans.score = answer;
+            
+        ans.save().then(function(){
+            question.addAnswer(ans).then(function(question){question.save();});
+            ans.setQuestion(question).then(function(ans){ans.save();});    
+        });
+    });
+}
+
+var answerForm = function(formID, answers){
+    
+}
+
 module.exports.addForm = addForm;
 module.exports.getForm = getForm;
 module.exports.getAllForms = getAllForms;
+module.exports.addAnswer = addAnswer;

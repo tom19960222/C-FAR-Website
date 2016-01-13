@@ -25,10 +25,10 @@ module.exports = function(sequelize){
             multipleChoice:{
                 type: Sequelize.INTEGER
             },
-            dropdownMenu:{
+            dropdown:{
                 type: Sequelize.INTEGER
             },
-            scoreMenu:{
+            score:{
                 type: Sequelize.INTEGER
             },
             ansid: {
