@@ -10,10 +10,10 @@ config.active_modules = [
         name: 'user',
         route: '/user'
     },
-    // {
-    //     name: 'form',
-    //     route: '/form'
-    // }
+    {
+        name: 'form',
+        route: '/form'
+    }
 ]
 
 // Margan is used to be logger, visit here to get more info:
