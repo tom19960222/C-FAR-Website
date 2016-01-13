@@ -24,6 +24,10 @@ module.exports = function(){
     router.get('/future', function(req, res){
         res.render('future-page');
     });
+
+    router.get('/information', function(req, res){
+        res.render('information-page');
+    });
     
     return router;
 }
