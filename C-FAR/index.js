@@ -20,4 +20,4 @@ for (var m in config.active_modules){
     console.log("Loaded module " + config.active_modules[m].name + ", mounted at " + config.active_modules[m].route);
 }
 
-db.sync(); // Sync database schema after loaded all the modules.
+db.sync({force: false}); // Sync database schema after loaded all the modules.

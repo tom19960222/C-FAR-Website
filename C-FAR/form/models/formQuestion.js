@@ -12,7 +12,7 @@ var Sequelize = require('sequelize');
 
 module.exports = function(sequelize){
     if(sequelize) {
-        var FormQuestion = sequelize.define('FormQuestion', {
+        var FormQuestion = sequelize.define('Question', {
             title: {
                 type: Sequelize.STRING,
                 allowNull: false
@@ -21,7 +21,8 @@ module.exports = function(sequelize){
                 type: Sequelize.TEXT
             },
             questionType: {
-                type: Sequelize.STRING
+                type: Sequelize.STRING,
+                allowNull: false
             },
             singleChoiceOptions:{
                 type: Sequelize.TEXT // JSON Array
@@ -38,11 +39,16 @@ module.exports = function(sequelize){
             scoreMin:{
                 type: Sequelize.INTEGER
             },
+            order: {
+                type: Sequelize.INTEGER,
+                allowNull: false
+            },
             qid: {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
                 autoIncrement: true
-            }
+            },
+            
         });
         return FormQuestion;
     }
