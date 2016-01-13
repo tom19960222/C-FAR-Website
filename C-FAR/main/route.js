@@ -20,6 +20,10 @@ module.exports = function(){
     router.get('/new-things', function(req, res){
         res.render('something-new-page');
     });
+
+    router.get('/future', function(req, res){
+        res.render('future-page');
+    });
     
     return router;
 }

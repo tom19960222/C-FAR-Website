@@ -154,7 +154,7 @@ function menu_focus( element, i ) {
 	
 	enable_arrows( i );
 		
-	if ( i == 1 || i == 6 )
+	if ( i == 1 || i == 7 )
 		$('.navbar').removeClass('inv');
 	else
 		$('.navbar').addClass('inv');
