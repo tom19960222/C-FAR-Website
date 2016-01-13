@@ -1,0 +1,118 @@
+.font-thin {
+    font-family: "Titillium Web", "微軟正黑體 Light", "微軟正黑體", sans-serif;
+    font-weight: 200;
+}
+
+.font-semibold {
+    font-family: "Titillium Web", "微軟正黑體 Light", "微軟正黑體", sans-serif;
+    font-weight: 600;
+}
+
+.font-light {
+    font-family: "Titillium Web", "微軟正黑體 Light", "微軟正黑體", sans-serif;
+    font-weight: 300;
+}
+
+* {
+    position: relative;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #2f2f2f;
+    font-family: "Titillium Web", "微軟正黑體 Light", "微軟正黑體", sans-serif;
+    font-weight: normal;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+
+.container{
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 10% 10% 0 10%;
+    padding: 5% 10% 10% 10%;
+}
+
+.line .hr {
+    background-color: #7b7c7b;
+    height: 3px;
+    margin: 5% auto;
+    width: 80%;
+}
+
+.title{
+    font-size: 70px;
+    padding-bottom: 30px;
+}
+
+.subtitle{
+    font-size: 45px;
+}
+
+.content{
+    font-size: 30px;
+}
+
+
+
+.XDD-comp{
+    width: 80%;
+    margin-bottom: 10%;
+}
+.XDD-comp *{
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+
+
+.btnbox{
+    margin: 5% 0 10% 5%;
+}
+
+.XDD-btn{
+    width: 80%;
+    margin-bottom: 3%;
+}
+.XDD-btn *{
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.XDD-slider{
+    margin: auto;
+    margin-bottom: 10%;
+    width: 80%;
+}
+
+.XDD-slider > div{
+    text-align: right;
+}
+
+.XDD-menu{
+    padding-top: 5%;
+}
+
+.XDD-menu > button{
+    font-size: 30px;
+    height: 2em;
+    width: 30%;
+}
+
+.XDD-submit{
+    position: absolute;
+    right: 15%;
+    bottom: 5em;
+
+}
+
+.XDD-submit > button{
+    font-size: 25px;
+    height: 2em;
+    width: 6em;
+}

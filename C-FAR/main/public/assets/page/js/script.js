@@ -86,7 +86,7 @@ $(function() {
 				$('.story').each(function(index, element) {
 					tops.push( $(element).offset().top - 200 );
 				});
-				console.log(tops.length);
+
 				var scroll_top = $(this).scrollTop();
 
 				var lis = $('.nav > li');
