@@ -28,6 +28,10 @@ module.exports = function(){
     router.get('/information', function(req, res){
         res.render('information-page');
     });
-    
+
+    router.get('/form', function(req, res){
+        res.render('form-page');
+    });
+
     return router;
 }
