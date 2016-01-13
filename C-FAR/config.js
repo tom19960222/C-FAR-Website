@@ -9,6 +9,10 @@ config.active_modules = [
     {
         name: 'user',
         route: '/user'
+    },
+    {
+        name: 'form',
+        route: '/form'
     }
 ]
 
