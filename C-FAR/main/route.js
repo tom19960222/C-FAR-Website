@@ -33,5 +33,17 @@ module.exports = function(){
         res.render('form-page');
     });
 
+    router.get('/one', function(req, res){
+        res.render('future1');
+    });
+
+    router.get('/two', function(req, res){
+        res.render('future2');
+    });
+
+    router.get('/three', function(req, res){
+        res.render('future3');
+    });
+
     return router;
 }

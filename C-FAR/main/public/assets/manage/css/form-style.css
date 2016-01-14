@@ -111,7 +111,9 @@ body {
 
 }
 
-.XDD-submit > button{
+.XDD-submit > a{
+    text-decoration: none;
+    padding-top: 0.25em;
     font-size: 25px;
     height: 2em;
     width: 6em;

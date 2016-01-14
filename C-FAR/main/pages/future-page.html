@@ -36,38 +36,44 @@
             <span class="font-semibold" style="position: absolute; width: 80px; font-size: 28px; padding-top: 5px;">C-FAR</span>
         </a>
         <div class="nav-collapse collapse navbar-responsive-collapse">
-            <ul class="nav row nav-font">
-                <li data-slide="1" class="col-12 col-sm-2">
+            <ul class="nav row nav-font nav-7-item">
+                <li data-slide="1" class="col-12 col-sm-1">
                     <a id="menu-link-1" href="#slide-1" title="Next Section">
                         <span class="icon icon-home"></span>
                         <span class="text">HOME</span>
                     </a>
                 </li>
-                <li data-slide="2" class="col-12 col-sm-2">
+                <li data-slide="2" class="col-12 col-sm-1">
                     <a id="menu-link-2" href="#slide-2" title="Next Section">
                         <span class="icon icon-user"></span>
                         <span class="text">ABOUT</span>
                     </a>
                 </li>
-                <li data-slide="3" class="col-12 col-sm-2">
+                <li data-slide="3" class="col-12 col-sm-1">
                     <a id="menu-link-3" href="#slide-3" title="Next Section">
                         <span class="icon icon-briefcase"></span>
                         <span class="text">ALBUM</span>
                     </a>
                 </li>
-                <li data-slide="4" class="col-12 col-sm-2">
+                <li data-slide="4" class="col-12 col-sm-1">
                     <a id="menu-link-4" href="#slide-4" title="Next Section">
                         <span class="icon icon-gears"></span>
                         <span class="text">WHAT</span>
                     </a>
                 </li>
-                <li data-slide="5" class="col-12 col-sm-2">
+                <li data-slide="5" class="col-12 col-sm-1">
                     <a id="menu-link-5" href="#slide-5" title="Next Section">
                         <span class="icon icon-heart"></span>
                         <span class="text">LINK</span>
                     </a>
                 </li>
-                <li data-slide="6" class="col-12 col-sm-2">
+                <li data-slide="6" class="col-12 col-sm-1">
+                    <a id="menu-link-8" href="#slide-8" title="Next Section">
+                        <span class="icon icon-info"></span>
+                        <span class="text">MORE</span>
+                    </a>
+                </li>
+                <li data-slide="7" class="col-12 col-sm-1">
                     <a id="menu-link-6" href="#slide-6" title="Next Section">
                         <span class="icon icon-envelope"></span>
                         <span class="text">CONTACT</span>
@@ -92,12 +98,18 @@
 </div>
 <!-- /.arrows -->
 <!-- === MAIN Background === -->
-<div class="slide story slide-1-s" id="slide-1" data-slide="1">
+<div class="slide story slide-1-s" id="slide-1" data-slide="1"
+     style="background-image: url(assets/page/images/background/future.jpg)">
+    <div style="background-color: rgba(0, 0, 0, 0.4); height: 100%; width: 100%; position: absolute"></div>
     <div class="container">
         <div id="home-row-1" class="row clearfix">
             <div class="col-12">
-                <h1 class="font-semibold">C-FAR <span class="font-thin">TKU</span></h1>
-                <h4 class="font-thin">未來事</h4>
+                <h1 class="font-semibold" style="font-size: 50px">
+                    <span class="font-thin" style="font-size: 25px">
+                        我們的
+                    </span>
+                    未來事
+                </h1>
                 <br>
                 <br>
             </div>
@@ -131,34 +143,69 @@
 
 
 <!-- === Slide 2 - Center Introduction === -->
-<div class="slide story" id="slide-2" data-slide="2" style="text-align: left;">
+<div class="slide story" id="slide-2" data-slide="2" style="background-color: #a6e1ec">
     <div class="container">
-        <div class="row title-row">
+        <div class="row title-row" style="color: orange">
             <div class="col-12 font-thin">關於未來的文章</div>
         </div>
         <!-- /row -->
 
-        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">Welcome</h2>
-            </div>
-            <div class="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Mauris sagittis pellentesque lacus eleifend lacinia...
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp"
+                style="width: 50%; position: relative; margin: 10% auto">
+            <div class="mdl-card__title"
+                    style="background-image: url(assets/page/images/future/未來事文章圖遠見預測真是無用.jpg);
+                            height: 300px; color: white; padding: 0">
+                <div style="background-color: rgba(0, 0, 0, 0.4); height: 100%; width: 100%; position: absolute"></div>
+                <h2 class="mdl-card__title-text" style=" padding: 10px; text-align: left;
+                                                         font-size: 35px; font-family: '微軟正黑體 Light';">
+                    遠見預測真是無用？
+                </h2>
             </div>
             <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Get Started
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                    href="/one">
+                    Read More
                 </a>
-            </div>
-            <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                    <i class="material-icons">share</i>
-                </button>
             </div>
         </div>
 
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp"
+             style="width: 50%; position: relative; margin: 10% auto">
+            <div class="mdl-card__title"
+                 style="background-image: url(assets/page/images/future/未來事文章圖回到未來.jpg);
+                            height: 300px; color: white; padding: 0">
+                <div style="background-color: rgba(0, 0, 0, 0.4); height: 100%; width: 100%; position: absolute"></div>
+                <h2 class="mdl-card__title-text" style=" padding: 10px; text-align: left;
+                                                         font-size: 35px; font-family: '微軟正黑體 Light';">
+                    《回到未來》中的未來就是今天時，我們實現了什麼？
+                </h2>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                    href="/two">
+                    Read More
+                </a>
+            </div>
+        </div>
 
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp"
+             style="width: 50%; position: relative; margin: 10% auto">
+            <div class="mdl-card__title"
+                 style="background-image: url(assets/page/images/future/未來事文章圖香港作為一種未來城市想像.jpg);
+                            height: 300px; color: white; padding: 0">
+                <div style="background-color: rgba(0, 0, 0, 0.4); height: 100%; width: 100%; position: absolute"></div>
+                <h2 class="mdl-card__title-text" style=" padding: 10px; text-align: left;
+                                                        font-size: 35px; font-family: '微軟正黑體 Light';">
+                    香港作為一種未來城市想像
+                </h2>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                    href="/three">
+                    Read More
+                </a>
+            </div>
+        </div>
 
     </div>
     <!-- /container -->
@@ -238,8 +285,8 @@
 <!-- === Slide 4 - Team === -->
 <div class="slide story" id="slide-7" data-slide="4">
     <div class="container container-fill">
-        <div class="row title-row">
-            <div class="col-12 font-thin">What's Work</div>
+        <div class="row title-row" style="color: orange">
+            <div class="col-12 font-thin">What Works in Future Studies</div>
         </div>
         <!-- /row -->
         <div class="row line-row">
@@ -305,7 +352,7 @@
 <!-- === Slide 5 Core === -->
 <div class="slide story" id="slide-5" data-slide="5" style="text-align: left;">
     <div class="container">
-        <div class="row title-row">
+        <div class="row title-row" style="color: orange">
             <div class="col-12 font-thin">相關連結</div>
         </div>
         <!-- /row -->
@@ -339,11 +386,57 @@
 
 
 
+<div class="slide story" id="slide-8" data-slide="6" style="text-align: left;">
+    <div class="container">
+
+        <!--Inner Slide - More Introduction-->
+        <div class="row title-row" style="text-align: center; padding-bottom: 3%; color: orange">
+            <div class="col-12 font-thin">更多資訊</div>
+        </div>
+        <!-- /row -->
+        <div class="row line-row">
+            <div class="hr">&nbsp;</div>
+        </div>
+        <!-- /row -->
+        <div id="XDD" class="row" style="text-align: center; padding-top: 10px">
+            <div class="col-12 col-sm-3 with-hover-text">
+                <p style="padding-top: 25%">
+                    <a href="/story" class="font-link" style="font-size: 50px;">故事</a>
+                </p>
+                <a><span class="hover-text font-light ">組織與價值理念</span></a>
+            </div><!-- /col12 -->
+
+            <div class="col-12 col-sm-3 with-hover-text">
+                <p style="padding-top: 25%">
+                    <a href="/work" class="font-link" style="font-size: 50px;">本事</a>
+                </p>
+                <a><span class="hover-text font-light">服務內容與策略發展</span></a>
+            </div><!-- /col12 -->
+
+            <div class="col-12 col-sm-3 with-hover-text">
+                <p style="padding-top: 25%">
+                    <a href="/future" class="font-link" style="font-size: 50px;">未來事</a>
+                </p>
+                <a><span class="hover-text font-light ">關於未來的討論</span></a>
+            </div><!-- /col12 -->
+
+            <div class="col-12 col-sm-3 with-hover-text">
+                <p style="padding-top: 25%">
+                    <a href="/new-things" class="font-link" style="font-size: 50px;">新鮮事</a>
+                </p>
+                <a><span class="hover-text font-light ">中心活動與最新訊息</span></a>
+            </div><!-- /col12 -->
+        </div>
+
+    </div>
+</div>
+
+
 <!-- === Slide 6 footer === -->
-<div class="slide story" id="slide-6" data-slide="6" style="text-align: left;">
+<div class="slide story" id="slide-6" data-slide="7" style="text-align: left;">
     <div class="container">
         <div class="row title-row">
-            <div class="col-12 font-light">聯絡我們</div>
+            <div class="col-12 font-light" style="color: orange;">聯絡我們</div>
         </div>
         <!-- /row -->
         <div class="row subtitle-row" style="font-size: 25px; padding: 0px;">
@@ -393,49 +486,10 @@
         </div>
         <!-- /row -->
 
-        <!--Inner Slide - More Introduction-->
-        <div class="row title-row" style="text-align: center; padding-top: 10%; padding-bottom: 3%">
-            <div class="col-12 font-thin">更多資訊</div>
-        </div>
-        <!-- /row -->
-        <div class="row line-row">
-            <div class="hr">&nbsp;</div>
-        </div>
-        <!-- /row -->
-        <div id="XDD" class="row" style="text-align: center; padding-top: 10px">
-            <div class="col-12 col-sm-3 with-hover-text">
-                <p style="padding-top: 25%">
-                    <a href="/story" class="font-link" style="font-size: 50px;">故事</a>
-                </p>
-                <a><span class="hover-text font-light ">組織與價值理念</span></a>
-            </div><!-- /col12 -->
-
-            <div class="col-12 col-sm-3 with-hover-text">
-                <p style="padding-top: 25%">
-                    <a href="/work" class="font-link" style="font-size: 50px;">本事</a>
-                </p>
-                <a><span class="hover-text font-light">服務內容、未來思考與策略發展</span></a>
-            </div><!-- /col12 -->
-
-            <div class="col-12 col-sm-3 with-hover-text">
-                <p style="padding-top: 25%">
-                    <a href="/future" class="font-link" style="font-size: 50px;">未來事</a>
-                </p>
-                <a><span class="hover-text font-light ">關於未來的討論</span></a>
-            </div><!-- /col12 -->
-
-            <div class="col-12 col-sm-3 with-hover-text">
-                <p style="padding-top: 25%">
-                    <a href="/new-things" class="font-link" style="font-size: 50px;">新鮮事</a>
-                </p>
-                <a><span class="hover-text font-light ">中心活動與最新訊息</span></a>
-            </div><!-- /col12 -->
-        </div>
     </div>
     <!-- /container -->
 </div>
 <!-- /Slide 6 -->
-
 
 <footer style="width: 100%; color: white; text-align: center; font-size: 20px; padding-top: 6%;">
     © Copyright cfar.tku.edu.tw 2016<br>
