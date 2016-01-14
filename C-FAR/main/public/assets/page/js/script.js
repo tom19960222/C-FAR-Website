@@ -15,7 +15,7 @@ $(document).ready(function(e) {
 				.css('overflow', 'visible')
 				.css('backgroundColor', 'rgba(98, 82, 187, 0.6)');
 
-			$(this).find('.title-float').animate({ top: '75%'});
+			$(this).find('.title-float').stop().animate({ top: '75%'});
 
 			$(this).find('.hover-text')
 				.stop()
@@ -46,7 +46,7 @@ $(document).ready(function(e) {
 						$(this).stop().hide();
 						$( obj ).css('overflow', 'hidden')
 								.css('backgroundColor', 'rgba(0,0,0,0)');
-						$(obj).find('.title-float').animate({ top: '83%'});
+						$(obj).find('.title-float').stop().animate({ top: '83%'});
 					}
 				);
 		}
@@ -155,7 +155,7 @@ var delay = (function(){
 function menu_focus( element, i, length ) {
 	//console.log(i);
 	if ( $(element).hasClass('active') ) {
-		if ( i == 6 ) {
+		if ( i == length ) {
 			if ( $('.navbar').hasClass('inv') == false )
 				return;
 		} else {
@@ -165,7 +165,7 @@ function menu_focus( element, i, length ) {
 	
 	enable_arrows( i, length );
 		
-	if ( i == 1 || i == 7 )
+	if ( i == 1 || i == length )
 		$('.navbar').removeClass('inv');
 	else
 		$('.navbar').addClass('inv');
@@ -358,3 +358,26 @@ jQuery(document).ready(function ($) {
 		}
 	});
 });
+
+
+function getEventTarget(e) {
+	e = e || window.event;
+	return e.target || e.srcElement;
+}
+
+var lastmem;
+function changeMember(num){
+	var mem = getEventTarget(event);
+	var a = [
+		'',
+		'喜歡傳播學中麥克魯漢（M. McLuhan）式的預言語法，也喜歡未來研究中強調的創意思維，兩者都進行跨界的思考，也始終對科技與人的關係進行關懷，這些喜愛融雜成為自己成長中的養分。目前在大學任教，主要以傳播相關學科為主，期望台灣傳播環境能更好，人人都能握有信心走向未來。',
+		'橫跨組織溝通研究、未來學、科學哲學、社會學、語藝批評、文化研究的跨領域研究者，對於社會文化的傳承流轉與創新趨勢有著熱烈的興趣，無時無刻保持冒險的好奇心。我認為，帶有美好未來想像的語言行動，將清晰地指出並誘導我們航向希望之地。我是李長潔，於大學教授社會未來、多元文化、全球社會等課程，並從事推動台灣科學與科技傳播之事務。',
+		'是法律人、飛機修護員、補教老師、鉗工工匠、職業軍人、電腦維修員、行銷人、保險規劃師、自幼好奇頑皮，喜愛探索新奇事物當個初心者，習慣使用跨領域的思維去尋找難題的解決之道。現正於未來學領域玩耍，望能習得一招半式嬉鬧於世界的角落。'
+	];
+
+	mem.className = "";
+	if(lastmem != undefined) lastmem.className = "member";
+	lastmem = mem;
+
+	document.getElementById('member').innerHTML = a[num];
+}
