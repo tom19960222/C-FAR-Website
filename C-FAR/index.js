@@ -8,8 +8,11 @@ var mainRouter = Express.Router();
 var modules = [];
 var db = require('./db');
 var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 
 module.exports.router = mainRouter;
+var s = session(config.session);
+s.store = new RedisStore(config.sessionStore);
 mainRouter.use(session(config.session));
 
 for (var m in config.active_modules){

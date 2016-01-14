@@ -20,12 +20,17 @@ config.active_modules = [
 // https://github.com/expressjs/morgan
 config.logType = 'dev';
 
+config.sessionStore = {
+    host: '163.13.128.116',
+    port: 6379
+}
+
 config.session = {
     secret: "c-fAr",
     resave: false,
     saveUninitialized: true,
     cookie: {},
-    name: 'c-far-session'
+    name: 'c-far-session',
 }
 
 if(process.env.NODE_ENV === 'production'){
