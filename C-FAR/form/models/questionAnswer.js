@@ -31,9 +31,6 @@ module.exports = function(sequelize){
             score:{
                 type: Sequelize.INTEGER
             },
-            formAnsId:{
-                type: Sequelize.INTEGER  
-            },
             ansid: {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
