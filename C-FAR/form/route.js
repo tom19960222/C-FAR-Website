@@ -50,16 +50,27 @@ module.exports = function(){
         next();
     }, function(req, res){
         res.status(200).json({message: 'Answers added.'});
-    })
+    });
     
     router.get('/question/:id', function(req, res){
         action.getQuestion(req.params['id'])
         .then(function(question){
-            res.status(200).json(question);
+            if (question) res.status(200).json(question);
+            else res.status(404).end();;
         })
         .catch(function(err){
             res.status(404);
+        });
+    })
+    
+    router.get('/response/:id', function(req, res){
+        action.getResponse(req.params['id'])
+        .then(function(response){
+            res.status(200).json(response);
         })
+        .catch(function(err){
+            res.status(404);
+        });
     })
 
     router.post('/edit', function(req, res){

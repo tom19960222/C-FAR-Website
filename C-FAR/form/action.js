@@ -2,6 +2,7 @@ var Model = require('./models');
 var Form = Model.form;
 var FormQuestion = Model.formQuestion;
 var QuestionAnswer = Model.questionAnswer;
+var FormResponse = Model.formResponse;
 var User = require('../user/models').User;
 
 
@@ -48,8 +49,8 @@ var addForm = function(uid, title, description, questions){
             newquestion.setForm(newform).then(function(newquestion){return newquestion.save();});
             newform.addQuestion(newquestion).then(function(newform){return newform.save();});
             User.findById(uid).then(function(user){
-                newform.setCreator(user).then(function(newform){newform.save();});
-                user.addForm(newform).then(function(user){user.save();});
+                newform.setCreator(user).then(function(newform){return newform.save();});
+                user.addForm(newform).then(function(user){return user.save();});
             });
         }
     });
@@ -71,13 +72,13 @@ var getAllForms = function(){
     return Form.findAll();
 }
 
-var addAnswer = function(qid, answer, formAnsId){
+var addAnswer = function(qid, answer, formResponse){
     var question;
-    var _formAnsId = formAnsId;
+    var _formResponse = formResponse;
     return FormQuestion.findById(qid)
     .then(function(_question){
         question = _question;
-        var ans = QuestionAnswer.build({formAnsId: _formAnsId});
+        var ans = QuestionAnswer.build();
         
         console.log(question.questionType);
         if(question.questionType === 'textbox')
@@ -94,8 +95,9 @@ var addAnswer = function(qid, answer, formAnsId){
             ans.score = answer;
             
         ans.save().then(function(){
-            question.addAnswer(ans).then(function(question){question.save();});
-            ans.setQuestion(question).then(function(ans){ans.save();});    
+            question.addAnswer(ans).then(function(question){return question.save();});
+            ans.setQuestion(question).then(function(ans){return ans.save();});
+            _formResponse.addAnswer(ans).then(function(response){return response.save();});    
         });
     });
 }
@@ -132,24 +134,24 @@ function promiseWhile(condition, body) {
 
 // TODO: Add a check to ensure all question are in the form.
 var answerForm = function(formId, answers){
-    return QuestionAnswer.findAll({order: [['formAnsId', 'DESC']]})
-    .then(function(ansrecords){
-        var formAnsId;
-        if(ansrecords[0])
-            formAnsId = ansrecords[0].formAnsId+1 || 1;
-        else
-            formAnsId = 1;
+    Form.findById(formId)
+    .then(function(form){
+        var ans = FormResponse.build({});
+        ans.setForm(form).then(function(ans){ans.save();});
         var i = -1; // Because we do i++ first, I start from -1.
         promiseWhile(function () { return i < answers.length; }, function () {
             i++;
-            return addAnswer(answers[i].qid, answers[i].answer, formAnsId);
-        });    
-    })
-    
+            return addAnswer(answers[i].qid, answers[i].answer, ans);
+        }); 
+    });
 }
 
 var getQuestion = function(qid){
     return FormQuestion.findById(qid, {include: [ {all: true} ]});
+}
+
+var getResponse = function(resid){
+    return FormResponse.findById(resid, {include: [ {all: true} ]});
 }
 
 module.exports.addForm = addForm;
@@ -158,3 +160,4 @@ module.exports.getAllForms = getAllForms;
 module.exports.addAnswer = addAnswer;
 module.exports.answerForm = answerForm;
 module.exports.getQuestion = getQuestion;
+module.exports.getResponse = getResponse;
