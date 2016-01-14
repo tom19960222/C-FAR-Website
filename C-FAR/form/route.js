@@ -11,8 +11,8 @@ module.exports = function(){
     router.post('/add', jsonParser, function(req, res, next){
         var ok = true;
         if(!(req.session.uid) || req.session.uid === 0){
-            ok = false;
-            res.status(401).end();
+            // ok = false;
+            // res.status(401).end();
         }
             
         if(!(req.body.title)){
@@ -42,6 +42,24 @@ module.exports = function(){
            if(form) res.status(200).json(form);
            else res.status(404); 
         });
+    });
+    
+    // TODO: Looks like there is a bug that action.answerForm.then(...) didn't work?
+    router.post('/answer/:id', jsonParser, function(req, res, next){
+        action.answerForm(req.params['id'], req.body.answers);
+        next();
+    }, function(req, res){
+        res.status(200).json({message: 'Answers added.'});
+    })
+    
+    router.get('/question/:id', function(req, res){
+        action.getQuestion(req.params['id'])
+        .then(function(question){
+            res.status(200).json(question);
+        })
+        .catch(function(err){
+            res.status(404);
+        })
     })
 
     router.post('/edit', function(req, res){

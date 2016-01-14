@@ -71,12 +71,13 @@ var getAllForms = function(){
     return Form.findAll();
 }
 
-var addAnswer = function(qid, answer){
+var addAnswer = function(qid, answer, formAnsId){
     var question;
+    var _formAnsId = formAnsId;
     return FormQuestion.findById(qid)
     .then(function(_question){
         question = _question;
-        var ans = QuestionAnswer.build({});
+        var ans = QuestionAnswer.build({formAnsId: _formAnsId});
         
         console.log(question.questionType);
         if(question.questionType === 'textbox')
@@ -99,11 +100,61 @@ var addAnswer = function(qid, answer){
     });
 }
 
-var answerForm = function(formID, answers){
+// Code form: http://qiita.com/HitsujixTweet/items/cc9b731f4abe1e5bc45a
+// More information: http://stackoverflow.com/questions/17217736/while-loop-with-promises
+var Q = require("q");
+
+// `condition` is a function that returns a boolean
+// `body` is a function that returns a promise
+// returns a promise for the completion of the loop
+function promiseWhile(condition, body) {
+    var done = Q.defer();
+
+    function loop() {
+        // When the result of calling `condition` is no longer true, we are
+        // done.
+        if (!condition()) return done.resolve();
+        // Use `when`, in case `body` does not return a promise.
+        // When it completes loop again otherwise, if it fails, reject the
+        // done promise
+        Q.when(body(), loop, done.reject);
+    }
+
+    // Start running the loop in the next tick so that this function is
+    // completely async. It would be unexpected if `body` was called
+    // synchronously the first time.
+    Q.nextTick(loop);
+
+    // The promise
+    return done.promise;
+}
+
+
+// TODO: Add a check to ensure all question are in the form.
+var answerForm = function(formId, answers){
+    return QuestionAnswer.findAll({order: [['formAnsId', 'DESC']]})
+    .then(function(ansrecords){
+        var formAnsId;
+        if(ansrecords[0])
+            formAnsId = ansrecords[0].formAnsId+1 || 1;
+        else
+            formAnsId = 1;
+        var i = -1; // Because we do i++ first, I start from -1.
+        promiseWhile(function () { return i < answers.length; }, function () {
+            i++;
+            return addAnswer(answers[i].qid, answers[i].answer, formAnsId);
+        });    
+    })
     
+}
+
+var getQuestion = function(qid){
+    return FormQuestion.findById(qid, {include: [ {all: true} ]});
 }
 
 module.exports.addForm = addForm;
 module.exports.getForm = getForm;
 module.exports.getAllForms = getAllForms;
 module.exports.addAnswer = addAnswer;
+module.exports.answerForm = answerForm;
+module.exports.getQuestion = getQuestion;
