@@ -13,7 +13,7 @@ var RedisStore = require('connect-redis')(session);
 module.exports.router = mainRouter;
 var s = session(config.session);
 s.store = new RedisStore(config.sessionStore);
-mainRouter.use(session(config.session));
+mainRouter.use(s);
 
 for (var m in config.active_modules){
     var mod = require(__dirname + '/' + config.active_modules[m].name);
