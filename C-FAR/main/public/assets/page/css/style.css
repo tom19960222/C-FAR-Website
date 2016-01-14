@@ -563,6 +563,33 @@ i {
     font-size: 20px;
 }
 
+#XDD {
+    padding-top: 125px;
+}
+
+#XDD .col-12 {
+    height: 175px;
+    overflow: hidden;
+    padding-top: 20px;
+    transition: all ease-in .5s;
+}
+
+#XDD img {
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#XDD .col-12:hover {
+    height: 175px;
+    padding-top: 0;
+}
+
+#XDD .col-12 .hover-text {
+    display: none;
+    font-size: 20px;
+}
 #slide-7 {
     background-color: #e4e6e5;
     color: #4e4e4e;
