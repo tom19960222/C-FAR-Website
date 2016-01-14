@@ -15,6 +15,8 @@ $(document).ready(function(e) {
 				.css('overflow', 'visible')
 				.css('backgroundColor', 'rgba(98, 82, 187, 0.6)');
 
+			$(this).find('.title-float').animate({ top: '75%'});
+
 			$(this).find('.hover-text')
 				.stop()
 				.show()
@@ -44,6 +46,7 @@ $(document).ready(function(e) {
 						$(this).stop().hide();
 						$( obj ).css('overflow', 'hidden')
 								.css('backgroundColor', 'rgba(0,0,0,0)');
+						$(obj).find('.title-float').animate({ top: '83%'});
 					}
 				);
 		}
