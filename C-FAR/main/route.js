@@ -45,5 +45,9 @@ module.exports = function(){
         res.render('future3');
     });
 
+    router.get('/error', function(req, res){
+        res.render('error');
+    });
+
     return router;
 }
