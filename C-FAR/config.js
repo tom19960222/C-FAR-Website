@@ -33,6 +33,15 @@ config.session = {
     name: 'c-far-session',
 }
 
+config.database = {
+    type: 'mysql',
+    host: 'mysql',
+    port: 3306,
+    username: 'admin',
+    password: 'password',
+    dbname: 'c-far'
+}
+
 if(process.env.NODE_ENV === 'production'){
     config.session.cookie.secure = true;
 }
