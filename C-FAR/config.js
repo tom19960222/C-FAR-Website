@@ -13,15 +13,15 @@ config.active_modules = [
     {
         name: 'form',
         route: '/form'
+    },
+    {
+        name: 'admin',
+        route: '/admin'
     }
 ]
 
-// Margan is used to be logger, visit here to get more info:
-// https://github.com/expressjs/morgan
-config.logType = 'dev';
-
 config.sessionStore = {
-    host: '163.13.128.116',
+    host: 'redis',
     port: 6379
 }
 
