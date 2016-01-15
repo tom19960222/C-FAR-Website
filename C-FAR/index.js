@@ -11,8 +11,8 @@ var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 
 module.exports.router = mainRouter;
+config.session.store = new RedisStore(config.sessionStore); 
 var s = session(config.session);
-s.store = new RedisStore(config.sessionStore);
 mainRouter.use(s);
 
 for (var m in config.active_modules){
