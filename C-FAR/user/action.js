@@ -48,6 +48,10 @@ var editUser = function(uid, firstName, lastName, username, email, password, per
     });
 }
 
+var getUserById = function(uid){
+    return User.findById(uid);
+}
+
 var login = function(username, password){
     return User.findOne({
         where: 
@@ -67,3 +71,4 @@ var login = function(username, password){
 module.exports.addUser = addUser;
 module.exports.editUser = editUser;
 module.exports.login = login;
+module.exports.getUserById = getUserById;
