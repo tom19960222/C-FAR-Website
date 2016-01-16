@@ -433,7 +433,6 @@ $(document).ready(function() {
 $(document).ready(function() {
 
 	$("#owl-share").owlCarousel({
-		autoPlay: 4000,
 		navigation : true, // Show next and prev buttons
 		slideSpeed : 300,
 		paginationSpeed : 400,

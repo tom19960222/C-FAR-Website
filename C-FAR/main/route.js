@@ -49,5 +49,13 @@ module.exports = function(){
         res.render('error');
     });
 
+    router.get('/login', function(req, res){
+        res.render('login');
+    });
+
+    router.get('/manage', function(req, res){
+        res.render('manage');
+    });
+
     return router;
 }
