@@ -15,7 +15,12 @@ $(document).ready(function(e) {
 				.css('overflow', 'visible')
 				.css('backgroundColor', 'rgba(98, 82, 187, 0.6)');
 
-			$(this).find('.title-float').stop().animate({ top: '75%'});
+			$(this).find('.title-float')
+				.stop()
+				.animate({
+					top: '75%',
+					opacity: 0.25
+				});
 
 			$(this).find('.hover-text')
 				.stop()
@@ -46,7 +51,12 @@ $(document).ready(function(e) {
 						$(this).stop().hide();
 						$( obj ).css('overflow', 'hidden')
 								.css('backgroundColor', 'rgba(0,0,0,0)');
-						$(obj).find('.title-float').stop().animate({ top: '83%'});
+						$(obj).find('.title-float')
+							.stop()
+							.animate({
+								top: '83%',
+								opacity: 1
+							});
 					}
 				);
 		}
@@ -196,10 +206,10 @@ function enable_arrows( dataslide, length ) {
 	if ( dataslide != length ) {
 		$('#arrow-down').removeClass('disabled');
 	}
-	if ( dataslide == 3 ) {
-		$('#arrow-left').removeClass('disabled');
-		$('#arrow-right').removeClass('disabled');
-	}
+	//if ( dataslide == 3 ) {
+	//	$('#arrow-left').removeClass('disabled');
+	//	$('#arrow-right').removeClass('disabled');
+	//}
 }
 
 /*************
@@ -360,6 +370,25 @@ jQuery(document).ready(function ($) {
 });
 
 
+
+
+
+
+//jQuery(document).ready(function ($) {
+//	$('member').parent().hover(
+//		function (e) {
+//			console.log(getEventTarget(e));
+//		},
+//		function (e) {
+//
+//		}
+//	);
+//});
+
+
+
+
+
 function getEventTarget(e) {
 	e = e || window.event;
 	return e.target || e.srcElement;
@@ -369,15 +398,46 @@ var lastmem;
 function changeMember(num){
 	var mem = getEventTarget(event);
 	var a = [
-		'',
+		'淡江大學未來學研究所助理教授，學歷是哥倫比亞大學教育博士與碩士，沒有名片的職稱是人生意義的學習者，目前找到最令我折服的路徑就是未來學。 最大的樂趣在不斷穿梭於各種時間與空間—過去/現在/未來，台灣/世界。',
 		'喜歡傳播學中麥克魯漢（M. McLuhan）式的預言語法，也喜歡未來研究中強調的創意思維，兩者都進行跨界的思考，也始終對科技與人的關係進行關懷，這些喜愛融雜成為自己成長中的養分。目前在大學任教，主要以傳播相關學科為主，期望台灣傳播環境能更好，人人都能握有信心走向未來。',
 		'橫跨組織溝通研究、未來學、科學哲學、社會學、語藝批評、文化研究的跨領域研究者，對於社會文化的傳承流轉與創新趨勢有著熱烈的興趣，無時無刻保持冒險的好奇心。我認為，帶有美好未來想像的語言行動，將清晰地指出並誘導我們航向希望之地。我是李長潔，於大學教授社會未來、多元文化、全球社會等課程，並從事推動台灣科學與科技傳播之事務。',
 		'是法律人、飛機修護員、補教老師、鉗工工匠、職業軍人、電腦維修員、行銷人、保險規劃師、自幼好奇頑皮，喜愛探索新奇事物當個初心者，習慣使用跨領域的思維去尋找難題的解決之道。現正於未來學領域玩耍，望能習得一招半式嬉鬧於世界的角落。'
 	];
 
-	mem.className = "";
-	if(lastmem != undefined) lastmem.className = "member";
-	lastmem = mem;
+	mem.parentNode.parentNode.className = "col-12 col-lg-3 col-sm-6";
+	if(lastmem != undefined) lastmem.className = "col-12 col-lg-3 col-sm-6 mem";
+	lastmem = mem.parentNode.parentNode;
 
 	document.getElementById('member').innerHTML = a[num];
 }
+
+
+
+
+//owl-slide page
+$(document).ready(function() {
+
+	$("#owl-img").owlCarousel({
+
+		autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+		items : 4,
+		itemsDesktop : [1199,3],
+		itemsDesktopSmall : [979,3]
+
+	});
+
+});
+
+
+$(document).ready(function() {
+
+	$("#owl-share").owlCarousel({
+		autoPlay: 4000,
+		navigation : true, // Show next and prev buttons
+		slideSpeed : 300,
+		paginationSpeed : 400,
+		singleItem:true
+	});
+
+});

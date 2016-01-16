@@ -58,12 +58,14 @@ body {
     transition: .25s all linear;
 }
 
-.member{
-    opacity: 0.4;
+
+
+.mem :hover{
+    opacity: 0.8;
 }
 
-.member :hover{
-    opacity: 1;
+.mem{
+    opacity: 0.5;
 }
 
 .navbar.inv {
@@ -490,7 +492,7 @@ i {
 }
 
 #slide-4 i {
-    font-size: 80px;
+    font-size: 50px;
     color: gray;
 }
 
@@ -696,3 +698,19 @@ i {
 .navigation-slide {
     cursor: pointer;
 }
+
+
+#owl-img{
+    margin: 5% 0;
+}
+
+#owl-img .item{
+    margin: 3px;
+    height: 30em;
+}
+
+/*#owl-img .item {*/
+    /*display: block;*/
+    /*width: 100%;*/
+
+/*}*/
