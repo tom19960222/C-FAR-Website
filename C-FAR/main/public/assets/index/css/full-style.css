@@ -41,40 +41,179 @@ footer {
     width: 100%;
 }
 
-#myCarousel > .mask{
+#myCarousel > .mask {
     position: fixed;
     z-index: 20;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     opacity: 0.5;
     height: 100%;
     width: 100%;
 }
 
-.title-row{
+#contact-row-4 .col-12{
+    padding-top: 0px !important;
+}
+
+.title-row {
+    height: 100%;
     padding-bottom: 20px !important;
     z-index: 10;
 }
 
-.font-link{
-    font-size: 60px;
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+    .title-font {
+        position: absolute;
+        top: 14%;
+        width: 100%;
+        font-size: 120%;
+    }
+
+    .subtitle-font {
+        width: 100%;
+        font-size: 23px;
+        letter-spacing: 0.55em;
+        text-indent: 0.55em;
+    }
+
+    .name-font {
+        position: absolute;
+        bottom: 30%;
+        width: 100%;
+        font-size: 25px;
+    }
+
+    .en-name-font {
+        position: absolute;
+        bottom: 25%;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    .logo-font {
+        position: absolute;
+        bottom: 15%;
+        width: 100%;
+        font-size: 25px;
+        font-weight: 300
+    }
+
+    .font-link {
+        font-size: 33px;
+    }
+
+    .small-text {
+        display: block;
+        font-style: normal;
+        font-size: 13px;
+        top: 10px;
+        letter-spacing: 12px;
+        text-align: center;
+        text-indent: 12px;
+    }
+    .scribe-font{
+        font-size: 14px !important;
+    }
+    .menu-container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .bg-container {
+        z-index: -1;
+        height: 100%;
+    }
 }
+
+
+
+
+@media screen and (min-width: 1300px) {
+    .title-font {
+        position: absolute;
+        top: 14%;
+        width: 100%;
+        font-size: 170%;
+    }
+
+    .subtitle-font {
+        width: 100%;
+        font-size: 30px;
+        letter-spacing: 0.55em;
+        text-indent: 0.55em;
+    }
+
+    .name-font {
+        position: absolute;
+        bottom: 30%;
+        width: 100%;
+        font-size: 35px;
+    }
+
+    .en-name-font {
+        position: absolute;
+        bottom: 25%;
+        width: 100%;
+        font-size: 27px;
+        font-weight: 300;
+    }
+
+    .logo-font {
+        position: absolute;
+        bottom: 15%;
+        width: 100%;
+        font-size: 35px;
+        font-weight: 300
+    }
+
+    .font-link {
+        font-size: 50px;
+    }
+
+    .small-text {
+        display: block;
+        font-style: normal;
+        font-size: 20px;
+        top: 10px;
+        letter-spacing: 12px;
+        text-align: center;
+        text-indent: 12px;
+    }
+    .scribe-font{
+        font-size: 25px !important;
+    }
+    .menu-container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .bg-container {
+        z-index: -1;
+        height: 100%;
+    }
+}
+
+
 
 #slide-6 {
     position: absolute;
-    background-color: rgba(0,0,0,0) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
     z-index: 10;
     width: 100%;
     height: 100%;
     padding-top: 30px !important;
 }
 
-
 @media (max-width: 767px) {
-    #contact-row-4{
+    #contact-row-4 {
         position: relative;
     }
 
-    .small-text{
+    .small-text {
         display: block;
         font-style: normal;
         font-size: 16px;
@@ -84,7 +223,7 @@ footer {
         text-indent: 20px;
     }
 
-    .hover-menu i{
+    .hover-menu i {
         margin: 0px !important;
     }
 
@@ -92,11 +231,11 @@ footer {
         margin-bottom: 0 !important;
     }
 
-    .hover-menu > p{
+    .hover-menu > p {
         padding-top: 20px !important;
     }
 
-    .title-row > div:first-child{
+    .title-row > div:first-child {
         display: none;
     }
 }
@@ -110,25 +249,16 @@ footer {
 
     }
 
-    .hover-menu > p,a {
+    .hover-menu > p, a {
         display: block;
         top: 83%;
     }
 
-    #contact-row-4{
+    #contact-row-4 {
         height: 100%;
         padding-top: 0px !important;
 
     }
 
-    .small-text{
-        display: block;
-        font-style: normal;
-        font-size: 16px;
-        top: 10px;
-        letter-spacing: 20px;
-        text-align: center;
-        text-indent: 20px;
-    }
 }
 

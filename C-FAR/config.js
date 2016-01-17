@@ -42,7 +42,7 @@ config.database = {
     dbname: 'c-far'
 }
 
-if(process.env.NODE_ENV === 'production'){
-    config.session.cookie.secure = true;
-}
+// if(process.env.NODE_ENV === 'production'){
+//     config.session.cookie.secure = true;
+// }
     
