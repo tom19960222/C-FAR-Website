@@ -51,7 +51,7 @@ footer {
 }
 
 #contact-row-4 .col-12{
-    padding-top: 0px !important;
+    padding: 0px !important;
 }
 
 .title-row {
@@ -61,7 +61,7 @@ footer {
 }
 
 @media screen and (min-width: 900px) and (max-width: 1300px) {
-    .title-font {
+    .big-title-font {
         position: absolute;
         top: 14%;
         width: 100%;
@@ -125,13 +125,18 @@ footer {
         z-index: -1;
         height: 100%;
     }
+
+    .hover-menu > p, a {
+        display: block;
+        top: 80%;
+    }
 }
 
 
 
 
 @media screen and (min-width: 1300px) {
-    .title-font {
+    .big-title-font {
         position: absolute;
         top: 14%;
         width: 100%;
@@ -195,6 +200,11 @@ footer {
         z-index: -1;
         height: 100%;
     }
+
+    .hover-menu > p, a {
+        display: block;
+        top: 80%;
+    }
 }
 
 
@@ -249,10 +259,7 @@ footer {
 
     }
 
-    .hover-menu > p, a {
-        display: block;
-        top: 83%;
-    }
+
 
     #contact-row-4 {
         height: 100%;

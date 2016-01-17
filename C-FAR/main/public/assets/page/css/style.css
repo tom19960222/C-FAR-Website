@@ -46,6 +46,10 @@ body {
     -webkit-font-smoothing: antialiased !important;
 }
 
+.text{
+    font-family: "Titillium Web", "微軟正黑體 Light", "微軟正黑體", sans-serif;
+}
+
 .justify-text {
     text-align: justify;
 }
@@ -58,14 +62,14 @@ body {
     transition: .25s all linear;
 }
 
-
-
-.mem :hover{
-    opacity: 0.8;
+.title-font{
+    color: orange;
+    font-size: 40px;
 }
 
-.mem{
-    opacity: 0.5;
+.content-font{
+    color: #494949;
+    font-size: 25px;
 }
 
 .navbar.inv {
@@ -244,7 +248,7 @@ body {
 .slide {
     background-position: center center;
     background-repeat: no-repeat;
-    padding-bottom: 65px;
+    padding-bottom: 0px;
     padding-top: 50px;
     text-align: center;
 }
@@ -497,7 +501,7 @@ i {
 }
 
 #slide-5 {
-    background-color: #E5FFF3;
+    background-color: #6AADB8;
     color: gray;
     padding-top: 90px;
 }
