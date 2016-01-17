@@ -139,8 +139,6 @@ function promiseWhile(condition, body) {
 
 // TODO: Add a check to ensure all question are in the form.
 var answerForm = function(formId, answers){
-    var q = require("q");
-    var _resid;
     return Form.findById(formId)
     .then(function(form){
         var res = FormResponse.build({});
