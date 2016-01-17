@@ -75,7 +75,6 @@ var getAllForms = function(){
 
 var addAnswer = function(qid, answer, formResponse){
     var question;
-    var _formResponse = formResponse;
     return FormQuestion.findById(qid)
     .then(function(_question){
         question = _question;
@@ -95,11 +94,16 @@ var addAnswer = function(qid, answer, formResponse){
         else if(question.questionType === 'score')
             ans.score = answer;
             
-        ans.save().then(function(){
-            question.addAnswer(ans).then(function(question){return question.save();});
-            ans.setQuestion(question).then(function(ans){return ans.save();});
-            _formResponse.addAnswer(ans).then(function(response){return response.save();});    
-        });
+        return ans.save()
+        .then(function(){
+            return formResponse.addAnswer(ans).then(function(response){return response.save();})
+            .then(function(){
+                return question.addAnswer(ans).then(function(question){return question.save();});    
+            })
+            .then(function(){
+                return ans.setQuestion(question).then(function(ans){return ans.save();});    
+            })
+        })
     });
 }
 
@@ -135,16 +139,29 @@ function promiseWhile(condition, body) {
 
 // TODO: Add a check to ensure all question are in the form.
 var answerForm = function(formId, answers){
-    Form.findById(formId)
+    var q = require("q");
+    var _resid;
+    return Form.findById(formId)
     .then(function(form){
-        var ans = FormResponse.build({});
-        ans.setForm(form).then(function(ans){ans.save();});
-        var i = -1; // Because we do i++ first, I start from -1.
-        promiseWhile(function () { return i < answers.length; }, function () {
-            i++;
-            return addAnswer(answers[i].qid, answers[i].answer, ans);
-        }); 
-    });
+        var res = FormResponse.build({});
+        return res.setForm(form)
+        .then(function(ans){
+            return ans.save()
+            .then(function(){ 
+                var i = -1; // Because we do i++ first, I start from -1.
+                return promiseWhile(function () { return i < answers.length-1; }, function () {
+                    i++;
+                    return addAnswer(answers[i].qid, answers[i].answer, res);  
+                })
+                .then(function(){
+                    return getResponse(ans.resid);
+                })
+                .catch(function(err){
+                    console.error("Error answerForm - " + err);
+                })
+            })   
+        })   
+    })
 }
 
 var getQuestion = function(qid){
@@ -158,7 +175,6 @@ var getResponse = function(resid){
 module.exports.addForm = addForm;
 module.exports.getForm = getForm;
 module.exports.getAllForms = getAllForms;
-module.exports.addAnswer = addAnswer;
 module.exports.answerForm = answerForm;
 module.exports.getQuestion = getQuestion;
 module.exports.getResponse = getResponse;

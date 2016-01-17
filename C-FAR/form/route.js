@@ -44,7 +44,6 @@ module.exports = function(){
         });
     });
     
-    // TODO: Looks like there is a bug that action.answerForm.then(...) didn't work?
     router.post('/answer/:id', jsonParser, function(req, res, next){
         action.answerForm(req.params['id'], req.body.answers);
         next();
