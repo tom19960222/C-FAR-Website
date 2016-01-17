@@ -48,11 +48,11 @@ var addForm = function(uid, title, description, questions){
             }
             newquestion.setForm(newform).then(function(newquestion){return newquestion.save();});
             newform.addQuestion(newquestion).then(function(newform){return newform.save();});
-            User.findById(uid).then(function(user){
-                newform.setCreator(user).then(function(newform){return newform.save();});
-                user.addForm(newform).then(function(user){return user.save();});
-            });
         }
+        return User.findById(uid).then(function(user){
+                user.addForm(newform).then(function(user){return user.save();});
+                return newform.setCreator(user).then(function(newform){return newform.save();});
+            });
     });
 }
 
@@ -62,9 +62,10 @@ var getForm = function(id){
         {model: FormQuestion}
     ]})
     .then(function(form){
-        return form.Questions.sort(function(a, b){
+        form.Questions.sort(function(a, b){
             return a.order - b.order;
         })
+        return form;
     });
 }
 

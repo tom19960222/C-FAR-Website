@@ -62,7 +62,7 @@ describe('Form#addForm', function(){
         .then(function(addedform){
             formAction.getForm(addedform.id)
             .then(function(foundform){
-                assert.equal(foundform.getQuestions().length, 6);
+                assert.equal(foundform.Questions.length, 6);
                 done();
             })
         })
