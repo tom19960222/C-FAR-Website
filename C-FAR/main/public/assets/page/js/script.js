@@ -421,8 +421,8 @@ $(document).ready(function() {
 
 		autoPlay: 3000, //Set AutoPlay to 3 seconds
 
-		items : 4,
-		itemsDesktop : [1199,3],
+		items : 5,
+		itemsDesktop : [1199,4],
 		itemsDesktopSmall : [979,3]
 
 	});
@@ -437,6 +437,20 @@ $(document).ready(function() {
 		slideSpeed : 300,
 		paginationSpeed : 400,
 		singleItem:true
+	});
+
+});
+
+$(document).ready(function() {
+
+	$("#owl-future").owlCarousel({
+
+		items : 2,
+		itemsDesktop : [1199,2],
+		itemsDesktopSmall : [979,2],
+
+		navigation: true
+
 	});
 
 });
