@@ -28,6 +28,34 @@ module.exports = function(){
     router.get('/information', function(req, res){
         res.render('information-page');
     });
-    
+
+    router.get('/form', function(req, res){
+        res.render('form-page');
+    });
+
+    router.get('/one', function(req, res){
+        res.render('future1');
+    });
+
+    router.get('/two', function(req, res){
+        res.render('future2');
+    });
+
+    router.get('/three', function(req, res){
+        res.render('future3');
+    });
+
+    router.get('/error', function(req, res){
+        res.render('error');
+    });
+
+    router.get('/login', function(req, res){
+        res.render('login');
+    });
+
+    router.get('/manage', function(req, res){
+        res.render('manage');
+    });
+
     return router;
 }

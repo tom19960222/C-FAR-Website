@@ -1,8 +1,9 @@
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize('c-far', 'root', '123456@', {
-  host: '163.13.128.116',
-  dialect: 'mysql',
-  port: 33060,
+var config = require('./config');
+var sequelize = new Sequelize(config.database.dbname, config.database.username, config.database.password, {
+  host: config.database.host,
+  dialect: config.database.type,
+  port: config.database.port,
   pool: {
     max: 5,
     min: 0,

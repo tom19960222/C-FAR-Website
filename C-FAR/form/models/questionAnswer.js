@@ -2,17 +2,17 @@ var Sequelize = require('sequelize');
 
 /*
     Types of questions:
-        1. textbox
-        2. textarea (allow mutiple lines)
-        3. single choice (radiobutton)
-        4. multiple choice (checkbox)
-        5. dropdown menu
-        6. score (N ~ M points)
+        1. textbox (textbox)
+        2. textarea (textarea (allow mutiple lines))
+        3. singleChoice (single choice (radiobutton))
+        4. multipleChoice (multiple choice (checkbox))
+        5. dropdown (dropdown menu)
+        6. score (score (N ~ M points))
 */
 
 module.exports = function(sequelize){
     if(sequelize) {
-        var questionAnswer = sequelize.define('questionAnswer', {
+        var questionAnswer = sequelize.define('Answer', {
             textbox:{
                 type: Sequelize.TEXT
             },
@@ -25,10 +25,10 @@ module.exports = function(sequelize){
             multipleChoice:{
                 type: Sequelize.INTEGER
             },
-            dropdownMenu:{
+            dropdown:{
                 type: Sequelize.INTEGER
             },
-            scoreMenu:{
+            score:{
                 type: Sequelize.INTEGER
             },
             ansid: {

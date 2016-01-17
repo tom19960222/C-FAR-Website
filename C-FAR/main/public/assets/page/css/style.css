@@ -58,6 +58,16 @@ body {
     transition: .25s all linear;
 }
 
+
+
+.mem :hover{
+    opacity: 0.8;
+}
+
+.mem{
+    opacity: 0.5;
+}
+
 .navbar.inv {
     background-color: rgba(0, 0, 0, .5);
     border-bottom: 1px solid #bfbfbf;
@@ -93,6 +103,10 @@ body {
 
 .nav-7-item li{
     margin-left: 5%;
+}
+
+.nav-8-item li{
+    margin-left: 3.5%;
 }
 
 .nav li {
@@ -253,17 +267,6 @@ body {
     background-position: center center;
 }
 
-.slide-1-w {
-    background-image: url(http://moco.tw/images/member/issue/91/91_1_2015-10-07-223528-72780.jpg) !important;
-}
-
-.slide-1-s {
-    background-image: url(https://drscdn.500px.org/photo/2029587/m%3D900/746e95c2db4a7fb404b986bb71131cf4) !important;
-}
-
-.slide-1-n {
-    background-image: url(http://farm8.staticflickr.com/7244/7195625944_5a47ddbbef_b.jpg) !important;
-}
 
 #slide-1 h1 {
     padding-top: 130px;
@@ -336,7 +339,6 @@ body {
 
 #slide-2 {
     background-color: #FFFFFF;
-    color: black;
     padding-top: 90px;
 }
 
@@ -490,7 +492,7 @@ i {
 }
 
 #slide-4 i {
-    font-size: 80px;
+    font-size: 50px;
     color: gray;
 }
 
@@ -563,12 +565,49 @@ i {
     font-size: 20px;
 }
 
+#XDD {
+    padding-top: 125px;
+}
+
+#XDD .col-12 {
+    height: 175px;
+    overflow: hidden;
+    padding-top: 20px;
+    transition: all ease-in .5s;
+}
+
+#XDD img {
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#XDD .col-12:hover {
+    height: 175px;
+    padding-top: 0;
+}
+
+#XDD .col-12 .hover-text {
+    display: none;
+    font-size: 20px;
+}
 #slide-7 {
     background-color: #e4e6e5;
     color: #4e4e4e;
     font-size: 35px;
     line-height: 50px;
     text-align: center;
+}
+
+#slide-8 {
+    background-color: #2f2625;
+    color: #e4e6e5;
+}
+
+#slide-8 a{
+    text-decoration: none;
+    color: #e4e6e5;
 }
 
 #lightbox-out {
@@ -659,3 +698,19 @@ i {
 .navigation-slide {
     cursor: pointer;
 }
+
+
+#owl-img{
+    margin: 5% 0;
+}
+
+#owl-img .item{
+    margin: 3px;
+    height: 30em;
+}
+
+/*#owl-img .item {*/
+    /*display: block;*/
+    /*width: 100%;*/
+
+/*}*/

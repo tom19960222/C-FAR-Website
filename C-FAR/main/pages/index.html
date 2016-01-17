@@ -7,9 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <meta name="keywords" content="CFAR C-FAR TKU Center for Future intelligence and Research">
     <meta name="author" content="JasonXDD">
 
     <title>C-FAR</title>
+
+
 
     <!-- Bootstrap Core CSS -->
     <link href="assets/index/css/bootstrap.min.css" rel="stylesheet">
@@ -33,64 +36,85 @@
 <body>
 <!-- === Nav === -->
 <div class="slide story" id="slide-6">
-    <div class="container" style="z-index: -1; height: 100%;">
-        <div class="row title-row" style="height: 100%">
-            <div class="col-12 font-light" style="position: absolute; top: 20%; width: 100%; font-size: 70px;">
+    <div class="container bg-container">
+        <div class="row title-row">
+            <div class="col-12 font-light title-font" style="">
                 策略遠見，未來浮現
 
-                <div class="col-12 font-light" style="width: 100%; font-size: 35px; letter-spacing: 0.55em; text-indent: 0.55em;">
+                <div class="col-12 font-light subtitle-font">
                     專業團隊，領你創造未來
                 </div>
             </div>
 
-            <div class="col-12 font-light" style="position: absolute; bottom: 35%; width: 100% ">TKU Center for Future intelligence and Research</div>
-            <div class="col-12 font-light" style="position: absolute; bottom: 25%; width: 100% "><span class="font-semibold">C-FAR</span></div>
+            <div class="col-12 font-light name-font">
+                淡江大學策略遠見研究中心
+            </div>
+            <div class="col-12 font-light en-name-font" style="">
+                Center for Futures Intelligence and Research
+            </div>
+            <div class="col-12 font-light logo-font" style="">
+                <img src="assets/index/img/logo.png" style="height: 1em; margin-bottom: 12px">
+            </div>
+
         </div><!-- /row -->
 
-        <div class="row line-row" style="position: absolute; bottom: 20%; width: 100% ">
-            <div class="hr">&nbsp;</div>
-        </div><!-- /row -->
     </div>
 
-    <div class="container" style="position: absolute; top: 0; width: 100%; height: 100%;">
+    <div class="container menu-container">
         <div id="contact-row-4" class="row">
-            <!--<div class="col-sm-1 hidden-sm">&nbsp;</div>-->
 
             <div class="col-12 col-sm-3 with-hover-text hover-menu">
-                <p><a href="/story" class="font-link"><i class="small-text">我們的</i>故事</a></p>
-                <a><span class="hover-text font-light ">故事-可以打些敘述</span></a>
+                <p class="title-float">
+                    <a href="/story" class="font-link">
+                        <i class="small-text">我們的</i>故事
+                    </a>
+                </p>
+                <a style="top: 73%"><span class="hover-text font-light scribe-font">組織與價值理念</span></a>
             </div><!-- /col12 -->
 
             <div class="col-12 col-sm-3 with-hover-text hover-menu">
-                <p><a href="/work" class="font-link"><i class="small-text">我們的</i>本事</a></p>
-                <a><span class="hover-text font-light">本事-可以打些敘述</span></a>
+                <p class="title-float">
+                    <a href="/work" class="font-link">
+                        <i class="small-text">我們的</i>本事
+                    </a>
+                </p>
+                <a style="top: 73%"><span class="hover-text font-light scribe-font">服務內容與策略發展</span></a>
             </div><!-- /col12 -->
 
             <div class="col-12 col-sm-3 with-hover-text hover-menu">
-                <p><a href="/future" class="font-link">未來事</a></p>
-                <a><span class="hover-text font-light ">未來事，早安</span></a>
+                <p class="title-float">
+                    <a href="/future" class="font-link">
+                        <i class="small-text">&nbsp;</i>未來事
+                    </a>
+                </p>
+                <a style="top: 73%"><span class="hover-text font-light scribe-font">關於未來的討論</span></a>
             </div><!-- /col12 -->
 
             <div class="col-12 col-sm-3 with-hover-text hover-menu">
-                <p><a href="/new-things" class="font-link">新鮮事</a></p>
-                <a><span class="hover-text font-light ">新鮮事-可以打些敘述</span></a>
+                <p class="title-float">
+                    <a href="/error" class="font-link">
+                        <i class="small-text">&nbsp;</i>新鮮事
+                    </a>
+                </p>
+                <a style="top: 73%"><span class="hover-text font-light scribe-font">中心活動與最新訊息</span></a>
             </div><!-- /col12 -->
 
-            <!--<div class="col-sm-1 hidden-sm">&nbsp;</div>-->
         </div><!-- /row -->
     </div><!-- /container -->
 </div><!-- /Slide 6 -->
 
 
+<!-- login -->
+<a class="btn btn-default" href="/login" role="button"
+        style="position: absolute; display: block; top: 0; left: 0; margin: 3% 3%; padding: 0 2%; font-size: 20px; z-index: 10;
+               background: none; color: whitesmoke;">
+    LOGIN
+</a>
+
+
 <!-- Full Page Image Background Carousel Header -->
 <header id="myCarousel" class="carousel slide">
     <div class="mask"></div>
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
 
     <div style="
         background-image: url(/assets/index/img/background.jpg);
@@ -100,40 +124,6 @@
         width: 100%;">
 
     </div>
-    <!-- Wrapper for Slides -->
-    <!--<div class="carousel-inner">-->
-        <!--<div class="item active">-->
-            <!--&lt;!&ndash; Set the first background image using inline CSS below. &ndash;&gt;-->
-            <!--<div class="fill"-->
-                 <!--style="background-image:url('http://www.lanyang.tku.edu.tw/lanyang/images/2010photos/20101106_TKU60_01_b.jpg');"></div>-->
-            <!--&lt;!&ndash;<div class="carousel-caption">&ndash;&gt;-->
-            <!--&lt;!&ndash;<h2>Caption 1</h2>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--</div>-->
-        <!--<div class="item">-->
-            <!--&lt;!&ndash; Set the second background image using inline CSS below. &ndash;&gt;-->
-            <!--<div class="fill" style="background-image:url('http://tknet.tku.edu.tw/~400401773/001.jpg');"></div>-->
-            <!--&lt;!&ndash;<div class="carousel-caption">&ndash;&gt;-->
-            <!--&lt;!&ndash;<h2>Caption 2</h2>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--</div>-->
-        <!--<div class="item">-->
-            <!--&lt;!&ndash; Set the third background image using inline CSS below. &ndash;&gt;-->
-            <!--<div class="fill"-->
-                 <!--style="background-image:url('http://saschampion.com.tw/wp-content/uploads/2015/04/%E6%B7%A1%E6%B1%9F%E5%9C%B0%E5%9C%96-1.png');"></div>-->
-            <!--&lt;!&ndash;<div class="carousel-caption">&ndash;&gt;-->
-            <!--&lt;!&ndash;<h2>Caption 3</h2>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <!-- Controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="icon-prev"></span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="icon-next"></span>
-    </a>
 
 </header>
 
@@ -141,15 +131,6 @@
 <!-- jQuery -->
 <script src="assets/index/js/jquery.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="assets/index/js/bootstrap.min.js"></script>
-
-<!-- Script to Activate the Carousel -->
-<script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-</script>
 
 <script src="assets/page/js/html5shiv.js"></script>
 <script src="assets/page/js/script.js"></script>
