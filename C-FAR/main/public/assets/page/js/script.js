@@ -184,7 +184,6 @@ function menu_focus( element, i, length ) {
 	$(element).addClass('active');
 	
 	var icon = $(element).find('.icon');
-	console.log(icon.offset().left);
 	var left_pos = icon.offset().left - $('.nav').offset().left;
 	var el_width = icon.width() + $(element).find('.text').width() + 10;
 	
@@ -328,7 +327,6 @@ jQuery(document).ready(function ($) {
 		
 		var slide = null;
 		var datasheet = $('.nav > li.active').data('slide');
-		console.log(datasheet);
 		var offset_top = false;
 		var offset_left = false;
 		
@@ -353,7 +351,7 @@ jQuery(document).ready(function ($) {
 				}
 				break;
 		}
-		
+
 		if ( offset_top != false ) {
 			htmlbody.stop(false, false).animate({
 				scrollTop: offset_top
@@ -386,6 +384,8 @@ jQuery(document).ready(function ($) {
 //	);
 //});
 
+//media is mobile
+var mq = window.matchMedia( "(max-width: 750px)" );
 
 $(document).ready(function(e) {
 	$('.mem').mouseenter(
@@ -486,3 +486,30 @@ $(document).ready(function(){
 	}
 });
 
+function showYoutube() {
+
+	$("#owl-youtube").owlCarousel({
+
+		items : 2,
+		itemsDesktop : [1199,2],
+		itemsDesktopSmall : [979,2],
+
+		afterInit : function(elem){
+			var that = this;
+			that.owlControls.prependTo(elem)
+		}
+	});
+
+}
+
+
+console.log(mq.matches);
+if(mq.matches){
+	$('#com-youtube').css({display: 'none'});
+	$('#owl-youtube').css({display: 'block'});
+	showYoutube();
+}
+else{
+	$('#com-youtube').css({display: 'block'});
+	$('#owl-youtube').css({display: 'none'});
+}
