@@ -1,6 +1,6 @@
 
 $(document).ready(function(e) {
-	$('.with-hover-text, .regular-link').click(function(e){
+	$('.with-hover-text, .regular-link, .link').click(function(e){
 		e.stopPropagation();
 	});
 	
@@ -184,7 +184,6 @@ function menu_focus( element, i, length ) {
 	$(element).addClass('active');
 	
 	var icon = $(element).find('.icon');
-	
 	var left_pos = icon.offset().left - $('.nav').offset().left;
 	var el_width = icon.width() + $(element).find('.text').width() + 10;
 	
@@ -322,7 +321,7 @@ jQuery(document).ready(function ($) {
 	
 	arrows.click(function(e) {
 		e.preventDefault();
-		
+
 		if ( $(this).hasClass('disabled') )
 			return;
 		
@@ -352,7 +351,7 @@ jQuery(document).ready(function ($) {
 				}
 				break;
 		}
-		
+
 		if ( offset_top != false ) {
 			htmlbody.stop(false, false).animate({
 				scrollTop: offset_top
@@ -385,6 +384,8 @@ jQuery(document).ready(function ($) {
 //	);
 //});
 
+//media is mobile
+var mq = window.matchMedia( "(max-width: 750px)" );
 
 $(document).ready(function(e) {
 	$('.mem').mouseenter(
@@ -395,8 +396,6 @@ $(document).ready(function(e) {
 });
 
 
-
-
 function getEventTarget(e) {
 	e = e || window.event;
 	return e.target || e.srcElement;
@@ -404,7 +403,7 @@ function getEventTarget(e) {
 
 var lastmem;
 function changeMember(num, mem){
-	if(lastmem == mem) return;
+	if(lastmem === mem) return;
 	var a = [
 		'名片上的職稱是淡江大學未來學研究所助理教授，學歷是哥倫比亞大學教育博士與碩士，沒有名片的職稱是人生意義的學習者，目前找到最令我折服的路徑就是未來學。 最大的樂趣在不斷穿梭於各種時間與空間—過去/現在/未來，台灣/世界。',
 		'喜歡傳播學中麥克魯漢（M. McLuhan）式的預言語法，也喜歡未來研究中強調的創意思維，兩者都進行跨界的思考，也始終對科技與人的關係進行關懷，這些喜愛融雜成為自己成長中的養分。目前在大學任教，主要以傳播相關學科為主，期望台灣傳播環境能更好，人人都能握有信心走向未來。',
@@ -412,11 +411,14 @@ function changeMember(num, mem){
 		'是法律人、飛機修護員、補教老師、鉗工工匠、職業軍人、電腦維修員、行銷人、保險規劃師、自幼好奇頑皮，喜愛探索新奇事物當個初心者，習慣使用跨領域的思維去尋找難題的解決之道。現正於未來學領域玩耍，望能習得一招半式嬉鬧於世界的角落。'
 	];
 
+
+	document.getElementById('member').innerHTML = a[num];
+
+
+	if(mem === null) return;
 	mem.style.opacity = 0.6;
 	if(lastmem != undefined) lastmem.style.opacity = 1;
 	lastmem = mem;
-
-	document.getElementById('member').innerHTML = a[num];
 }
 
 
@@ -430,8 +432,8 @@ $(document).ready(function() {
 		autoPlay: 3000, //Set AutoPlay to 3 seconds
 
 		items : 5,
-		itemsDesktop : [1199,4],
-		itemsDesktopSmall : [979,3]
+		itemsDesktop : [1199,3],
+		itemsDesktopSmall : [700, 1]
 
 	});
 
@@ -464,3 +466,50 @@ $(document).ready(function() {
 	});
 
 });
+
+
+
+$(document).ready(function(){
+
+	$("#member-owl").owlCarousel({
+
+		items : 4,
+		itemsDesktop : [1199,4],
+		itemsDesktopSmall : [979,1],
+
+		//navigation: true,
+		afterAction: XDD
+	});
+
+	function XDD(){
+		changeMember(this.owl.currentItem, null);
+	}
+});
+
+function showYoutube() {
+
+	$("#owl-youtube").owlCarousel({
+
+		items : 2,
+		itemsDesktop : [1199,2],
+		itemsDesktopSmall : [979,2],
+
+		afterInit : function(elem){
+			var that = this;
+			that.owlControls.prependTo(elem)
+		}
+	});
+
+}
+
+
+console.log(mq.matches);
+if(mq.matches){
+	$('#com-youtube').css({display: 'none'});
+	$('#owl-youtube').css({display: 'block'});
+	showYoutube();
+}
+else{
+	$('#com-youtube').css({display: 'block'});
+	$('#owl-youtube').css({display: 'none'});
+}
