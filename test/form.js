@@ -1,9 +1,6 @@
 /// <reference path="../typings/assert/assert.d.ts" />
 /// <reference path="../typings/mocha/mocha.d.ts" />
 
-// module.exports.answerForm = answerForm;
-// module.exports.getQuestion = getQuestion;
-// module.exports.getResponse = getResponse;
 
 var formAction = require('../C-FAR/form/action.js');
 var assert = require('assert');
@@ -132,3 +129,12 @@ describe('Form#answerForm', function(){
     })
 });
 
+describe('Form#getQuestion', function(){
+    it('should return question qid=1', function(done){
+        return formAction.getQuestion(1)
+        .then(function(question){
+            assert.equal(question.qid, 1);
+            return done();
+        })
+    })
+});
