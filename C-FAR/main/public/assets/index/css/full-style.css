@@ -50,9 +50,9 @@ footer {
     width: 100%;
 }
 
-#contact-row-4 .col-12{
-    padding: 0px !important;
-}
+/*#contact-row-4 .col-12{*/
+    /*padding: 0px !important;*/
+/*}*/
 
 .title-row {
     height: 100%;
@@ -60,7 +60,7 @@ footer {
     z-index: 10;
 }
 
-@media screen and (min-width: 900px) and (max-width: 1300px) {
+@media screen and (min-width: 750px) and (max-width: 1500px) {
     .big-title-font {
         position: absolute;
         top: 14%;
@@ -135,7 +135,7 @@ footer {
 
 
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1500px) {
     .big-title-font {
         position: absolute;
         top: 14%;
@@ -218,54 +218,86 @@ footer {
     padding-top: 30px !important;
 }
 
-@media (max-width: 767px) {
-    #contact-row-4 {
-        position: relative;
-    }
-
-    .small-text {
-        display: block;
-        font-style: normal;
-        font-size: 16px;
-        top: 0px;
-        letter-spacing: 20px;
-        text-align: center;
-        text-indent: 20px;
-    }
-
-    .hover-menu i {
-        margin: 0px !important;
-    }
-
-    .hover-menu {
-        margin-bottom: 0 !important;
-    }
-
-    .hover-menu > p {
-        padding-top: 20px !important;
-    }
-
-    .title-row > div:first-child {
-        display: none;
-    }
+.hover-menu i {
+    margin: 0px !important;
 }
 
-@media (min-width: 767px) {
+.hover-menu {
+    margin-bottom: 0 !important;
+}
 
-    .hover-menu {
-        padding-bottom: 20px !important;
-        height: 100% !important;
-        display: block;
+.hover-menu > p {
+    padding-top: 20px !important;
+}
 
+.hover-menu {
+    padding-bottom: 20px !important;
+    height: 100% !important;
+    display: block;
+
+}
+
+#contact-row-4 {
+    height: 100%;
+    padding-top: 0px !important;
+
+}
+
+
+@media screen and (max-width: 750px) {
+    .big-title-font {
+        /*position: absolute;*/
+        top: 14%;
+        width: 100%;
+        font-size: 110%;
+    }
+
+    .subtitle-font {
+        width: 100%;
+        font-size: 45%;
+        letter-spacing: 0.3em;
+        text-indent: 0.3em;
+        padding-bottom: 10%;
+    }
+
+    .name-font {
+        bottom: 30%;
+        width: 100%;
+        font-size: 65%;
+    }
+
+    .en-name-font {
+        bottom: 25%;
+        width: 100%;
+        font-size: 50%;
+    }
+
+    .logo-font {
+        bottom: 15%;
+        width: 100%;
+        font-size: 90%;
+    }
+
+    .hover-menu{
+        position: relative !important;
+        margin: 0 !important;
+        padding-bottom: 30px !important;
+    }
+
+    .font-link{
+        font-size: 30px;
     }
 
 
 
-    #contact-row-4 {
-        height: 100%;
-        padding-top: 0px !important;
-
+    .small-text {
+        font-style: normal;
+        font-size: 20%;
+        text-align: center;
     }
 
+    .scribe-font{
+        font-size: 20px !important;
+    }
 }
 
