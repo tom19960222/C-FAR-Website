@@ -11,9 +11,17 @@ $(document).ready(function(e) {
 	$('.with-hover-text').hover(
 		function(e) {
 			var self = $(this);
-			$(this)
-				.css('overflow', 'visible')
-				.css('backgroundColor', 'rgba(98, 82, 187, 0.6)');
+
+			if($(this).parent().attr('id') === 'XDD'){
+				$(this)
+					.css('overflow', 'visible');
+				$(this).children('a').css('color', 'black');
+				$(this).children('p').children('a').css('color', 'black');
+			}else{
+				$(this)
+					.css('overflow', 'visible')
+					.css('backgroundColor', 'rgba(98, 82, 187, 0.6)');
+			}
 
 			$(this).find('.title-float')
 				.stop()
@@ -36,6 +44,7 @@ $(document).ready(function(e) {
 					'linear'
 				);
 		},
+
 		function(e) {
 			var obj = $(this);
 			$(this).find('.hover-text')
@@ -49,8 +58,21 @@ $(document).ready(function(e) {
 					'linear',
 					function() {
 						$(this).stop().hide();
-						$( obj ).css('overflow', 'hidden')
+
+						if(obj.parent().attr('id') === 'XDD'){
+							$( obj ).css('overflow', 'hidden');
+							$( obj ).children('a').css('color', 'white');
+							$( obj ).children('p').children('a').css('color', 'white');
+						}
+						else {
+							$( obj ).css('overflow', 'hidden')
 								.css('backgroundColor', 'rgba(0,0,0,0)');
+						}
+
+
+
+
+
 						$(obj).find('.title-float')
 							.stop()
 							.animate({
