@@ -38,6 +38,9 @@ module.exports = function(sequelize){
                type: Sequelize.BOOLEAN,
                allowNull: false 
             }
+        },
+        {
+            paranoid: true
         });   
     }
     return Article;

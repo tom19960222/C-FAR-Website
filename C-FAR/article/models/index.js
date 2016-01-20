@@ -1,5 +1,5 @@
 var sequelize = require('../../db.js');
-var User = require('../user/models');
+var User = require('../../user/models').User;
 
 var Article = require('./article')(sequelize);
 

@@ -21,6 +21,7 @@ module.exports = function(){
                 }
             })
             .catch(function(err){
+                console.error("Add article failed - " + err);
                 res.status(500).end();
             })
     });
@@ -33,22 +34,47 @@ module.exports = function(){
         }
         else{
             var body = req.body;
-            return action.addArticle(body.title, body.summary, body.content, body.cover_image_url, body.creator, body.required_permission, body.visable)
+            return action.addArticle(body.title, body.summary, body.content, body.cover_image_url, req.session.uid, body.required_permission, body.visable)
                 .then(function(_article){
                     res.status(201).json(_article).end();
                 });
         }
     });
 
-    router.post('/edit', function(req, res){
-        return action.editArticle(body.title, body.summary, body.content, body.cover_image_url, body.creator, body.required_permission, body.visable)
+    router.post('/:id/edit', function(req, res){
+        if(req.session.permission < 2){ // Not admin, check if is owner.
+            action.getArticle(req.params['id'])
             .then(function(_article){
-                res.status(200)
+                if(_article.creator != req.session.uid){
+                    res.status(403).json({message: 'You have no permission to do it.'}).end();
+                    return;
+                }
+            });
+        }
+        var body = req.body;
+        return action.editArticle(req.params['id'], body.title, body.summary, body.content, body.cover_image_url, body.required_permission, body.visable)
+            .then(function(_article){
+                res.status(200).json(_article).end();
             })
     });
     
-    router.post('/delete', function(req, res){
-        res.status(501).send("<h1>Not implemented</h1>");
+    router.post('/:id/delete', function(req, res){
+        if(req.session.permission < 2){ // Not admin, check if is owner.
+            action.getArticle(req.params['id'])
+            .then(function(_article){
+                if(_article.creator != req.session.uid){
+                    res.status(403).json({message: 'You have no permission to do it.'}).end();
+                    return;
+                }
+            });
+        }
+        return action.deleteArticle(req.params['id'])
+            .then(function(){
+                res.status(200).json({message: 'Delete successful.'}).end();
+            })
+            .catch(function(err){
+                res.status(500).json({message: 'Delete failed.'}).end();
+            })
     });
 
     return router;
