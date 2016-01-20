@@ -57,5 +57,9 @@ module.exports = function(){
         res.render('manage');
     });
 
+    router.get('/meeting', function(req, res){
+        res.render('meeting');
+    });
+
     return router;
 }
