@@ -23,7 +23,7 @@ module.exports = function(sequelize){
                 type: Sequelize.INTEGER
             },
             multipleChoice:{
-                type: Sequelize.INTEGER
+                type: Sequelize.STRING // JSON Array
             },
             dropdown:{
                 type: Sequelize.INTEGER

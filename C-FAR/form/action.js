@@ -88,7 +88,7 @@ var addAnswer = function(qid, answer, formResponse){
         else if(question.questionType === 'singleChoice')
             ans.singleChoice = answer;
         else if(question.questionType === 'multipleChoice')
-            ans.multipleChoice = answer;
+            ans.multipleChoice = JSON.stringify(answer);
         else if(question.questionType === 'dropdown')
             ans.dropdown = answer;
         else if(question.questionType === 'score')

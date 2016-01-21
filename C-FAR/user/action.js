@@ -31,14 +31,15 @@ var addUser = function(firstName, lastName, username, email, password, permissio
 }
 
 var editUser = function(uid, firstName, lastName, username, email, password, permission, language){
-    return User.findById(uid).then(function(user){
+    return User.findById(uid)
+    .then(function(user){
        if(firstName) user.firstName = firstName;
        if(lastName) user.lastName = lastName;
        if(email) user.email = email;
        if(password) user.password = password;
        if(permission) user.permission = permission;
        if(language) user.language = language;
-       user.save()
+       return user.save()
        .catch(function(err){
            console.error('Edit user failed - ' + err);
        });

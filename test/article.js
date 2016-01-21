@@ -2,20 +2,28 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
 
 var articleAction = require('../C-FAR/article/action.js');
+var userAction = require('../C-FAR/user/action.js');
 var assert = require('assert');
 
-var newArticleId;
+var newArticleId, newUserId;
+
+beforeEach(function(){
+    return userAction.addUser('Testfirst', 'Testlast', 'Testuser'+Date.now(), 'Test'+Date.now()+'@test.com', 'password', 2, 'zh-tw')
+        .then(function(newuser){
+            newUserId = newuser.uid;
+        });
+});
 
 describe('Article#addArticle', function(){
     it('should add an article', function(done){
-        articleAction.addArticle("Test article", "Test summary", "Test content", "http://cfar.tku.edu.tw/assets/index/img/background.jpg", 1, 0, true)
+        articleAction.addArticle("Test article", "Test summary", "Test content", "http://cfar.tku.edu.tw/assets/index/img/background.jpg", newUserId, 0, true)
         .then(function(addedarticle){
             assert.deepEqual(addedarticle.title, "Test article");
             assert.deepEqual(addedarticle.summary, "Test summary");
             assert.deepEqual(addedarticle.content, "Test content");
             assert.deepEqual(addedarticle.cover_image_url, "http://cfar.tku.edu.tw/assets/index/img/background.jpg");
             addedarticle.getCreator().then(function(creator){
-                assert.equal(creator.uid, 1);    
+                assert.equal(creator.uid, newUserId);    
             });
             assert.equal(addedarticle.required_permission, 0);
             assert.equal(addedarticle.visable, true);
@@ -27,9 +35,9 @@ describe('Article#addArticle', function(){
 
 describe('Article#getArticle', function(){
     it('should return the article added just now', function(done){
-        articleAction.getArticle(1)
+        articleAction.getArticle(newArticleId)
         .then(function(foundarticle){
-            assert.equal(foundarticle.id, 1);
+            assert.equal(foundarticle.id, newArticleId);
             return done();
         })
     })
