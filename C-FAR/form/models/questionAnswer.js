@@ -34,8 +34,12 @@ module.exports = function(sequelize){
             ansid: {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
-                autoIncrement: true
+                autoIncrement: true,
+                unique: true
             }
+        },
+        {
+            paranoid: true
         });
         return questionAnswer;
     }

@@ -8,8 +8,12 @@ module.exports = function(sequelize){
             resid: {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
-                autoIncrement: true
+                autoIncrement: true,
+                unique: true
             }
+        },
+        {
+            paranoid: true
         });
         return FormResponse;
     }

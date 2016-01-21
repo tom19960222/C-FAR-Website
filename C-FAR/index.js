@@ -31,4 +31,4 @@ for (var m in config.active_modules){
 //     return db.query('SET FOREIGN_KEY_CHECKS = 1')
 // })
 
-// db.sync({force: false}); // Sync database schema after loaded all the modules.
+db.sync({force: false}); // Sync database schema after loaded all the modules.

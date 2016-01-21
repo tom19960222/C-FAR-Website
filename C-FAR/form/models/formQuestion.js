@@ -46,9 +46,13 @@ module.exports = function(sequelize){
             qid: {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
-                autoIncrement: true
+                autoIncrement: true,
+                unique: true
             },
             
+        },
+        {
+            paranoid: true
         });
         return FormQuestion;
     }

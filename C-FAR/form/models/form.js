@@ -12,6 +12,9 @@ module.exports = function(sequelize){
             description: {
                 type: Sequelize.STRING
             }
+        },
+        {
+            paranoid: true
         });
         
         return Form;
