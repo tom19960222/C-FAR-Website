@@ -148,7 +148,7 @@ header .intro-text .skills {
 
     .navbar-fixed-top.navbar-shrink {
         padding: 10px 0;
-        background-color: #6AADB8;
+        background-color: #7575CE;
         transition: .5s;
     }
 
@@ -170,6 +170,21 @@ header .intro-text .skills {
 
 .navbar .navbar-nav {
     letter-spacing: 1px;
+}
+
+@media (max-width: 768px){
+    .navbar-nav>li>a{
+        color: black !important;
+        font-weight: 600;
+        font-family: "微軟正黑體";
+    }
+    .navbar-nav>li:nth-child(2){ background-color: #e7867c; }
+    .navbar-nav>li:nth-child(3){ background-color: #e7ad80; }
+    .navbar-nav>li:nth-child(4){ background-color: #e0d369; }
+    .navbar-nav>li:nth-child(5){ background-color: #84c587; }
+    .navbar-nav>li:nth-child(6){ background-color: #85b1c2; }
+    .navbar-nav>li:nth-child(7){ background-color: #807cb7; }
+
 }
 
 .navbar .navbar-nav li a:focus {
@@ -206,7 +221,7 @@ section#agenda {
 }
 
 section#agenda h3{
-	font-size:2em;
+	font-size: 25px;
 	line-height:1.3em;
 }
 
@@ -454,14 +469,30 @@ footer .footer-below {
 
 @media(max-width:767px) {
     .navbar-brand>img {
-    width: 160px!important;
-    margin-top: -8px;
+        width: 160px !important;
+        /*margin-top: -13px;*/
+        margin: 0px auto;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-toggle {
+        position: fixed !important;
+        right: 0;
+    }
 }
 
-section#report h2 img,section#about h2 img,section#speaker h2 img,section#agenda h2 img,section#portfolio h2 img, section#sponsor h2 img{
-    width: 80%;
+@media (max-width: 767px) {
+    section#report h2 img,section#about h2 img,section#speaker h2 img,section#agenda h2 img,section#portfolio h2 img, section#sponsor h2 img{
+        width: 100%;
+    }
 }
-}
+
+
 
 .sponsor-title{
 	margin-left:20px;
@@ -671,9 +702,9 @@ section#portfolio .btn-outline {
     color:#FFF;
 	background-color: #e7867c;
     transition: all .3s ease-in-out;
-    box-shadow: 3px 3px 3px #4b4b4b;
-    -webkit-box-shadow: 3px 3px 3px #4b4b4b;
-    -moz-box-shadow: 3px 3px 3px #4b4b4b;
+    /*box-shadow: 3px 3px 3px #4b4b4b;*/
+    /*-webkit-box-shadow: 3px 3px 3px #4b4b4b;*/
+    /*-moz-box-shadow: 3px 3px 3px #4b4b4b;*/
 }
 
 section#agenda .btn-outline2:hover,
@@ -691,9 +722,9 @@ section#agenda .btn-outline2 {
     color:#FFF;
     background-color:#25B6A0;
     transition: all .3s ease-in-out;
-    box-shadow: 3px 3px 3px #4b4b4b;
-    -webkit-box-shadow: 3px 3px 3px #4b4b4b;
-    -moz-box-shadow: 3px 3px 3px #4b4b4b;
+    /*box-shadow: 3px 3px 3px #4b4b4b;*/
+    /*-webkit-box-shadow: 3px 3px 3px #4b4b4b;*/
+    /*-moz-box-shadow: 3px 3px 3px #4b4b4b;*/
 }
 
 section#portfolio .btn-outline2:hover,
@@ -713,9 +744,9 @@ section#portfolio .btn-outline2 {
     color:#FFF;
 	background-color:#25B6A0;
     transition: all .3s ease-in-out;
-    box-shadow: 3px 3px 3px #4b4b4b;
-    -webkit-box-shadow: 3px 3px 3px #4b4b4b;
-    -moz-box-shadow: 3px 3px 3px #4b4b4b;
+    /*box-shadow: 3px 3px 3px #4b4b4b;*/
+    /*-webkit-box-shadow: 3px 3px 3px #4b4b4b;*/
+    /*-moz-box-shadow: 3px 3px 3px #4b4b4b;*/
 }
 
 #portfolioModal1 h2{
