@@ -1164,7 +1164,8 @@ h6, .h6 {
 	font-size: 13px
 }
 p {
-	margin: 0 0 10.5px
+	margin: 0 0 10.5px;
+	color: white;
 }
 .lead {
 	margin-bottom: 21px;

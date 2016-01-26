@@ -23,6 +23,8 @@ $(document).ready(function(e) {
 					.css('backgroundColor', 'rgba(98, 82, 187, 0.6)');
 			}
 
+
+
 			$(this).find('.title-float')
 				.stop()
 				.animate({
