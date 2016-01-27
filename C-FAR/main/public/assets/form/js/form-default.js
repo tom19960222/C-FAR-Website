@@ -3,13 +3,6 @@
  */
 
 
-function getRangeValue (){
-    var RangeValue = document.getElementById('myRange');
-    var ShowValue = document.getElementById('myShow');
-    ShowValue.innerHTML = RangeValue.value;
-}
-
-
 // IE does not know about the target attribute. It looks for srcElement
 // This function will get the event target in a browser-compatible way
 function getEventTarget(e) {
@@ -17,9 +10,19 @@ function getEventTarget(e) {
     return e.target || e.srcElement;
 }
 
-var Choose = document.getElementById('myChoose');
-Choose.onclick = function(e){
+function findAncestor (el, cls) {
+    while ((el = el.parentElement) && !el.classList.contains(cls));
+    return el;
+}
+
+function getRangeValue (e){
+	var eventNode = getEventTarget(e);
+	var show = eventNode.parentNode.parentNode.children[0];
+    show.innerHTML = eventNode.value;
+}
+
+function getMenuValue(e){
     var target = getEventTarget(e);
-    var Ans = document.getElementsByClassName('myAns')[0];
-    Ans.innerHTML = target.innerHTML;
+    parent = findAncestor(target, 'XDD-menu');
+    parent.children[0].innerHTML = target.innerHTML;
 };

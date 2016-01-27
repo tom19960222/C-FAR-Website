@@ -13,11 +13,27 @@ $(document).ready(function(e) {
 			var self = $(this);
 
 			if($(this).parent().attr('id') === 'XDD'){
-				$(this)
-					.css('overflow', 'visible');
+				$(this).css('overflow', 'visible');
 				$(this).children('a').css('color', 'black');
 				$(this).children('p').children('a').css('color', 'black');
-			}else{
+			}
+			else if($(this).parent().attr('class') === 'row index'){
+				$(this).css('overflow', 'visible');
+				$(this)
+					.children('.bg-link')
+					.children('.bg-img')
+					.stop()
+					.css('opacity', 0)
+					.delay(150)
+					.animate(
+						{
+							opacity: 1
+						},
+						'fast',
+						'linear'
+					);
+			}
+			else{
 				$(this)
 					.css('overflow', 'visible')
 					.css('backgroundColor', 'rgba(98, 82, 187, 0.6)');
@@ -65,6 +81,21 @@ $(document).ready(function(e) {
 							$( obj ).css('overflow', 'hidden');
 							$( obj ).children('a').css('color', 'white');
 							$( obj ).children('p').children('a').css('color', 'white');
+						}
+						else if(obj.parent().attr('class') === 'row index'){
+							$( obj ).css('overflow', 'visible');
+							$( obj )
+								.children('.bg-link')
+								.children('.bg-img')
+								.stop()
+								.animate(
+									{
+										//paddingTop: '0',
+										opacity: 0
+									},
+									'fast',
+									'linear'
+								);
 						}
 						else {
 							$( obj ).css('overflow', 'hidden')
