@@ -36,10 +36,12 @@ module.exports = function(){
         .then(function(user){
             if(user) {
                 req.session.uid = user.uid;
+                req.session.permission = user.permission;
                 res.status(200).json({message: 'Login successed.'});
             }
             else {
                 req.session.uid = 0;
+                req.session.permission = 0;
                 res.status(403).json({message: 'Username or password is wrong.'});
             }
         })
@@ -47,6 +49,7 @@ module.exports = function(){
     
     router.get('/logout', function(req, res){
         req.session.uid = 0;
+        req.session.permission = 0;
         res.status(200).json({message: 'Logout successed.'});
     });
     

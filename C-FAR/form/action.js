@@ -57,14 +57,54 @@ var addForm = function(uid, title, description, questions){
 }
 
 var getForm = function(id){
-    return Form.findById(id, {include: [
-        {model: User, as: 'creator'},
-        {model: FormQuestion}
-    ]})
+    return Form.findById(id, {
+        attributes: ['title', 'description', 'id'],
+        include: [ {model: FormQuestion, attributes: ['title', 'description', 'questionType', 'singleChoiceOptions', 'multipleChoiceOptions', 'dropdownOptions', 'scoreMax', 'scoreMin', 'order', 'qid'] } ]
+        })
     .then(function(form){
         form.Questions.sort(function(a, b){
             return a.order - b.order;
         })
+        for(var i in form.Questions) {
+            if(form.Questions[i].questionType === 'textbox' || form.Questions[i].questionType === 'textarea'){
+                delete form.Questions[i].dataValues.singleChoiceOptions;
+                delete form.Questions[i].dataValues.multipleChoiceOptions;
+                delete form.Questions[i].dataValues.dropdownOptions;
+                delete form.Questions[i].dataValues.scoreMax;
+                delete form.Questions[i].dataValues.scoreMin;
+                delete form.Questions[i].dataValues.order;
+            }
+            else if (form.Questions[i].questionType === 'singleChoice'){
+                form.Questions[i].singleChoiceOptions = JSON.parse(form.Questions[i].singleChoiceOptions);
+                delete form.Questions[i].dataValues.multipleChoiceOptions;
+                delete form.Questions[i].dataValues.dropdownOptions;
+                delete form.Questions[i].dataValues.scoreMax;
+                delete form.Questions[i].dataValues.scoreMin;
+                delete form.Questions[i].dataValues.order;
+            }
+            else if(form.Questions[i].questionType === 'multipleChoice'){
+                form.Questions[i].multipleChoiceOptions = JSON.parse(form.Questions[i].multipleChoiceOptions);
+                delete form.Questions[i].dataValues.singleChoiceOptions;
+                delete form.Questions[i].dataValues.dropdownOptions;
+                delete form.Questions[i].dataValues.scoreMax;
+                delete form.Questions[i].dataValues.scoreMin;
+                delete form.Questions[i].dataValues.order;
+            }
+            else if(form.Questions[i].questionType === 'dropdown'){
+                form.Questions[i].dropdownOptions = JSON.parse(form.Questions[i].dropdownOptions);
+                delete form.Questions[i].dataValues.singleChoiceOptions;
+                delete form.Questions[i].dataValues.multipleChoiceOptions;
+                delete form.Questions[i].dataValues.scoreMax;
+                delete form.Questions[i].dataValues.scoreMin;
+                delete form.Questions[i].dataValues.order;
+            }
+            else if(form.Questions[i].questionType === 'score'){
+                delete form.Questions[i].dataValues.singleChoiceOptions;
+                delete form.Questions[i].dataValues.multipleChoiceOptions;
+                delete form.Questions[i].dataValues.dropdownOptions;
+                delete form.Questions[i].dataValues.order;
+            }
+        }
         return form;
     });
 }

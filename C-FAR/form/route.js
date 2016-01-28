@@ -55,7 +55,7 @@ module.exports = function(){
         action.getQuestion(req.params['id'])
         .then(function(question){
             if (question) res.status(200).json(question);
-            else res.status(404).end();;
+            else res.status(404).end();
         })
         .catch(function(err){
             res.status(404);
