@@ -1,0 +1,96 @@
+[{
+        "type": "linebar"
+    },
+
+    {
+        "type": "title",
+        "title": "Big Title"
+    },
+
+    {
+        "type": "image",
+        "src": "http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg"
+    },
+
+    {
+        "type": "subtitle",
+        "subtitle": "Small Subtitle"
+    },
+
+    {
+        "type": "content",
+        "content": "This is content"
+    },
+
+    {
+        "type": "linebar"
+    },
+
+    {
+        "type": "textfield",
+        "title": "TEXTFIELD",
+        "content": "XDDD textfield"
+    },
+
+    {
+        "type": "numfield",
+        "title": "NUMFIELD",
+        "content": "XDDDD numfield"
+    },
+
+    {
+        "type": "textarea",
+        "title": "TEXTAREA",
+        "content": "XDDDD textarea"
+    },
+
+    {
+        "type": "checkbox",
+        "title": "CHECKBOX",
+        "content": "XDDD checkbox",
+        "checkName": "check-name",
+        "check": [
+            "value 1",
+            "value 2",
+            "XDDDDDD"
+        ]
+    },
+
+    {
+        "type": "radiobox",
+        "title": "RADIOBOX",
+        "content": "XDDDD radiobox",
+        "radioName": "radio-name",
+        "radio": [
+            "123",
+            "345",
+            "456"
+        ]
+    },
+
+    {
+        "type": "range",
+        "title": "RANGE",
+        "content": "XDDD range",
+        "max": 999,
+        "min": 100
+    },
+
+    {
+        "type": "menu",
+        "title": "MENU",
+        "content": "XDDDD menu",
+        "menuName": "menu-name",
+        "menu": [
+            "YOYO",
+            "TV",
+            "IS",
+            "GOOD"
+        ]
+    },
+
+    {
+        "type": "background",
+        "src": "http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg"
+    }
+]
