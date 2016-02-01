@@ -11,8 +11,8 @@ module.exports = function(){
     router.post('/add', jsonParser, function(req, res, next){
         var ok = true;
         if(!(req.session.uid) || req.session.uid === 0){
-            // ok = false;
-            // res.status(401).end();
+            ok = false;
+            res.status(401).end();
         }
             
         if(!(req.body.title)){
