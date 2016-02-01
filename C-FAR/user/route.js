@@ -36,6 +36,7 @@ module.exports = function(){
         .then(function(user){
             if(user) {
                 req.session.uid = user.uid;
+                req.session.permission = user.permission;
                 res.status(200).json({message: 'Login successed.'});
             }
             else {

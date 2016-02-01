@@ -14,6 +14,8 @@ beforeEach(function(){
         });
 });
 
+// TODO: add a fail getArticle case.
+
 describe('Article#addArticle', function(){
     it('should add an article', function(done){
         articleAction.addArticle("Test article", "Test summary", "Test content", "http://cfar.tku.edu.tw/assets/index/img/background.jpg", newUserId, 0, true)
