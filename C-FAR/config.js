@@ -3,6 +3,10 @@ module.exports = config;
 
 config.active_modules = [
     {
+        name: 'staticFile',
+        route: '/static'  
+    },
+    {
         name: 'main',
         route: '/'
     },
