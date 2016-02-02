@@ -31,9 +31,17 @@ var register = function (path, dirname){
 
 var deRegister = function(path){
     return new Promise(function(resolve, reject){
-        for (var i in Router.stack){
-            if(Router.stack[i].route.path === path)
-                resolve(Router.stack.splice(i));
+        
+        /* Get the real path we want to delete. */
+        Router.use(path, Express.static(__dirname));
+        var delpath = Router.stack[Router.stack.length-1].regexp.toString();
+        Router.stack.slice(Router.stack.length-1);
+        
+        for(var i in Router.stack){
+            if(Router.stack[i].regexp.toString() === delpath){
+                Router.stack.splice(i)
+                resolve(Router);
+            }
         }
         reject('Path not exists.');
     })
