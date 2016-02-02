@@ -43,7 +43,7 @@ var register = function (path, dirname, absolutePath){
                     else
                         allRoutes.push(Router.stack[i].regexp.toString());
                 }
-                console.info("Mounted static path %s at %s", realDirname, path);
+                console.info("Mounted static path %s at %s", realDirname, app.active_modules.staticFile.mountedPath+path);
                 return resolve(routerInfo);
             });
         })   

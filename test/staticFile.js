@@ -6,6 +6,13 @@ var staticFile = require('../C-FAR/staticFile');
 var util = require('util');
 var Promise = require('bluebird');
 
+// Fake app object
+var app = {};
+app.active_modules = {};
+app.active_modules.staticFile = {};
+app.active_modules.staticFile.mountedPath = '/static';
+global.app = app;
+
 describe('staticFile#register', function(){
     it('should register the path where this script living in', function(done){
         staticFile.register('/test', __dirname, true)

@@ -5,29 +5,31 @@
 /// <reference path="typings/morgan/morgan.d.ts" />
 
 var Express = require('express');
-var app = Express();
+var _app = Express();
+global.app = _app; // Push _app to global scope.
+
 var c_far = require('./C-FAR');
 var config = require('./config');
 var logger = require('morgan');
 var helmet = require('helmet');
 var ejs = require('ejs');
 
-app.engine('.html', require('ejs').__express);
-app.set('views', __dirname + '/C-FAR/main/pages');
-app.set('view engine', 'html');
-app.set('trust proxy', config.trust_proxy);
-app.use(logger(config.logType));
+_app.engine('.html', require('ejs').__express);
+_app.set('views', __dirname + '/C-FAR/main/pages');
+_app.set('view engine', 'html');
+_app.set('trust proxy', config.trust_proxy);
+_app.use(logger(config.logType));
 
 // Use helmet to prevent some common attack.
-app.use(helmet.xssFilter());
-app.use(helmet.frameguard('sameorigin'));
-app.use(helmet.hidePoweredBy());
-app.use(helmet.ieNoOpen());
-app.use(helmet.noSniff());
+_app.use(helmet.xssFilter());
+_app.use(helmet.frameguard('sameorigin'));
+_app.use(helmet.hidePoweredBy());
+_app.use(helmet.ieNoOpen());
+_app.use(helmet.noSniff());
 
-app.use('/', c_far.router);
+_app.use('/', c_far.router);
 
 
-app.listen(config.listen.port, function(){
+_app.listen(config.listen.port, function(){
     console.log("Server started at port " + config.listen.port);
 });
