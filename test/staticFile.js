@@ -4,14 +4,20 @@
 var assert = require('assert');
 var staticFile = require('../C-FAR/staticFile');
 var util = require('util');
+var Promise = require('bluebird');
 
 describe('staticFile#register', function(){
     it('should register the path where this script living in', function(done){
-        staticFile.register('/test', __dirname)
+        staticFile.register('/test', __dirname, true)
         .then(function(router){
             assert.equal(router.stack.length, 1);
+            return staticFile.register('/test2', 'test'); 
+        })
+        .then(function(router){
+            assert.equal(router.stack.length, 2);
             done();
         })
+        
     })
 });
 
