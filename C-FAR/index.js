@@ -3,24 +3,32 @@
 /// <reference path="../typings/express-session/express-session.d.ts" />
 
 var Express = require('express');
+var path = require('path');
 var config = require('./config');
 var mainRouter = Express.Router();
-var modules = [];
 var db = require('./db');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+
+// Global variable 'app' should be avaliable now, if index.js in the root folder has been executed.
+// So we can put something often used in it.
+var active_modules = {};
+app.active_modules = active_modules; 
+app.db = db;
 
 module.exports.router = mainRouter;
 config.session.store = new RedisStore(config.sessionStore); 
 var s = session(config.session);
 mainRouter.use(s);
 
-for (var m in config.active_modules){
-    var mod = require(__dirname + '/' + config.active_modules[m].name);
+var modules = Object.keys(config.active_modules);
+for (var m in modules){
+    var mod = require(path.join(__dirname, modules[m]));
     mod.init();
-    mainRouter.use(config.active_modules[m].route, mod.router);
-    modules.push(mod);
-    console.log("Loaded module " + config.active_modules[m].name + ", mounted at " + config.active_modules[m].route);
+    mainRouter.use(config.active_modules[modules[m]].route, mod.router);
+    mod.mountedPath = config.active_modules[modules[m]].route;
+    active_modules[modules[m]] = mod;
+    console.log("Loaded module " + modules[m] + ", mounted at " + config.active_modules[modules[m]].route);
 }
 
 // db.query('SET FOREIGN_KEY_CHECKS = 0')

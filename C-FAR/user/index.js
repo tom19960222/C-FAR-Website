@@ -1,6 +1,6 @@
 var Model = require('./models');
 var Express = require('express');
-var router = require('./route')();
+var router = require('./route');
 var action = require('./action');
 var inited = false;
 

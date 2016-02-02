@@ -1,27 +1,30 @@
+var path = require('path');
 var config = {}
 module.exports = config;
 
-config.active_modules = [
-    {
-        name: 'main',
+config.active_modules = {
+    staticFile: {
+        route: '/static'  
+    },
+    main: {
         route: '/'
     },
-    {
-        name: 'user',
+    user: {
         route: '/user'
     },
-    {
-        name: 'form',
+    form: {
         route: '/form'
     },
-    {
-        name: 'admin',
+    admin: {
         route: '/admin'
+    },
+    article: {
+        route: '/article'
     }
-]
+}
 
 config.sessionStore = {
-    host: 'redis',
+    host: 'local.docker',
     port: 6379
 }
 
@@ -42,6 +45,7 @@ config.database = {
     dbname: 'c-far'
 }
 
+config.staticStorage = path.normalize(path.join(__dirname, 'assets'));
 // if(process.env.NODE_ENV === 'production'){
 //     config.session.cookie.secure = true;
 // }

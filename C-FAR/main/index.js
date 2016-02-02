@@ -1,5 +1,5 @@
 var Express = require('express');
-var router = require('./route.js')();
+var router = require('./route.js');
 var inited = false;
 
 module.exports.init = function(){
