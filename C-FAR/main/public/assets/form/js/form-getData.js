@@ -133,16 +133,16 @@ function Show(data){
 			case 'title': 		CreateTitle(get[i].title);			break;
 			case 'subtitle': 	CreateSubtitle(get[i].subtitle);	break;
 			case 'content': 	CreateContent(get[i].content);		break;
-			case 'textfield': 	CTextfield(get[i]);			break;
-			case 'numfield': 	CNumfield(get[i]);			break;		
-			case 'textarea': 	CTextArea(get[i]);			break;
-			case 'checkbox': 	CCheckbox(get[i]);			break;
-			case 'radiobox': 	CRadiobox(get[i]);			break;
-			case 'range': 		CRange(get[i]);				break;
-			case 'menu': 		CMenu(get[i]); 				break;
-			case 'background': 	ChangeBackground(get[i]);	break;
-			case 'image': 		CImage(get[i]); 			break;
-			case 'linebar': 	CreateHr(); 				break;
+			case 'textfield': 	CTextfield(get[i]);					break;
+			case 'numfield': 	CNumfield(get[i]);					break;		
+			case 'textarea': 	CTextArea(get[i]);					break;
+			case 'checkbox': 	CCheckbox(get[i]);					break;
+			case 'radiobox': 	CRadiobox(get[i]);					break;
+			case 'range': 		CRange(get[i]);						break;
+			case 'menu': 		CMenu(get[i]); 						break;
+			case 'background': 	ChangeBackground(get[i]);			break;
+			case 'image': 		CImage(get[i]); 					break;
+			case 'linebar': 	CreateHr(); 						break;
 		}
 	}
 
@@ -153,7 +153,7 @@ function Get(){
 	   
     //jQuery post
     $.ajax({
-        url: 'assets/meeting/js/sampleGet.json',
+        url: 'assets/form/js/sampleGet.json',
         type: 'GET',
         dataType: 'text',
         success: function (data, textStatus, xhr) {
