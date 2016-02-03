@@ -48,6 +48,11 @@ var questions = [
                 scoreMax: 10,
                 scoreMin: 1
             },
+            {
+                title: 'Custom HR',
+                questionType: 'custom',
+                custom: '<hr />'
+            }
         ];
 
 var answers = [
@@ -56,7 +61,8 @@ var answers = [
     { answer: 1},
     { answer: [0, 2]},
     { answer: 1},
-    { answer: 5}
+    { answer: 5},
+    { answer: undefined }
 ];
 
 var newformid, newresponseid, newUserId;
@@ -76,13 +82,14 @@ describe('Form#addForm', function(){
             newformid = addedform.id;
             return formAction.getForm(addedform.id)
             .then(function(foundform){
-                assert.equal(foundform.Questions.length, 6);
+                assert.equal(foundform.Questions.length, 7);
                 assert.equal(foundform.Questions[0].questionType, 'textbox');
                 assert.equal(foundform.Questions[1].questionType, 'textarea');
                 assert.equal(foundform.Questions[2].questionType, 'singleChoice');
                 assert.equal(foundform.Questions[3].questionType, 'multipleChoice');
                 assert.equal(foundform.Questions[4].questionType, 'dropdown');
                 assert.equal(foundform.Questions[5].questionType, 'score');
+                assert.equal(foundform.Questions[6].questionType, 'custom');
                 for(var i in foundform.Questions)
                     newquestionids.push(foundform.Questions[i].qid);
                 return done();
@@ -127,6 +134,7 @@ describe('Form#answerForm', function(){
                 assert.deepEqual(JSON.parse(response.Answers[3].multipleChoice), answers[3].answer);
                 assert.equal(response.Answers[4].dropdown, answers[4].answer);
                 assert.equal(response.Answers[5].score, answers[5].answer);
+                // Custom field has no answer. It just for showing custom HTML.
                 assert.equal(response.Answers.length, 6);
                 return done();
             })    

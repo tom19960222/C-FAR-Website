@@ -39,6 +39,9 @@ module.exports = function(sequelize){
             scoreMin:{
                 type: Sequelize.INTEGER
             },
+            custom:{
+                type: Sequelize.STRING  
+            },
             order: {
                 type: Sequelize.INTEGER,
                 allowNull: false

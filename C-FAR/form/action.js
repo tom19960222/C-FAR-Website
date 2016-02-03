@@ -46,6 +46,9 @@ var addForm = function(uid, title, description, questions){
                 newquestion.scoreMax = questions[i].scoreMax;
                 newquestion.scoreMin = questions[i].scoreMin;
             }
+            else if(questions[i].questionType === 'custom'){
+                newquestion.custom = questions[i].custom;
+            }
             newquestion.setForm(newform).then(function(newquestion){return newquestion.save();});
             newform.addQuestion(newquestion).then(function(newform){return newform.save();});
         }
@@ -59,7 +62,7 @@ var addForm = function(uid, title, description, questions){
 var getForm = function(id){
     return Form.findById(id, {
         attributes: ['title', 'description', 'id'],
-        include: [ {model: FormQuestion, attributes: ['title', 'description', 'questionType', 'singleChoiceOptions', 'multipleChoiceOptions', 'dropdownOptions', 'scoreMax', 'scoreMin', 'order', 'qid'] } ]
+        include: [ {model: FormQuestion, attributes: ['title', 'description', 'questionType', 'singleChoiceOptions', 'multipleChoiceOptions', 'dropdownOptions', 'scoreMax', 'scoreMin','custom', 'order', 'qid'] } ]
         })
     .then(function(form){
         form.Questions.sort(function(a, b){
@@ -73,6 +76,7 @@ var getForm = function(id){
                 delete form.Questions[i].dataValues.scoreMax;
                 delete form.Questions[i].dataValues.scoreMin;
                 delete form.Questions[i].dataValues.order;
+                delete form.Questions[i].dataValues.custom;
             }
             else if (form.Questions[i].questionType === 'singleChoice'){
                 form.Questions[i].singleChoiceOptions = JSON.parse(form.Questions[i].singleChoiceOptions);
@@ -81,6 +85,7 @@ var getForm = function(id){
                 delete form.Questions[i].dataValues.scoreMax;
                 delete form.Questions[i].dataValues.scoreMin;
                 delete form.Questions[i].dataValues.order;
+                delete form.Questions[i].dataValues.custom;
             }
             else if(form.Questions[i].questionType === 'multipleChoice'){
                 form.Questions[i].multipleChoiceOptions = JSON.parse(form.Questions[i].multipleChoiceOptions);
@@ -89,6 +94,7 @@ var getForm = function(id){
                 delete form.Questions[i].dataValues.scoreMax;
                 delete form.Questions[i].dataValues.scoreMin;
                 delete form.Questions[i].dataValues.order;
+                delete form.Questions[i].dataValues.custom;
             }
             else if(form.Questions[i].questionType === 'dropdown'){
                 form.Questions[i].dropdownOptions = JSON.parse(form.Questions[i].dropdownOptions);
@@ -97,11 +103,21 @@ var getForm = function(id){
                 delete form.Questions[i].dataValues.scoreMax;
                 delete form.Questions[i].dataValues.scoreMin;
                 delete form.Questions[i].dataValues.order;
+                delete form.Questions[i].dataValues.custom;
             }
             else if(form.Questions[i].questionType === 'score'){
                 delete form.Questions[i].dataValues.singleChoiceOptions;
                 delete form.Questions[i].dataValues.multipleChoiceOptions;
                 delete form.Questions[i].dataValues.dropdownOptions;
+                delete form.Questions[i].dataValues.order;
+                delete form.Questions[i].dataValues.custom;
+            }
+            else if(form.Questions[i].questionType === 'custom'){
+                delete form.Questions[i].dataValues.singleChoiceOptions;
+                delete form.Questions[i].dataValues.multipleChoiceOptions;
+                delete form.Questions[i].dataValues.dropdownOptions;
+                delete form.Questions[i].dataValues.scoreMax;
+                delete form.Questions[i].dataValues.scoreMin;
                 delete form.Questions[i].dataValues.order;
             }
         }
@@ -118,6 +134,7 @@ var addAnswer = function(qid, answer, formResponse){
     return FormQuestion.findById(qid)
     .then(function(_question){
         question = _question;
+        if(question.questionType === 'custom') return;
         var ans = QuestionAnswer.build();
         
         console.log(question.questionType);
