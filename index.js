@@ -15,7 +15,6 @@ var helmet = require('helmet');
 var ejs = require('ejs');
 
 _app.engine('.html', require('ejs').__express);
-_app.set('views', __dirname + '/C-FAR/main/pages');
 _app.set('view engine', 'html');
 _app.set('trust proxy', config.trust_proxy);
 _app.use(logger(config.logType));
