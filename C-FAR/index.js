@@ -9,17 +9,19 @@ var mainRouter = Express.Router();
 var db = require('./db');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+module.exports.router = mainRouter;
+
+config.session.store = new RedisStore(config.sessionStore); 
+var s = session(config.session);
+mainRouter.use(s);
 
 // Global variable 'app' should be avaliable now, if index.js in the root folder has been executed.
 // So we can put something often used in it.
 var active_modules = {};
 app.active_modules = active_modules; 
 app.db = db;
-
-module.exports.router = mainRouter;
-config.session.store = new RedisStore(config.sessionStore); 
-var s = session(config.session);
-mainRouter.use(s);
+app.config = config;
+app.set('views', config.renderPagePath);
 
 var modules = Object.keys(config.active_modules);
 for (var m in modules){

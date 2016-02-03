@@ -46,6 +46,8 @@ config.database = {
 }
 
 config.staticStorage = path.normalize(path.join(__dirname, 'assets'));
+
+config.renderPagePath = path.join(__dirname, 'main', 'pages');
 // if(process.env.NODE_ENV === 'production'){
 //     config.session.cookie.secure = true;
 // }

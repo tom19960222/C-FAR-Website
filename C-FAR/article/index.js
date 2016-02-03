@@ -6,7 +6,7 @@ var inited = false;
 
 var init = function(){
     if(!(app.active_modules.user))
-        throw new Error("Missing user module. Form module depends on User module to work!");
+        throw new Error("Missing user module. Article module depends on User module to work!");
     inited = true;
 }
 
