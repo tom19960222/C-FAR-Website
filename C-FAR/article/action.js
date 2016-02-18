@@ -1,6 +1,6 @@
 var Article = require('./models').Article;
 var User = require('../user/models').User;
-var sequelize = require('../db');
+var sequelize = app.db;
 
 var addArticle = function(title, summary, content, cover_image_url, creator, required_permission, visable){
     var article, user;

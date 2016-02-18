@@ -1,6 +1,7 @@
 /// <reference path="../typings/assert/assert.d.ts" />
 /// <reference path="../typings/mocha/mocha.d.ts" />
 
+require('../'); // Initialize global variable.
 var articleAction = require('../C-FAR/article/action.js');
 var userAction = require('../C-FAR/user/action.js');
 var assert = require('assert');

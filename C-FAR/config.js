@@ -36,13 +36,22 @@ config.session = {
     name: 'c-far-session',
 }
 
-config.database = {
+config.database = {};
+config.database.sql = {
     type: 'mysql',
     host: 'mysql',
     port: 3306,
     username: 'admin',
     password: 'password',
     dbname: 'c-far'
+}
+config.database.nosql = {
+    host: 'local.docker',
+    port: 27017,
+    dbname: 'c-far',
+    username: undefined,
+    password: undefined,
+    connectionUri: undefined
 }
 
 config.staticStorage = path.normalize(path.join(__dirname, 'assets'));
