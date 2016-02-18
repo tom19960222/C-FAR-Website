@@ -1,7 +1,8 @@
 /// <reference path="../typings/assert/assert.d.ts" />
 /// <reference path="../typings/mocha/mocha.d.ts" />
 
-var db = require('../C-FAR/db.js');
+require('../');
+var db = app.db;
 var userAction = require('../C-FAR/user/action.js');
 var assert = require('assert');
 

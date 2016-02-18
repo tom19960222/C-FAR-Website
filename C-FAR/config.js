@@ -4,7 +4,7 @@ module.exports = config;
 
 config.active_modules = {
     staticFile: {
-        route: '/static'  
+        route: '/assets'  
     },
     main: {
         route: '/'
@@ -56,7 +56,8 @@ config.database.nosql = {
 
 config.staticStorage = path.normalize(path.join(__dirname, 'assets'));
 
-config.renderPagePath = path.join(__dirname, 'main', 'pages');
+config.renderPagePath = path.join(__dirname, 'pages');
+
 // if(process.env.NODE_ENV === 'production'){
 //     config.session.cookie.secure = true;
 // }

@@ -14,10 +14,10 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 if(config.database.nosql.connectionUri)
     mongoose.connect(config.database.nosql.connectionUri);
-else
+else{
     mongoose.connect('mongodb://'+config.database.nosql.host+':'+config.database.nosql.port+'/'+config.database.nosql.dbname,
     {user: config.database.nosql.username, pass: config.database.nosql.password});
-
+}
 
 module.exports = sequelize;
 module.exports.sql = sequelize;
