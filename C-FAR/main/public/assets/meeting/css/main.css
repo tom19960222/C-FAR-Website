@@ -15,6 +15,7 @@ p {
 	text-align: left;
 }
 
+
 p.small {
     font-size: 16px;
 }
@@ -84,7 +85,7 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #AAC4C3;
+    background: #81D2F1;
 }
 
 header .container {
@@ -94,7 +95,7 @@ header .container {
 
 header img {
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto;
 }
 
 header .intro-text .name {
@@ -113,11 +114,7 @@ header .intro-text .skills {
 
 
 @media(min-width:768px) {
-    header .container {
-        padding-top: 200px;
-        padding-bottom: 100px;
-    }
-
+    
     header .intro-text .name {
         font-size: 4.75em;
     }
@@ -201,7 +198,7 @@ section {
 
 
 section#report {
-    background-color: #60977D;
+    background-color: #EFF3F7;
 }
 
 section#report p{
@@ -213,10 +210,10 @@ section#report p{
 	}
 
 section#speaker {
-    background-color: #79A3AE;
+    background-color: #EFF3F7;
 }
 section#agenda {
-    background-color: #488286;
+    background-color: white;
 }
 
 section#agenda h3{
@@ -235,7 +232,7 @@ section#admission {
 
 section#sponsor{
     color: white;
-    background-color: #6271A3;
+    background-color: white;
 }
 section h2 {
     margin: 0;
@@ -244,7 +241,7 @@ section h2 {
 
 section.success {
     color:#FFF;
-    background: #427869;
+    background: white;
 }
 
 section.success a{
@@ -698,7 +695,7 @@ position: absolute;
 }
 
 section#portfolio {
-    background-color: #5B94B4;
+    background-color: #EFF3F7;
 }
 
 section#portfolio .btn-outline:hover,
@@ -806,4 +803,78 @@ section#sponsor .img-responsive{
 
 .img-circle{
     height: 200px !important;
+}
+
+
+
+
+/*Using C-FAR page footer style*/
+#connect {
+    background-color: #2f2f2f;
+    color: #e4e6e5;
+    padding-bottom: 70px;
+    padding-top: 90px;
+}
+
+#connect .line-row .hr {
+    background-color: #4e4e4e;
+    color: #4e4e4e;
+}
+
+@media (max-width: 767px) {
+    #connect {
+        background-image: none;
+    }
+}
+
+#connect a {
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+}
+
+.with-hover-text > p{
+    padding-top: 30px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+.with-hover-text span {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .with-hover-text {
+        margin-bottom: 2em;
+        margin-top: 1em;
+    }
+}
+
+#contact-row-4 {
+    padding-top: 125px;
+}
+
+#contact-row-4 .col-12 {
+    height: 175px;
+    overflow: hidden;
+    padding-top: 20px;
+    transition: all ease-in .5s;
+}
+
+#contact-row-4 img {
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#contact-row-4 .col-12:hover {
+    height: 175px;
+    padding-top: 0;
+}
+
+#contact-row-4 .col-12 .hover-text {
+    display: none;
+    font-size: 20px;
 }

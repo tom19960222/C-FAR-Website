@@ -1064,8 +1064,8 @@ img {
 
 .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
 	display: block;
-	max-width: 100%;
 	height: auto;
+	width: 100%;
 }
 
 .img-rounded {
@@ -1154,7 +1154,7 @@ h3, .h3 {
 }
 h4, .h4 {
 	font-size: 21px;
-	color: #FBF3B9;
+	color: #823F05;
 	font-weight:bold;
 }
 h5, .h5 {
@@ -1165,7 +1165,7 @@ h6, .h6 {
 }
 p {
 	margin: 0 0 10.5px;
-	color: white;
+	color: #3E3E3E;
 }
 .lead {
 	margin-bottom: 21px;
@@ -1439,7 +1439,7 @@ pre code {
 }
 @media (min-width:1200px) {
 .container {
-	width: 1170px
+	width: 1170px;
 }
 }
 .container-fluid {
