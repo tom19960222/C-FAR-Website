@@ -213,7 +213,7 @@ section#speaker {
     background-color: #EFF3F7;
 }
 section#agenda {
-    background-color: white;
+    background-color: #EFF3F7;
 }
 
 section#agenda h3{
@@ -232,7 +232,7 @@ section#admission {
 
 section#sponsor{
     color: white;
-    background-color: white;
+    background-color: #EFF3F7;;
 }
 section h2 {
     margin: 0;
@@ -500,10 +500,19 @@ footer .footer-below {
 }
 
 @media (max-width: 767px) {
-    section#report h2 img,section#about h2 img,section#speaker h2 img,section#agenda h2 img,section#portfolio h2 img, section#sponsor h2 img{
+   /* section#report h2 img,
+    section#about h2 img,
+    section#speaker h2 img,
+    section#agenda h2 img,
+    section#portfolio h2 img, 
+    section#sponsor h2 img{
         width: 100%;
-    }
+    }*/
     
+    section h2 img{
+        width: 100%
+    }
+
     .trans-img{
         width: 80%;
         margin-bottom: 10%;
@@ -695,7 +704,7 @@ position: absolute;
 }
 
 section#portfolio {
-    background-color: #EFF3F7;
+    background-color: white;
 }
 
 section#portfolio .btn-outline:hover,
@@ -729,17 +738,17 @@ section#portfolio .btn-outline {
 section#agenda .btn-outline2:hover,
 section#agenda .btn-outline2:focus,
 section#agenda .btn-outline2:active {
-    border: solid 1px #fff;
-    color:#bf9324;
-    background: #fff;
+    border: solid 1px #585899;
+    color:rgba(255,255,0,1);
+    background: #585899;;
 }
 
 section#agenda .btn-outline2 {
     margin-top: 15px;
-    border: solid 1px #25B6A0;
+    border: solid 1px #F66666;
     font-size: 20px;
     color:#FFF;
-    background-color:#25B6A0;
+    background-color:#F66666;
     transition: all .3s ease-in-out;
     /*box-shadow: 3px 3px 3px #4b4b4b;*/
     /*-webkit-box-shadow: 3px 3px 3px #4b4b4b;*/
@@ -749,19 +758,19 @@ section#agenda .btn-outline2 {
 section#portfolio .btn-outline2:hover,
 section#portfolio .btn-outline2:focus,
 section#portfolio .btn-outline2:active {
-    border: solid 1px #fff;
-    color:#bf9324;
-    background: #fff;
+    border: solid 1px #585899;
+    color:rgba(255,255,0,1);
+    background: #585899;
 }
 
 
 
 section#portfolio .btn-outline2 {
-    margin-top: 15px;
-    border: solid 1px #25B6A0;
+    margin-top: 30px;
+    border: solid 1px #F66666;
     font-size: 20px;
     color:#FFF;
-	background-color:#25B6A0;
+	background-color:#F66666;
     transition: all .3s ease-in-out;
     /*box-shadow: 3px 3px 3px #4b4b4b;*/
     /*-webkit-box-shadow: 3px 3px 3px #4b4b4b;*/
@@ -878,3 +887,36 @@ section#sponsor .img-responsive{
     display: none;
     font-size: 20px;
 }
+
+
+/*speaker */
+.speaker{
+    margin-bottom: 30px;
+}
+
+.agendaText{
+    left: 8em;
+    position: absolute;
+    padding-top: 1em;
+}
+
+.agendaTitle{
+    font-weight: 900;
+}
+
+@media (max-width: 767px) {
+    .speaker{
+        margin-bottom: 15%;
+    }
+
+    .speaker img{
+        width: 35%
+    }
+
+    .agendaText{
+        padding-top: 0;
+        left: 38%;
+        font-size: 15px;
+    }
+}
+
