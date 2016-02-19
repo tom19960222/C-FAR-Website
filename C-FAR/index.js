@@ -25,7 +25,7 @@ app.set('views', config.renderPagePath);
 
 var modules = Object.keys(config.active_modules);
 for (var m in modules){
-    var mod = require(path.join(__dirname, modules[m]));
+    var mod = require(path.join(__dirname, 'modules', modules[m]));
     mod.init();
     mainRouter.use(config.active_modules[modules[m]].route, mod.router);
     mod.mountedPath = config.active_modules[modules[m]].route;
