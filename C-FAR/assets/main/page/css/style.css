@@ -630,7 +630,7 @@ i {
 }
 
 .zoom {
-    background-image: url('/assets/page/images/zoom.png');
+    background-image: url('/assets/main/page/images/zoom.png');
     background-position: center center;
     background-repeat: no-repeat;
     height: 100%;
@@ -651,7 +651,7 @@ i {
 }
 
 #arrows div {
-    background-image: url('/assets/page/images/website-arrows.png');
+    background-image: url('/assets/main/page/images/website-arrows.png');
     cursor: pointer;
     height: 30px;
     position: absolute;

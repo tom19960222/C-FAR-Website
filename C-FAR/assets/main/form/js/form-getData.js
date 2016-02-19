@@ -153,7 +153,7 @@ function Get(){
 	   
     //jQuery post
     $.ajax({
-        url: 'assets/form/js/sampleGet.json',
+        url: 'assets/main/form/js/sampleGet.json',
         type: 'GET',
         dataType: 'text',
         success: function (data, textStatus, xhr) {
