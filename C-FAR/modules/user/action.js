@@ -49,36 +49,39 @@ var editUser = function(uid, firstName, lastName, username, email, password, per
     });
 }
 
-var getUserById = function(uid){
-    return User.findById(uid);
+var getUserById = function(uid, getAllData){
+    if (getAllData) return User.findById(uid);
+    else {
+        return User.findById(uid, 
+        {attributes: ['firstName', 'lastName', 'username', 'email', 'permission', 'language', 'uid']})
+    }
 }
 
-var getUserByEmail = function(email){
-    return User.findOne({
-        where:{
-            email: email
-        }
-    })
+var getUserByEmail = function(email, getAllData){
+    if(getAllData)
+        return User.findOne({ where:{ email: email } });
+    else {
+        return User.findOne({
+            where:{ email: email },
+            attributes: ['firstName', 'lastName', 'username', 'email', 'permission', 'language', 'uid']
+        });
+    }
 }
 
-var login = function(username, password){
-    return User.findOne({
-        where: 
-        {
-            $or:
-            [
-                { $and: [{username: username}, {password: password}] },
-                { $and: [{email: username}, {password: password}] }
-            ]
-        }
-    })
-    .catch(function(err){
-        console.error("Login failed - " + err);
-    });
+var deleteSensitiveInformation = function(user){
+    if(user.password) delete user.password;
+    if(user.createdAt) delete user.createdAt;
+    if(user.updatedAt) delete user.updatedAt;
+    
+    if(user.dataValues.password) delete user.dataValues.password;
+    if(user.dataValues.createdAt) delete user.dataValues.createdAt;
+    if(user.dataValues.updatedAt) delete user.dataValues.updatedAt;
+    
+    return user;
 }
 
 module.exports.addUser = addUser;
 module.exports.editUser = editUser;
-module.exports.login = login;
 module.exports.getUserById = getUserById;
 module.exports.getUserByEmail = getUserByEmail;
+module.exports.deleteSensitiveInformation = deleteSensitiveInformation;
