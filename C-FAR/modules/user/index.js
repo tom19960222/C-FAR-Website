@@ -5,6 +5,7 @@ var action = require('./action');
 var inited = false;
 
 var init = function(){
+    require('./passport');
     inited = true;
 }
 

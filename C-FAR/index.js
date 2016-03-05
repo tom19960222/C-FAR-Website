@@ -1,6 +1,7 @@
 /// <reference path="../typings/node/node.d.ts" />
 /// <reference path="../typings/express/express.d.ts" />
 /// <reference path="../typings/express-session/express-session.d.ts" />
+/// <reference path="../typings/passport/passport.d.ts" />
 
 var Express = require('express');
 var path = require('path');
@@ -9,11 +10,13 @@ var mainRouter = Express.Router();
 var db = require('./db');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+var passport = require('passport');
 module.exports.router = mainRouter;
 
 config.session.store = new RedisStore(config.sessionStore); 
-var s = session(config.session);
-mainRouter.use(s);
+mainRouter.use(session(config.session));
+mainRouter.use(passport.initialize());
+mainRouter.use(passport.session());
 
 // Global variable 'app' should be avaliable now, if index.js in the root folder has been executed.
 // So we can put something often used in it.

@@ -2,6 +2,13 @@ var Express = require('express');
 var action = require('./action');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
+var passport = require('passport');
+
+var needLogin = function(req, res, next){
+    if(req.isAuthenticated())
+        next();
+    req.status(401).end();
+}
 
 module.exports = function(){
     var router = Express.Router();
@@ -31,25 +38,13 @@ module.exports = function(){
         res.status(501).send("<h1>Not implemented</h1>");
     });
 
-    router.post('/login', jsonParser, function(req, res, next){
-        action.login(req.body.username, req.body.password)
-        .then(function(user){
-            if(user) {
-                req.session.uid = user.uid;
-                req.session.permission = user.permission;
-                res.status(200).json({message: 'Login successed.'});
-            }
-            else {
-                req.session.uid = 0;
-                req.session.permission = 0;
-                res.status(403).json({message: 'Username or password is wrong.'});
-            }
-        })
+    router.post('/login', jsonParser, passport.authenticate('local'), function(req, res, next){
+        res.status(200).json(req.user);
+        // res.status(200).json({message: 'Login successed.'});
     });
     
     router.get('/logout', function(req, res){
-        req.session.uid = 0;
-        req.session.permission = 0;
+        req.logout();
         res.status(200).json({message: 'Logout successed.'});
     });
     

@@ -1,6 +1,6 @@
-/// <reference path="../../typings/node/node.d.ts" />
-/// <reference path="../../typings/sequelize/sequelize.d.ts" />
-/// <reference path="../../typings/express/express.d.ts" />
+/// <reference path="../../../typings/node/node.d.ts" />
+/// <reference path="../../../typings/sequelize/sequelize.d.ts" />
+/// <reference path="../../../typings/express/express.d.ts" />
 
 var model = require('./models');
 var User = model.User;
@@ -53,6 +53,14 @@ var getUserById = function(uid){
     return User.findById(uid);
 }
 
+var getUserByEmail = function(email){
+    return User.findOne({
+        where:{
+            email: email
+        }
+    })
+}
+
 var login = function(username, password){
     return User.findOne({
         where: 
@@ -73,3 +81,4 @@ module.exports.addUser = addUser;
 module.exports.editUser = editUser;
 module.exports.login = login;
 module.exports.getUserById = getUserById;
+module.exports.getUserByEmail = getUserByEmail;

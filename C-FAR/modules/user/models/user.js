@@ -55,6 +55,13 @@ module.exports = function(sequelize){
                 autoIncrement: true,
                 unique: true
             }
+        },
+        {
+            instanceMethods: {
+                validatePassword: function(inputPassword){
+                    return inputPassword == this.password;
+                }
+            }   
         });   
     }
     return User;
