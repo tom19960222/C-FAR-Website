@@ -47,19 +47,4 @@ router.get('/logout', function(req, res){
     res.status(200).json({message: 'Logout successed.'});
 });
 
-router.get('/login', function(req, res, next){
-    if(!(req.body)) req.body = {};
-    req.body.email = req.params.email;
-    req.body.password = req.params.password;
-    next();  
-}, passport.authenticate('local'), function(req, res,next){
-    res.status(200).send("<html><body><h1>You are now logged in as " + req.user.username + "</h1><a href='/user/now'>GO</a></body></html>");
-});
-
-router.get('/now', function(req, res){
-    console.log(req.user);
-    console.log(req.session);
-    res.status(200).json(req.user);
-});
-
 module.exports = router;
