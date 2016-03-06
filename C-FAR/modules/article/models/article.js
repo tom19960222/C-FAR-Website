@@ -1,5 +1,5 @@
-/// <reference path="../../../typings/node/node.d.ts" />
-/// <reference path="../../../typings/sequelize/sequelize.d.ts" />
+/// <reference path="../../../../typings/node/node.d.ts" />
+/// <reference path="../../../../typings/sequelize/sequelize.d.ts" />
 
 var Sequelize = require('sequelize');
 

@@ -1,5 +1,5 @@
-/// <reference path="../../../typings/node/node.d.ts" />
-/// <reference path="../../../typings/sequelize/sequelize.d.ts" />
+/// <reference path="../../../../typings/node/node.d.ts" />
+/// <reference path="../../../../typings/sequelize/sequelize.d.ts" />
 
 var Sequelize = require('sequelize');
 var User;
@@ -55,6 +55,17 @@ module.exports = function(sequelize){
                 autoIncrement: true,
                 unique: true
             }
+        },
+        {
+            instanceMethods: {
+                validatePassword: function(inputPassword){
+                    return inputPassword == this.password;
+                },
+                updateLoginTime: function(){
+                    this.last_login = Date.now();
+                    return this.save();
+                }
+            }   
         });   
     }
     return User;

@@ -1,4 +1,4 @@
-/// <reference path="../../typings/mongoose/mongoose.d.ts" />
+/// <reference path="../../../typings/mongoose/mongoose.d.ts" />
 var mongoose = app.db.nosql;
 var Promise = require('bluebird');
 var tagSchema = require('./models').tag;
