@@ -24,7 +24,7 @@ config.active_modules = {
 }
 
 config.sessionStore = {
-    host: 'local.docker',
+    host: '192.168.10.109',
     port: 6379
 }
 
@@ -39,14 +39,14 @@ config.session = {
 config.database = {};
 config.database.sql = {
     type: 'mysql',
-    host: 'mysql',
+    host: '192.168.10.109',
     port: 3306,
-    username: 'admin',
-    password: 'password',
+    username: 'root',
+    password: '123456@',
     dbname: 'c-far'
 }
 config.database.nosql = {
-    host: 'local.docker',
+    host: '192.168.10.109',
     port: 27017,
     dbname: 'c-far',
     username: undefined,
