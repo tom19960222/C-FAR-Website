@@ -42,6 +42,18 @@ router.get('/three', function(req, res){
     res.render('future3');
 });
 
+router.get('/four', function(req, res){
+    res.render('future4');
+});
+
+router.get('/five', function(req, res){
+    res.render('future5');
+});
+
+router.get('/six', function(req, res){
+    res.render('future6');
+});
+
 router.get('/error', function(req, res){
     res.render('error');
 });
