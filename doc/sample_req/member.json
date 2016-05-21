@@ -1,0 +1,111 @@
+// 1. when page load, get member data
+//req: GET url
+//res: 
+[
+	{	
+		index: ""  //indenty key
+		ch_name: "JasonXDDD",
+		en_name: "JasonXDDD, RD",
+		introduction: "lalalalalala, just do XDDD",
+		head: "src/img.jpg"  //image route
+	},
+	{
+		index: ""
+		ch_name: "QAQ",
+		en_name: "QAQ, CEO",
+		introduction: "yoyoyo",
+		head: "src/img.jpg"
+	}
+]
+
+
+
+
+// 2. add/update member data
+//req: POST url
+[
+	//update
+	{	
+		index: "THE index IS EXISIT"
+		ch_name: "Jason",
+		en_name: "JasonLIU, RD",
+		introduction: "just do XDDD",
+		head: "frhjalfhafjkahfjkdlhjfh"  //image code
+	},
+
+	//add
+	{
+		index: 0  // 0 is add new member
+		ch_name: "QAQ",
+		en_name: "QAQ, CEO",
+		introduction: "yoyoyo",
+		head: "frhjalfhafjkahfjkdlhjfh4324"
+	}
+]
+//res:
+{
+	status: "success",
+	code: 200,
+	data: [
+		{	
+			index: ""  //indexenty key
+			ch_name: "JasonXDDD",
+			en_name: "JasonXDDD, RD",
+			introduction: "lalalalalala, just do XDDD",
+			head: "src/img.jpg"  //image route
+		},
+		{
+			index: ""
+			ch_name: "QAQ",
+			en_name: "QAQ, CEO",
+			introduction: "yoyoyo",
+			head: "src/img.jpg"
+		}
+		//...
+	]
+}
+
+{
+	status: "error",
+	code: 404,
+	data: "error message" //show on the view
+}
+
+
+
+
+// 3. delete member
+//req: POST url
+{
+	index: [
+		"a", "b", "c", "d"
+	]
+}
+//res:
+{
+	status: "success",
+	code: 200,
+	data: [
+		{	
+			index: ""  //indexenty key
+			ch_name: "JasonXDDD",
+			en_name: "JasonXDDD, RD",
+			introduction: "lalalalalala, just do XDDD",
+			head: "src/img.jpg"  //image route
+		},
+		{
+			index: ""
+			ch_name: "QAQ",
+			en_name: "QAQ, CEO",
+			introduction: "yoyoyo",
+			head: "src/img.jpg"
+		}
+		//...
+	]
+}
+
+{
+	status: "error",
+	code: 404,
+	data: "error message" //show on the view
+}

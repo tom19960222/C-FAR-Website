@@ -1,0 +1,66 @@
+//1. same with img.json. there are 15 messages in the view. they only need to change the img not delete/add
+//req: GET URL
+//res: 
+[
+	{
+		index: 1,
+		content: "希望這個課程以後還會繼續下去，因為說真的三天實在是有點短，以後只要再有這個課程，我一定來！",
+		author: "張榮欽",
+		job_title: "西頓實業公司負責人" 
+
+	},
+	{
+		index: 2,
+		content: "（讓我們）在變動的過程當中，能夠找出過去整個一路走來，到目前為止整個可能的方向，我想對我們人生來講當然是一個好的體驗。",
+		author: "林敏霖",
+		job_title: "總統府國策顧問" 
+	},
+
+	//... 15 objs
+]
+
+//2. change pic
+//req: POST URL
+[
+	{
+		index: 1,
+		content: "希望這個課程以後還會繼續下去，因為說真的三天實在是有點短，以後只要再有這個課程，我一定來！",
+		author: "張榮欽",
+		job_title: "西頓實業公司負責人"
+	},
+	{
+		index: 2,
+		content: "希望這個課程以後還會繼續下去，因為說真的三天實在是有點短，以後只要再有這個課程，我一定來！",
+		author: "張榮欽",
+		job_title: "西頓實業公司負責人"
+	}
+]
+
+//res: 
+{
+	status: "success",
+	code: 200,
+	data: [
+		{
+			index: 1,
+			content: "希望這個課程以後還會繼續下去，因為說真的三天實在是有點短，以後只要再有這個課程，我一定來！",
+			author: "張榮欽",
+			job_title: "西頓實業公司負責人" 
+
+		},
+		{
+			index: 2,
+			content: "（讓我們）在變動的過程當中，能夠找出過去整個一路走來，到目前為止整個可能的方向，我想對我們人生來講當然是一個好的體驗。",
+			author: "林敏霖",
+			job_title: "總統府國策顧問" 
+		},
+
+		//... 15 objs
+	]
+}
+
+{
+	status: "error",
+	code: 400, //400/404/...
+	data: "error message"
+}

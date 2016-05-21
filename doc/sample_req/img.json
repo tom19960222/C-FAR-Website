@@ -1,0 +1,52 @@
+//1. there are 20 pic in the view. they only need to change the img not delete/add
+//req: GET URL
+//res: 
+[
+	{
+		index: 1,
+		content: "src..."
+	},
+	{
+		index: 2,
+		content: "src..."
+	},
+
+	//... 20 objs
+]
+
+//2. change pic
+//req: POST URL
+[
+	{
+		index: 1,
+		content: "fdakflh4jkfhefkjahfkljd"
+	},
+	{
+		index: 2,
+		content: "fdasjfkldafhfklfhlaksd;j"
+	}
+]
+
+//res: 
+{
+	status: "success",
+	code: 200,
+	data: [
+		{
+			index: 1,
+			content: "src..."
+		},
+		{
+			index: 2,
+			content: "src..."
+		}
+
+		//... 20 objs
+	]
+}
+
+{
+	status: "error",
+	code: 400, //400/404/...
+	data: "error message"
+}
