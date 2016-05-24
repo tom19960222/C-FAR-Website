@@ -54,6 +54,20 @@ router.get('/six', function(req, res){
     res.render('future6');
 });
 
+router.get('/seven', function(req, res){
+    res.render('future7');
+});
+
+router.get('/eight', function(req, res){
+    res.render('future8');
+});
+
+router.get('/nine', function(req, res){
+    res.render('future9');
+});
+
+
+
 router.get('/error', function(req, res){
     res.render('error');
 });

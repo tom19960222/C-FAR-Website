@@ -146,4 +146,99 @@ function shareFactor(content, author, job){
 
 
 
+
+
+
 //story page - member
+var c = [
+	{	
+		index: 0,  //indenty key
+		ch_name: "宋玫玫",
+		job_title: "EdD",
+		en_name: "Mei-Mei Song, EdD",
+		introduction: "名片上的職稱是淡江大學未來學研究所助理教授，學歷是哥倫比亞大學教育博士與碩士，沒有名片的職稱是人生意義的學習者，目前找到最令我折服的路徑就是未來學。 最大的樂趣在不斷穿梭於各種時間與空間—過去/現在/未來，台灣/世界。",
+		head: "assets/main/page/images/member/宋玫玫.jpg"  //image route
+	},
+	{
+		index: 1,
+		ch_name: "吳裕勝",
+		job_title: "PhD",
+		en_name: "Yu-Sheng Wu, PhD",
+		introduction: "喜歡傳播學中麥克魯漢（M. McLuhan）式的預言語法，也喜歡未來研究中強調的創意思維，兩者都進行跨界的思考，也始終對科技與人的關係進行關懷，這些喜愛融雜成為自己成長中的養分。目前在大學任教，主要以傳播相關學科為主，期望台灣傳播環境能更好，人人都能握有信心走向未來。",
+		head: "assets/main/page/images/member/吳裕勝.jpg"
+	},
+	{
+		index: 2,
+		ch_name: "李長潔",
+		job_title: "PhD",
+		en_name: "Chang-Chieh Lee, PhD",
+		introduction: "橫跨組織溝通研究、未來學、科學哲學、社會學、語藝批評、文化研究的跨領域研究者，對於社會文化的傳承流轉與創新趨勢有著熱烈的興趣，無時無刻保持冒險的好奇心。我認為，帶有美好未來想像的語言行動，將清晰地指出並誘導我們航向希望之地。我是李長潔，於大學教授社會未來、多元文化、全球社會等課程，並從事推動台灣科學與科技傳播之事務。",
+		head: "assets/main/page/images/member/李長潔.jpg"
+	},
+	{
+		index: 3,
+		ch_name: "林青岳",
+		job_title: " ",
+		en_name: "Cing-Yue Lin",
+		introduction: "是法律人、飛機修護員、補教老師、鉗工工匠、職業軍人、電腦維修員、行銷人、保險規劃師、自幼好奇頑皮，喜愛探索新奇事物當個初心者，習慣使用跨領域的思維去尋找難題的解決之道。現正於未來學領域玩耍，望能習得一招半式嬉鬧於世界的角落。",
+		head: "assets/main/page/images/member/林青岳.jpg"
+	}
+];
+
+(function() {
+	var target = $('#member-owl');
+	c.forEach(function(element, index, array) {
+		target.append(memberFactor(element.ch_name, element.en_name, element.job_title, element.head, element.index));
+	})
+
+})();
+
+function memberFactor(ch_name, en_name, job, head, index) {
+	return '<div id=' + index + ' class="mem item">' +
+				'<p>' +	'<img src="' + head + '" style="height: 22em;">' + '</p>' +
+				'<h2 class="font-semibold" style=" font-size: 30px; padding-bottom: 10px">' +
+					ch_name + '<br>' +
+					job + '<br>' +
+					'<span style="font-size: 20px">' +
+						en_name +
+					'</span>' +
+				'</h2>' +
+			'</div> <!-- /col12 -->';
+}
+
+
+//media is mobile
+var mq = window.matchMedia( "(max-width: 750px)" );
+
+$(document).ready(function(e) {
+	$('.mem').mouseenter(
+		function(){
+			changeMember(this.getAttribute('id'), this);
+		}
+	)
+});
+
+
+function getEventTarget(e) {
+	e = e || window.event;
+	return e.target || e.srcElement;
+}
+
+var lastmem;
+function changeMember(num, mem){
+	var a = [];
+	c.forEach(function(element, index, array) {
+		a.push(element);
+	})
+
+	if(lastmem === mem) return;
+	
+	// console.log(a);
+	document.getElementById('member').innerHTML = a[num].introduction;
+
+
+	if(mem === null) return;
+	mem.style.opacity = 0.6;
+	if(lastmem != undefined) lastmem.style.opacity = 1;
+	lastmem = mem;
+}
