@@ -3,50 +3,45 @@
 //res: 
 [
 	{
-		index: 1,
-		content: "src..."
+		image_id: 1,
+		path: "/assets/balabala.jpg"
 	},
 	{
-		index: 2,
-		content: "src..."
+		image_id: 2,
+		path: "/assets/balabala2.jpg"
 	},
 
 	//... 20 objs
 ]
 
 //2. change pic
-//req: POST URL
+//req: PUT URL
 [
 	{
-		index: 1,
+		image_id: 1,
+		filename: "123.jpg",
 		content: "fdakflh4jkfhefkjahfkljd"
 	},
 	{
-		index: 2,
+		image_id: 2,
+		filename: "456.jpg",
 		content: "fdasjfkldafhfklfhlaksd;j"
 	}
 ]
 
 //res: 
-{
-	status: "success",
-	code: 200,
-	data: [
-		{
-			index: 1,
-			content: "src..."
-		},
-		{
-			index: 2,
-			content: "src..."
-		}
+[
+	{
+		image_id: 1,
+		content: "/assets/balabala.jpg"
+	},
+	{
+		image_id: 2,
+		content: "/assets/balabala2.jpg"
+	}
 
-		//... 20 objs
-	]
-}
+	//... 20 objs
+]
 
-{
-	status: "error",
-	code: 400, //400/404/...
-	data: "error message"
-}
+// response code: 400 -> filename or content is missing.
+// response code: 404 -> You want to change a image that is not existed.
