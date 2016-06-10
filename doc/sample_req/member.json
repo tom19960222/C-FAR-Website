@@ -3,117 +3,138 @@
 //res: 
 [
 	{	
-		index: ""  //indenty key
+		member_id: 1  //indenty key
 		ch_name: "JasonXDDD",
 		job_title: "最帥的工程師XD",
 		en_name: "JasonXDDD, RD",
 		introduction: "lalalalalala, just do XDDD",
-		head: "src/img.jpg"  //image route
+		head_pic_url: "/assets/img.jpg"  //image route
 	},
 	{
-		index: ""
+		member_id: 2
 		ch_name: "QAQ",
 		job_title: "最帥的工程師XD",
 		en_name: "QAQ, CEO",
 		introduction: "yoyoyo",
-		head: "src/img.jpg"
+		head_pic_url: "/assets/img2.jpg"
 	}
 ]
 
 
 
 
-// 2. add/update member data
+// 2. add member data
 //req: POST url
+{	
+	ch_name: "Jason",
+	job_title: "最帥的工程師XD",
+	en_name: "JasonLIU, RD",
+	introduction: "just do XDDD",
+	head_pic_data: "frhjalfhafjkahfjkdlhjfh",  //image code
+	head_pic_filename: "123.jpg"
+}
+
+//res:
+{
+	[
+		{	
+			member_id: 1  //indexenty key
+			ch_name: "JasonXDDD",
+			job_title: "最帥的工程師XD",
+			en_name: "JasonXDDD, RD",
+			introduction: "lalalalalala, just do XDDD",
+			head_pic_url: "/assets/img2.jpg"  //image route
+		},
+		{
+			member_id: 2
+			ch_name: "QAQ",
+			job_title: "最帥的工程師XD",
+			en_name: "QAQ, CEO",
+			introduction: "yoyoyo",
+			head_pic_url: "/assets/img2.jpg"
+		}
+		//...
+	]
+}
+
+// 3. update member data
+//req: PUT url
 [
 	//update
 	{	
-		index: "THE index IS EXISIT"
+		member_id: 1, // existed ID.
 		ch_name: "Jason",
 		job_title: "最帥的工程師XD",
 		en_name: "JasonLIU, RD",
 		introduction: "just do XDDD",
-		head: "frhjalfhafjkahfjkdlhjfh"  //image code
+		head_pic_data: "frhjalfhafjkahfjkdlhjfh",  //image code
+		head_pic_filename: "123.jpg"
 	},
 
-	//add
 	{
-		index: 0  // 0 is add new member
+		member_id: 2,
 		ch_name: "QAQ",
 		job_title: "最帥的工程師XD",
 		en_name: "QAQ, CEO",
 		introduction: "yoyoyo",
-		head: "frhjalfhafjkahfjkdlhjfh4324"
+		head_pic_data: "frhjalfhafjkahfjkdlhjfh",  //image code
+		head_pic_filename: "123.jpg"
 	}
 ]
 //res:
 {
-	status: "success",
-	code: 200,
-	data: [
+    [
 		{	
-			index: ""  //indexenty key
+			member_id: 1  //indexenty key
 			ch_name: "JasonXDDD",
 			job_title: "最帥的工程師XD",
 			en_name: "JasonXDDD, RD",
 			introduction: "lalalalalala, just do XDDD",
-			head: "src/img.jpg"  //image route
+			head_pic_url: "/assets/img2.jpg"  //image route
 		},
 		{
-			index: ""
+			member_id: 2
 			ch_name: "QAQ",
 			job_title: "最帥的工程師XD",
 			en_name: "QAQ, CEO",
 			introduction: "yoyoyo",
-			head: "src/img.jpg"
+			head_pic_url: "/assets/img2.jpg"
 		}
 		//...
 	]
 }
 
-{
-	status: "error",
-	code: 404,
-	data: "error message" //show on the view
-}
-
-
+// response code: 404 -> You want to change a image that is not existed.
+// response code: 500 -> Server side error.
 
 
 // 3. delete member
-//req: POST url
+//req: DELETE url
 {
-	index: [
-		"a", "b", "c", "d"
-	]
+	member_id: [1,2,3,4]
 }
 //res:
 {
-	status: "success",
-	code: 200,
-	data: [
+	[
 		{	
-			index: ""  //indexenty key
+			member_id: 5,
 			ch_name: "JasonXDDD",
 			job_title: "最帥的工程師XD",
 			en_name: "JasonXDDD, RD",
 			introduction: "lalalalalala, just do XDDD",
-			head: "src/img.jpg"  //image route
+			head_pic_url: "/assets/img2.jpg"  //image route
 		},
 		{
-			index: ""
+			member_id: 6,
 			ch_name: "QAQ",
 			job_title: "最帥的工程師XD",
 			en_name: "QAQ, CEO",
 			introduction: "yoyoyo",
-			head: "src/img.jpg"
+			head_pic_url: "/assets/img2.jpg"
 		}
 		//...
 	]
 }
 
-{
-	status: "error",
-	code: 404,
-	data: "error message" //show on the view
-}
+// response code: 404 -> You want to change a image that is not existed.
+// response code: 500 -> Server side error.
