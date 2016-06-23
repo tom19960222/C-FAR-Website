@@ -66,6 +66,10 @@ router.get('/nine', function(req, res){
     res.render('future9');
 });
 
+router.get('/ten', function(req, res){
+    res.render('future10');
+});
+
 
 
 router.get('/error', function(req, res){
