@@ -25,7 +25,7 @@ function postUser(){
     var userPasswd = document.getElementById('Password');
 
     var data = {
-        username: userName.value,
+        email: userName.value,
         password: userPasswd.value
     };
     console.log(JSON.stringify(data));

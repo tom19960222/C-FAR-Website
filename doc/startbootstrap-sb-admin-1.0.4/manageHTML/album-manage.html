@@ -86,7 +86,7 @@
                         <a href="share-manage.html"><i class="fa fa-fw fa-table"></i> 本事。學生分享</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> 未來事。文章分享</a>
+                        <a href="article-manage.html"><i class="fa fa-fw fa-edit"></i> 未來事。文章分享</a>
                     </li>
                     <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> 最新消息</a>
@@ -212,7 +212,7 @@
                 <div class="row">
                     <div class="col-sm-11">
                         <h1 class="page-header">
-                            新增成員 <small>ADD MEMBER</small>
+                            新增照片 <small>ADD PHOTO</small>
                         </h1>
                     </div>
                     <div class="col-sm-1">
@@ -222,61 +222,22 @@
                 <!-- /.row -->         
                 <br><br>
                 
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <img id="imgShow" src="" alt="head image" height="250px">
+                            <img id="imgShow" src="#" alt="head image" height="250px">
                             <br>
-                            <h3>上傳大頭照</h3>
+                            <h3>上傳照片</h3>
                             <input id="imgFile" type="file" accept="image/*" onchange="imgReload(this)">
                             <p id="imgPath"></p>
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                         <div class="form-group">
-                            <h3>姓名</h3>
-                            <input class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                         <div class="form-group">
-                            <h3>頭銜</h3>
-                            <input class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                         <div class="form-group">
-                            <h3>英文名稱</h3>
-                            <input class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                         <div class="form-group">
-                            <h3>自我介紹</h3>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
                 
                 <br><br>
-                <button type="submit" class="btn btn-default">送出 Submit</button>
+                <button type="submit" class="btn btn-default" onclick="postADD_album()">送出 Submit</button>
 
             </div>
         </div>
@@ -426,6 +387,8 @@
     <script src="owl-carousel/owl.carousel.js"></script>
     <!-- Setting Data By XDD -->
     <script type="text/javascript" src="js/scriptXDD.js"></script>
+    <!-- Data GET/POST JavaScript -->
+    <script type="text/javascript" src="js/get-post-XDD.js"></script>
 
 
     <script type="text/javascript">

@@ -8,6 +8,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>SB Admin - Bootstrap Admin Template</title>
+    <!--mdl button-->
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -16,7 +20,8 @@
     <!-- <link href="css/plugins/morris.css" rel="stylesheet"> -->
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    
+
+
     <!-- Owl-carousel -->
     <link rel="stylesheet" type="text/css" href="owl-carousel/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="owl-carousel/owl.theme.css">
@@ -31,6 +36,12 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style type="text/css" media="screen">
+        small{
+            font-family: "Titillium Web", "微軟正黑體 Light", "微軟正黑體", sans-serif !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -76,7 +87,7 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
+                    <li>
                         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> 故事。中心成員</a>
                     </li>
                     <li>
@@ -85,7 +96,7 @@
                     <li>
                         <a href="share-manage.html"><i class="fa fa-fw fa-table"></i> 本事。學生分享</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="article-manage.html"><i class="fa fa-fw fa-edit"></i> 未來事。文章分享</a>
                     </li>
                     <li>
@@ -112,7 +123,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            中心成員 <small>故事</small>
+                            文章分享 <small>未來事</small>
                         </h1>
                     </div>
                 </div>
@@ -128,14 +139,14 @@
                                         <i class="fa fa-plus fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">新增成員</div>
-                                        <div>Add new member</div>
+                                        <div class="huge">新增文章</div>
+                                        <div>Add new article</div>
                                     </div>
                                 </div>
                             </div>
                             <a href="#" onclick="enableADD()">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Add New Member</span>
+                                    <span class="pull-left">Add New Article</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -172,14 +183,14 @@
                                         <i class="fa fa-trash fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">刪除成員</div>
-                                        <div>Delete member</div>
+                                        <div class="huge">刪除文章</div>
+                                        <div>Delete article</div>
                                     </div>
                                 </div>
                             </div>
                             <a href="#" onclick="enableDELETE()">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Delete Member</span>
+                                    <span class="pull-left">Delete Article</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -199,32 +210,32 @@
 
 
 
-        <div class="slide story" id="slide-4" style="text-align: left; background-color: white; padding-top: 5%">
+        <!-- === Slide 2 - Center Introduction === -->
+        <div class="story" id="slide-2" data-slide="2" style="background-color: white">
             <div class="container">
-        
-                <div class="row">
+
+                 <div class="row">
                     <div class="col-lg-12">
                         <h3 class="page-header">
-                            預覽顯示 <small>中心成員</small>
+                            預覽顯示 <small>文章分享</small>
                         </h3>
                     </div>
                 </div>
                 <!-- /.row -->
 
 
-                <!--member-->
-                <div id="member-owl" class="owl-carousel owl-theme" style="text-align: center">
-                    <!-- dynamically generated -->
+                <div id="owl-future" class="owl-carousel owl-theme" style="width: 100%">
+                <!-- dynamically generated -->
                 </div>
-                <!-- /row -->
 
-                <div class="row subtitle-row">
-                    <div id="member" class="col-12 font-thin" style="font-size: 25px;"></div>
-                </div>
-                <!-- /row -->      
             </div>
+            <!-- /container -->
         </div>
-        <!-- /slide3 -->
+        <!-- /slide2 -->
+
+
+
+
         
 
 

@@ -298,21 +298,21 @@ var d = [
 	},
 
 	{
-		background: "assets/main/page/images/future/f3.png",
+		background: "assets/main/page/images/future/f3.jpg",
 		title: "香港作為一種未來城市想像",
 		author: "李長潔",
 		link: "/three"
 	},
 
 	{
-		background: "assets/main/page/images/future/f2.png",
+		background: "assets/main/page/images/future/f2.jpg",
 		title: "《回到未來》中的未來就是今天時，我們實現了什麼？",
 		author: "李長潔",
 		link: "/two"
 	},
 
 	{
-		background: "assets/main/page/images/future/f1.png",
+		background: "assets/main/page/images/future/f1.jpg",
 		title: "遠見預測真是無用？",
 		author: "李長潔",
 		link: "/one"
@@ -322,7 +322,7 @@ var d = [
 (function() {
 	var target = $('#owl-future');
 	d.forEach(function(element, index, array) {
-		target.append(futureFactor(element.ch_name, element.en_name, element.job_title, element.head, element.index));
+		target.append(futureFactor(element.background, element.title, element.author, element.link));
 	})
 
 })();
@@ -333,8 +333,8 @@ function futureFactor(bg, title, author, link) {
 					' style="width: 90%;position: relative; margin: 2% 5% auto">' + 
 					'<div class="mdl-card__title"' +
 						'style="background-image: url(' + bg + '); height: 300px; color: white; padding: 0">' +
-						'<div style="background-color: rgba(0, 0, 0, 0.4); height: 100%; width: 100%; position: absolute"></div>' +
-						'<h2 class="mdl-card__title-text" style=" padding: 10px; text-align: left;' +
+						'<div style="background-color: rgba(0, 0, 0, 0.4); height: inherit; width: 100%; position: absolute"></div>' +
+						'<h2 class="mdl-card__title-text" style=" padding: 10px; text-align: left; z-index: 1;' +
 							'font-size: 35px; font-family: \'微軟正黑體 Light\';">' +
 							title +
 						'</h2>' +
