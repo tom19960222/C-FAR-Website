@@ -1,0 +1,142 @@
+//1. get all article
+[
+	{
+		article_id: 9,
+		background: "assets/main/page/images/future/f10.png",
+		title: "何謂隱現議題（emerging issue）",
+		author: "李長潔",
+		link: "/ten"
+	},
+
+	{
+		article_id: 8,
+		background: "assets/main/page/images/future/f9.png",
+		title: "台灣未來將邁向何處 公民願望大調查",
+		author: "李長潔",
+		link: "/nine"
+	},
+
+	{
+		article_id: 7,
+		background: "assets/main/page/images/future/f8.png",
+		title: "日劇裡的科技社會變遷 黑柳徹子的《荳荳電視台》",
+		author: "李長潔",
+		link: "/eight"
+	},
+
+	{
+		article_id: 6,
+		background: "assets/main/page/images/future/f7.png",
+		title: "規劃人生的十年",
+		author: "邱懷瑤",
+		link: "/seven"
+	},
+
+	{
+		article_id: 5,
+		background: "assets/main/page/images/future/f6.png",
+		title: "透過情境分析開創未來",
+		author: "",
+		link: "/six"
+	},
+
+	{
+		article_id: 4,
+		background: "assets/main/page/images/future/f5.png",
+		title: "何謂未來情境(scenarios)？",
+		author: "李長潔",
+		link: "/five"
+	},
+
+	{
+		article_id: 3,
+		background: "assets/main/page/images/future/f4.png",
+		title: "創新X創意：跳出框架思考",
+		author: "邱懷瑤",
+		link: "/four"
+	},
+
+	{
+		article_id: 2,
+		background: "assets/main/page/images/future/f3.jpg",
+		title: "香港作為一種未來城市想像",
+		author: "李長潔",
+		link: "/three"
+	},
+
+	{
+		article_id: 1,
+		background: "assets/main/page/images/future/f2.jpg",
+		title: "《回到未來》中的未來就是今天時，我們實現了什麼？",
+		author: "李長潔",
+		link: "/two"
+	}
+]
+
+
+//ADD new article
+//post
+
+{
+	author: "JasonXDD",
+	title: "我的手業障很重",
+	background: "img url",
+	content: [
+		//same with assest/form/js/sampleGet.json
+		{
+	        "type": "linebar"
+	    },
+
+	    {
+	        "type": "title",
+	        "title": "Big Title"
+	    },
+
+	    {
+	        "type": "image",
+	        "src": "http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg"
+	    },
+
+	    {
+	        "type": "subtitle",
+	        "subtitle": "Small Subtitle"
+	    },
+
+	    {
+	        "type": "content",
+	        "content": "This is content"
+	    },
+
+	    {
+	        "type": "linebar"
+	    },
+
+	    {
+	        "type": "textfield",
+	        "title": "TEXTFIELD",
+	        "content": "XDDD textfield"
+	    },
+
+	    {
+	        "type": "numfield",
+	        "title": "NUMFIELD",
+	        "content": "XDDDD numfield"
+	    }
+	    //...
+	]
+}
+
+//response
+//all article with new add one link
+
+
+//edit
+{
+	article_id: 5,
+	type: "edit"
+}
+
+//resp
+{
+
+}
