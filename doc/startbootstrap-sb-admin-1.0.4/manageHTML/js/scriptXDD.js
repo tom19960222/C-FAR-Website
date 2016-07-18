@@ -35,13 +35,16 @@ var a = [
 ];
 
 
-(function() {
+function initAlbum() {
 	var target = $('#owl-img');
+	var changeAlbum = $('.change_album').children("img");
+
 	a.forEach(function(element, index, array) {
 		target.append(photoFactor(element.content));
+		changeAlbum[element.index-1].setAttribute("src", element.content);
 	})
 
-})();
+};
 
 function photoFactor(src) {
 	return '<div class="item" style="' + 
@@ -79,7 +82,7 @@ var b = [
 	{
 		index: 1,
 		content: "這個課程對我們人生以後的事情會有幫助，對將來發展的事業可以有很大的幫助。",
-		author: "周介石XD",
+		author: "周介石",
 		job_title: "台華貿易股份有限公司 董事長" 
 	},
 	{
@@ -134,13 +137,37 @@ var b = [
 ];
 
 
-(function() {
+function initShare() {
 	var target = $('#owl-share');
+	var editShare = $('#edit_share');
+	var deleteShare = $('#delete_share');
+
 	b.forEach(function(element, index, array) {
 		target.append(shareFactor(element.content, element.author, element.job_title));
+		editShare.append(editShareFactor(element.author, element.job_title, element.index));
+		deleteShare.append(deleteShareFactor(element.author, element.job_title, element.index));
 	})
 
-})();
+};
+
+function editShareFactor(ch_name, job, index){
+	return '<div class="col-sm-6">' +
+				'<button class="btn btn-default btn-lg choose_edit_share" onclick="chooseEdit(this)" value="' + index + '">' +
+					'<span style="font-weight: 900;">' + ch_name + '</span>' + 
+					' <small>' + job + '</small>' + 
+				'</button>' +
+			'</div>';
+}
+
+
+function deleteShareFactor(ch_name, job, index){
+	return '<div class="col-sm-6">' +
+				'<button class="btn btn-default btn-lg" onclick="chooseDelete(this)" value="' + index + '">' +
+					'<span style="font-weight: 900;">' + ch_name + '</span>' + 
+					' <small>' + job + '</small>' +
+				'</button>' +
+			'</div>';
+}
 
 function shareFactor(content, author, job){
 	return '<div class="row subtitle-row">' +
@@ -215,16 +242,47 @@ var c = [
 		en_name: "Cing-Yue Lin",
 		introduction: "是法律人、飛機修護員、補教老師、鉗工工匠、職業軍人、電腦維修員、行銷人、保險規劃師、自幼好奇頑皮，喜愛探索新奇事物當個初心者，習慣使用跨領域的思維去尋找難題的解決之道。現正於未來學領域玩耍，望能習得一招半式嬉鬧於世界的角落。",
 		head: "img/member/林青岳.jpg"
+	},
+	{
+		index: 4,
+		ch_name: "林青岳",
+		job_title: " ",
+		en_name: "Cing-Yue Lin",
+		introduction: "是法律XDDD人、飛機修護員、補教老師、鉗工工匠、職業軍人、電腦維修員、行銷人、保險規劃師、自幼好奇頑皮，喜愛探索新奇事物當個初心者，習慣使用跨領域的思維去尋找難題的解決之道。現正於未來學領域玩耍，望能習得一招半式嬉鬧於世界的角落。",
+		head: "img/member/林青岳.jpg"
 	}
 ];
 
-(function() {
+function initMember() {
 	var target = $('#member-owl');
+	var editMember = $('#edit_member');
+	var deleteMember = $('#delete_member');
+
 	c.forEach(function(element, index, array) {
 		target.append(memberFactor(element.ch_name, element.en_name, element.job_title, element.head, element.index));
+		editMember.append(editMemberFactor(element.ch_name, element.head, element.index));
+		deleteMember.append(deleteMemberFactor(element.ch_name, element.head, element.index));
 	})
 
-})();
+};
+
+function deleteMemberFactor(ch_name, img, index){
+	return '<div class="col-sm-3">' +
+				ch_name +
+				'<button class="btn btn-default btn-lg" onclick="chooseDelete(this)" value="' + index + '">' +
+					'<img src="' + img + '" height="200px" width="auto">' +
+				'</button>' +
+			'</div>';
+}
+
+function editMemberFactor(ch_name, img, index){
+	return '<div class="col-sm-3">' +
+				ch_name +
+				'<button class="btn btn-default btn-lg choose_edit_member" onclick="chooseEdit(this)" value="' + index + '">' +
+					'<img src="' + img + '" height="200px" width="auto">' +
+				'</button>' +
+			'</div>';
+}
 
 function memberFactor(ch_name, en_name, job, head, index) {
 	return '<div id=' + index + ' class="mem item">' +
@@ -281,8 +339,9 @@ $(document).ready(function(){
 
 	$("#member-owl").owlCarousel({
 
+		autoPlay: true,
 		items : 4,
-		itemsDesktop : [1199,4],
+		itemsDesktop : [1199,3],
 		itemsDesktopSmall : [979,1],
 
 		//navigation: true,
@@ -417,3 +476,20 @@ $(document).ready(function() {
 	});
 
 });
+
+
+
+
+
+function imgReload(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#imgShow').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+
+    }

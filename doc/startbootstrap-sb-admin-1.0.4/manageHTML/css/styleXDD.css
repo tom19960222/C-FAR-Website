@@ -137,7 +137,7 @@ body {
     background-color: #2f2f2f;
     font-family: "Titillium Web", "微軟正黑體 Light", "微軟正黑體", sans-serif;
     font-weight: normal;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     -webkit-font-smoothing: antialiased !important;
 }
 
@@ -158,11 +158,15 @@ body {
 	top: 0;
 }
 
-#addForm, #deleteForm, #editForm {
+#addForm, #deleteForm, #editForm, #changeForm {
 	display: none;
 	margin: 5%;
 	padding: 10%;
 	background-color: white;
 	z-index: 1;
 
+}
+
+#choose_control{
+    display: none;
 }

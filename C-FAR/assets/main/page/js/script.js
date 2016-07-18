@@ -487,14 +487,27 @@ $(document).ready(function() {
 
 });
 
+$(document).ready(function() {
 
+	$("#owl-newthing").owlCarousel({
+		autoPlay: true,
+		items : 1,
+		itemsDesktop : [1199,1],
+		itemsDesktopSmall : [979,1],
+
+		navigation: true
+
+	});
+
+});
 
 $(document).ready(function(){
 
 	$("#member-owl").owlCarousel({
 
+		autoPlay: true,
 		items : 4,
-		itemsDesktop : [1199,4],
+		itemsDesktop : [1199,3],
 		itemsDesktopSmall : [979,1],
 
 		//navigation: true,

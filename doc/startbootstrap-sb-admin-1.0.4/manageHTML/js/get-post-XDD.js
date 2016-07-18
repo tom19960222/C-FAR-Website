@@ -9,7 +9,11 @@ var data_album = [
 	},
 
 	//... 20 objs
-]
+];
+var empty_photo;
+var choose_photo;
+
+
 
 function postADD_album() {
 	var postJSON = [];
@@ -42,3 +46,5 @@ function getData_album(){
 		}
 	});
 }
+
+

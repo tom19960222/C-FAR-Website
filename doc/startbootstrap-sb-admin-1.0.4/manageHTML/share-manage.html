@@ -234,7 +234,7 @@
                 <div class="row">
                     <div class="col-sm-11">
                         <h1 class="page-header">
-                            新增成員 <small>ADD MEMBER</small>
+                            新增分享 <small>ADD SHARE</small>
                         </h1>
                     </div>
                     <div class="col-sm-1">
@@ -244,18 +244,6 @@
                 <!-- /.row -->         
                 <br><br>
                 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <img id="imgShow" src="" alt="head image" height="250px">
-                            <br>
-                            <h3>上傳大頭照</h3>
-                            <input id="imgFile" type="file" accept="image/*" onchange="imgReload(this)">
-                            <p id="imgPath"></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -280,17 +268,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                          <div class="form-group">
-                            <h3>英文名稱</h3>
-                            <input class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                         <div class="form-group">
-                            <h3>自我介紹</h3>
+                            <h3>分享內容</h3>
                             <textarea class="form-control" rows="3"></textarea>
                         </div>
                     </div>
@@ -315,7 +293,7 @@
                 <div class="row">
                     <div class="col-sm-11">
                         <h1 class="page-header">
-                            刪除成員 <small>DELETE MEMBER</small>
+                            刪除分享 <small>DELETE SHARE</small>
                         </h1>
                     </div>
                     <div class="col-sm-1">
@@ -325,11 +303,8 @@
                 <!-- /.row -->         
                 <br><br>
                 
-                <div class="row">
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg" onclick="chooseDelete(this)">001</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg" onclick="chooseDelete(this)">002</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg" onclick="chooseDelete(this)">003</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg" onclick="chooseDelete(this)">004</button></div>
+                <div class="row" id="delete_share">
+                    <!-- Dynamical generated -->
                 </div>
                                     
                 <br><br>
@@ -356,33 +331,17 @@
                 <!-- /.row -->         
                 <br><br>
 
-                <div class="row">
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg edit" onclick="chooseEdit(this)">001</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg edit" onclick="chooseEdit(this)">002</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg edit" onclick="chooseEdit(this)">003</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg edit" onclick="chooseEdit(this)">004</button></div>
+                <div class="row" id="edit_share">
+                    <!-- Dynamical generated -->
                 </div>
                 <br><br>
 
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="form-group">
-                            <img id="imgShow" src="" alt="head image" height="250px">
-                            <br>
-                            <h3>上傳大頭照</h3>
-                            <input id="imgFile" type="file" accept="image/*" onchange="imgReload(this)">
-                            <p id="imgPath"></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
                          <div class="form-group">
                             <h3>姓名</h3>
-                            <input class="form-control">
+                            <input id="edit_author" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -392,27 +351,18 @@
                     <div class="col-lg-12">
                          <div class="form-group">
                             <h3>頭銜</h3>
-                            <input class="form-control">
+                            <input id="edit_job" class="form-control">
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
 
-                <div class="row">
-                    <div class="col-lg-12">
-                         <div class="form-group">
-                            <h3>英文名稱</h3>
-                            <input class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
 
                 <div class="row">
                     <div class="col-lg-12">
                          <div class="form-group">
-                            <h3>自我介紹</h3>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <h3>分享內容</h3>
+                            <textarea id="edit_content" class="form-control" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
@@ -451,18 +401,8 @@
 
 
     <script type="text/javascript">
-        function imgReload(input) {
-            if(input.files && input.files[0]){
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    $('#imgShow').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-            
-        }
+        
+        initShare();
 
         function enableADD() {
             $('#mask').css('display', 'block');
@@ -495,6 +435,7 @@
             $('#editForm').css('display', 'none');
         }
 
+
         function chooseEdit(button) {
             var btnClass = button.className;
             if(btnClass.includes('active')){
@@ -502,21 +443,37 @@
             }
             else{
                 btnClass += ' active';
-                $('.edit').removeClass('active');
+                $('.choose_edit_share').removeClass('active');
             }
 
             button.className = btnClass;
 
+            //set view
+            $('#edit_author')[0].value =  b[button.value-1].author;
+            $('#edit_job')[0].value =  b[button.value-1].job_title;
+            $('#edit_content')[0].value =  b[button.value-1].content;
         }
 
+
+
+        var deleteItem = [];
 
         function chooseDelete(button) {
             var btnClass = button.className;
 
-            if(btnClass.includes('active'))
+            if(btnClass.includes('active')){
                 btnClass = btnClass.replace(' active', '');
-            else
+
+                deleteItem.splice(deleteItem.indexOf(button.value), 1);
+                //from number button.value remove 1 item
+                console.log(deleteItem);
+            }
+            else{
                 btnClass += ' active';
+
+                deleteItem.push(button.value);
+                console.log(deleteItem);
+            }
 
             button.className = btnClass;
         }

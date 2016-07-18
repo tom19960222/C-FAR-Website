@@ -16,13 +16,11 @@
     <!-- <link href="css/plugins/morris.css" rel="stylesheet"> -->
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    
     <!-- Owl-carousel -->
     <link rel="stylesheet" type="text/css" href="owl-carousel/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="owl-carousel/owl.theme.css">
     <!-- Custom CSS Style By XDD -->
     <link rel="stylesheet" type="text/css" href="css/styleXDD.css">
-
     <!-- Font style -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -34,10 +32,6 @@
 </head>
 
 <body>
-
-
-
-
     <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -51,8 +45,6 @@
                 </button>
                 <a class="navbar-brand" href="index.html">C-FAR 管理</a>
             </div>
-
-
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
@@ -68,11 +60,6 @@
                     </ul>
                 </li>
             </ul>
-
-
-
-
-
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
@@ -95,17 +82,6 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-
-
-
-
-
-
-
-
-
-
-
         <div id="page-wrapper">
             <div class="container-fluid">
                 <!-- Page Heading -->
@@ -117,31 +93,7 @@
                     </div>
                 </div>
                 <!-- /.row -->
-
-
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-plus fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">新增相片</div>
-                                        <div>Add new photo</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#" onclick="enableADD()">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Add New Photo</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
                     
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-yellow">
@@ -151,14 +103,14 @@
                                         <i class="fa fa-trash fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">刪除相片</div>
-                                        <div>Delete photo</div>
+                                        <div class="huge">修改相片</div>
+                                        <div>Change photo</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" onclick="enableDELETE()">
+                            <a href="#" onclick="enableCHANGE()">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Delete Photo</span>
+                                    <span class="pull-left">Change Photo</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -167,23 +119,13 @@
                     </div>
                 </div>
                 <!-- /.row -->
-                
-
-
-                
             </div>
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
-
-
-
-
-
         <!--=== Slide 3 - Photo Album-->
         <div class="slide story" id="slide-3" data-slide="3" style="text-align: left;">
             <div class="container">
-        
                 <div class="row">
                     <div class="col-lg-12">
                         <h3 class="page-header">
@@ -192,8 +134,6 @@
                     </div>
                 </div>
                 <!-- /.row -->
-            
-
                 <div id="owl-img" class="owl-carousel owl-theme">
                     <!-- dynamically generated -->
                 </div>
@@ -201,29 +141,146 @@
             </div>
         </div>
         <!-- /slide3 -->
-        
+
 
 
         <!-- Show Edit Form -->
         <div id="mask"></div>
         
         <div class="formMember">
-            <div class="container" id="addForm">
+            <div class="container" id="changeForm">
                 <div class="row">
                     <div class="col-sm-11">
                         <h1 class="page-header">
-                            新增照片 <small>ADD PHOTO</small>
+                            修改照片 <small>CHANGE PHOTO</small>
                         </h1>
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" class="btn btn-default" onclick="disableADD()">Cancel</button>                            
+                        <button type="submit" class="btn btn-default" onclick="disableCHANGE()">Cancel</button>
                     </div>
                 </div>
-                <!-- /.row -->         
-                <br><br>
-                
+                <!-- /.row -->
+                <br>
+                <br>
+                <div class="row" style="margin-bottom: 30px">
+                    <div class="col-sm-3">01
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="1">
+                            <img src="" alt="" height="100px" width="auto" style="margin: 0 auto;">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">02
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="2">
+                            <img src="" alt="" height="100px" width="auto" style="margin: 0 auto;">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">03
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="3">
+                            <img src="" alt="" height="100px" width="auto" style="margin: 0 auto;">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">04
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="4">
+                            <img src="" alt="" height="100px" width="auto" style="margin: 0 auto;">
+                        </button>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 30px">
+                    <div class="col-sm-3">05
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="5">
+                            <img src="" alt="" height="100px" width="auto" style="margin: 0 auto;">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">06
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="6">
+                            <img src="" alt="" height="100px" width="auto" style="margin: 0 auto;">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">07
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="7">
+                            <img src="" alt="" height="100px" width="auto" style="margin: 0 auto;">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">08
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="8">
+                            <img src="" alt="" height="100px" width="auto" style="margin: 0 auto;">
+                        </button>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 30px">
+                    <div class="col-sm-3">09
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="9">
+                            <img src="" alt="" height="100px" width="auto" style="margin: 0 auto;">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">10
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="10">
+                            <img src="" alt="" height="100px" width="auto style="margin: 0 auto;"">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">11
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="11">
+                            <img src="" alt="" height="100px" width="auto style="margin: 0 auto;"">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">12
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="12">
+                            <img src="" alt="" height="100px" width="auto style="margin: 0 auto;"">
+                        </button>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 30px">
+                    <div class="col-sm-3">13
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="13">
+                            <img src="" alt="" height="100px" width="auto style="margin: 0 auto;"">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">14
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="14">
+                            <img src="" alt="" height="100px" width="auto style="margin: 0 auto;"">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">15
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="15">
+                            <img src="" alt="" height="100px" width="auto style="margin: 0 auto;"">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">16
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="16">
+                            <img src="" alt="" height="100px" width="auto style="margin: 0 auto;"">
+                        </button>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 30px">
+                    <div class="col-sm-3">17
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="17">
+                            <img src="" alt="" height="100px" width="auto style="margin: 0 auto;"">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">18
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="18">
+                            <img src="" alt="" height="100px" width="auto style="margin: 0 auto;"">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">19
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="19">
+                            <img src="" alt="" height="100px" width="auto style="margin: 0 auto;"">
+                        </button>
+                    </div>
+                    <div class="col-sm-3">20
+                        <button class="btn btn-default btn-lg change_album" onclick="chooseCHANGE(this)" value="20">
+                            <img src="" alt="" height="100px" width="auto style="margin: 0 auto;"">
+                        </button>
+                    </div>
+                </div>
+                <!-- /row -->
+                <br>
+                <br>
+                <div class="row" id="choose_control">
+                    <h2 class="show_choose_photo"></h2>
+                    <button class="btn btn-danger btn-sm" onclick="chooseDELETE()">DELETE</button>
+                    <br>
+                    <br>
 
-                <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
                             <img id="imgShow" src="#" alt="head image" height="250px">
@@ -235,144 +292,18 @@
                     </div>
                 </div>
                 <!-- /row -->
-                
-                <br><br>
-                <button type="submit" class="btn btn-default" onclick="postADD_album()">送出 Submit</button>
-
-            </div>
-        </div>
-        <!-- /add-member -->
 
 
-
-
-
-
-    
-        <div class="formMember">
-            <div class="container" id="deleteForm">
-                <div class="row">
-                    <div class="col-sm-11">
-                        <h1 class="page-header">
-                            刪除成員 <small>DELETE MEMBER</small>
-                        </h1>
-                    </div>
-                    <div class="col-sm-1">
-                        <button type="submit" class="btn btn-default" onclick="disableDELETE()">Cancel</button>                            
-                    </div>
-                </div>
-                <!-- /.row -->         
-                <br><br>
-                
-                <div class="row">
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg" onclick="chooseDelete(this)">001</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg" onclick="chooseDelete(this)">002</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg" onclick="chooseDelete(this)">003</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg" onclick="chooseDelete(this)">004</button></div>
-                </div>
-                                    
-                <br><br>
+                <br>
+                <br>
                 <button type="submit" class="btn btn-default">送出 Submit</button>
-
             </div>
         </div>
-
-
-
-
-        <div class="formMember">
-            <div class="container" id="editForm">
-                <div class="row">
-                    <div class="col-sm-11">
-                        <h1 class="page-header">
-                            修改內容 <small>EDIT CONTENT</small>
-                        </h1>
-                    </div>
-                    <div class="col-sm-1">
-                        <button type="submit" class="btn btn-default" onclick="disableEDIT()">Cancel</button>                            
-                    </div>
-                </div>
-                <!-- /.row -->         
-                <br><br>
-
-                <div class="row">
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg edit" onclick="chooseEdit(this)">001</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg edit" onclick="chooseEdit(this)">002</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg edit" onclick="chooseEdit(this)">003</button></div>
-                    <div class="col-sm-3"><button class="btn btn-default btn-lg edit" onclick="chooseEdit(this)">004</button></div>
-                </div>
-                <br><br>
-
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <img id="imgShow" src="" alt="head image" height="250px">
-                            <br>
-                            <h3>上傳大頭照</h3>
-                            <input id="imgFile" type="file" accept="image/*" onchange="imgReload(this)">
-                            <p id="imgPath"></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                         <div class="form-group">
-                            <h3>姓名</h3>
-                            <input class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                         <div class="form-group">
-                            <h3>頭銜</h3>
-                            <input class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                         <div class="form-group">
-                            <h3>英文名稱</h3>
-                            <input class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                         <div class="form-group">
-                            <h3>自我介紹</h3>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <br><br>
-                <button type="submit" class="btn btn-default">送出 Submit</button>
-
-            </div>
-        </div>
+        <!-- changeForm -->
 
 
     </div>
     <!-- /#wrapper -->
-
-
-
-
-
-
-
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -382,87 +313,48 @@
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
  -->
-
     <!-- Owl-carousel JavaScript -->
     <script src="owl-carousel/owl.carousel.js"></script>
     <!-- Setting Data By XDD -->
     <script type="text/javascript" src="js/scriptXDD.js"></script>
     <!-- Data GET/POST JavaScript -->
     <script type="text/javascript" src="js/get-post-XDD.js"></script>
-
-
     <script type="text/javascript">
-        function imgReload(input) {
-            if(input.files && input.files[0]){
-                var reader = new FileReader();
+    
+    initAlbum();
 
-                reader.onload = function(e) {
-                    $('#imgShow').attr('src', e.target.result);
-                }
+    function enableCHANGE() {
+        $('#mask').css('display', 'block');
+        $('.formMember').css('display', 'block');
+        $('#changeForm').css('display', 'block');
+    }
 
-                reader.readAsDataURL(input.files[0]);
-            }
-            
+    function disableCHANGE() {
+        $('#mask').css('display', 'none');
+        $('.formMember').css('display', 'none');
+        $('#changeForm').css('display', 'none');
+    }
+
+    function chooseCHANGE(button) {
+        var btnClass = button.className;
+
+        if (btnClass.includes('active')) {
+            btnClass = btnClass.replace(' active', '');
+        } else {
+            btnClass += ' active';
+            $('.change_album').removeClass('active');
         }
 
-        function enableADD() {
-            $('#mask').css('display', 'block');
-            $('.formMember').css('display', 'block');
-            $('#addForm').css('display', 'block');
-        }
-        function disableADD() {
-            $('#mask').css('display', 'none');
-            $('.formMember').css('display', 'none');
-            $('#addForm').css('display', 'none');
-        }
-        function enableDELETE() {
-            $('#mask').css('display', 'block');
-            $('.formMember').css('display', 'block');
-            $('#deleteForm').css('display', 'block');
-        }
-        function disableDELETE() {
-            $('#mask').css('display', 'none');
-            $('.formMember').css('display', 'none');
-            $('#deleteForm').css('display', 'none');
-        }
-        function enableEDIT() {
-            $('#mask').css('display', 'block');
-            $('.formMember').css('display', 'block');
-            $('#editForm').css('display', 'block');
-        }
-        function disableEDIT() {
-            $('#mask').css('display', 'none');
-            $('.formMember').css('display', 'none');
-            $('#editForm').css('display', 'none');
-        }
+        button.className = btnClass;
+        $('.show_choose_photo')[0].innerHTML = "選擇第" + button.value + "張照片";
+        $('#choose_control').css('display', 'block');
+        if(a[button.value-1] === undefined)
+            $('#imgShow')[0].setAttribute("src", "3");
+        else
+            $('#imgShow')[0].setAttribute("src", a[button.value-1].content);
+    }
 
-        function chooseEdit(button) {
-            var btnClass = button.className;
-            if(btnClass.includes('active')){
-                btnClass = btnClass.replace(' active', '');
-            }
-            else{
-                btnClass += ' active';
-                $('.edit').removeClass('active');
-            }
-
-            button.className = btnClass;
-
-        }
-
-
-        function chooseDelete(button) {
-            var btnClass = button.className;
-
-            if(btnClass.includes('active'))
-                btnClass = btnClass.replace(' active', '');
-            else
-                btnClass += ' active';
-
-            button.className = btnClass;
-        }
     </script>
-
 </body>
 
 </html>
