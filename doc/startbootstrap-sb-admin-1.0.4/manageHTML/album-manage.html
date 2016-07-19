@@ -296,7 +296,7 @@
 
                 <br>
                 <br>
-                <button type="submit" class="btn btn-default">送出 Submit</button>
+                <button type="submit" class="btn btn-default" onclick="postADD_album()">送出 Submit</button>
             </div>
         </div>
         <!-- changeForm -->
@@ -320,8 +320,10 @@
     <!-- Data GET/POST JavaScript -->
     <script type="text/javascript" src="js/get-post-XDD.js"></script>
     <script type="text/javascript">
+
+    fn_list.ajaxReq(fn_list.image_get);
     
-    initAlbum();
+
 
     function enableCHANGE() {
         $('#mask').css('display', 'block');
@@ -351,7 +353,7 @@
         if(a[button.value-1] === undefined)
             $('#imgShow')[0].setAttribute("src", "3");
         else
-            $('#imgShow')[0].setAttribute("src", a[button.value-1].content);
+            $('#imgShow')[0].setAttribute("src", a[button.value-1].path);
     }
 
     </script>

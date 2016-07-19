@@ -398,11 +398,15 @@
     <script src="owl-carousel/owl.carousel.js"></script>
     <!-- Setting Data By XDD -->
     <script type="text/javascript" src="js/scriptXDD.js"></script>
-
+    <script type="text/javascript" src="js/get-post-XDD.js"></script>
 
     <script type="text/javascript">
-        
-        initShare();
+        $(function(){
+            fn_list.ajaxReq(fn_list.message_get).done(function() {
+                console.log(b);
+                initShare();
+            });
+        })
 
         function enableADD() {
             $('#mask').css('display', 'block');

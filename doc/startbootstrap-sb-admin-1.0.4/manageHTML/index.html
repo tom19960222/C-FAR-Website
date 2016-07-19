@@ -445,11 +445,11 @@
     <script src="owl-carousel/owl.carousel.js"></script>
     <!-- Setting Data By XDD -->
     <script type="text/javascript" src="js/scriptXDD.js"></script>
-
+    <script type="text/javascript" src="js/get-post-XDD.js"></script>
 
     <script type="text/javascript">
         
-        initMember();
+        fn_list.ajaxReq(fn_list.member_get);
 
         function enableADD() {
             $('#mask').css('display', 'block');
