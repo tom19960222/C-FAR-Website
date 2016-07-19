@@ -213,7 +213,7 @@ var mq = window.matchMedia( "(max-width: 750px)" );
 $(document).ready(function(e) {
 	$('.mem').mouseenter(
 		function(){
-			changeMember(this.getAttribute('id'), this);
+			changeMember(this.getAttribute('id')-1, this);
 		}
 	)
 });
@@ -233,7 +233,8 @@ function changeMember(num, mem){
 
 	if(lastmem === mem) return;
 	
-	// console.log(a);
+	console.log(a);
+	console.log(num);
 	document.getElementById('member').innerHTML = a[num].introduction;
 
 

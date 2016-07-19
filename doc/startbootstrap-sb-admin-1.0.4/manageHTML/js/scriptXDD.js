@@ -42,7 +42,7 @@ function initAlbum() {
 
 	console.log(a);
 	a.forEach(function(element, index, array) {
-		target.append(photoFactor(element.path));
+		target.data('owlCarousel').addItem(photoFactor(element.path));
 		changeAlbum[element.image_id-1].setAttribute("src", element.path);
 	})
 
@@ -144,14 +144,12 @@ function initShare() {
 	var editShare = $('#edit_share');
 	var deleteShare = $('#delete_share');
 
-	console.log(b);
 
 	b.forEach(function(element, index, array) {
-		target.append(shareFactor(element.content, element.author, element.job_title));
+		target.data('owlCarousel').addItem(shareFactor(element.content, element.author, element.job_title));
 		editShare.append(editShareFactor(element.author, element.job_title, element.message_id));
 		deleteShare.append(deleteShareFactor(element.author, element.job_title, element.message_id));
 	})
-
 };
 
 function editShareFactor(ch_name, job, index){
@@ -198,7 +196,6 @@ $(document).ready(function() {
 		items : 3,
 		itemsDesktop : [1199,3],
 		itemsDesktopSmall : [979,3]
-
 	});
 
 });
@@ -265,11 +262,12 @@ function initMember() {
 
 	console.log(c);
 	c.forEach(function(element, index, array) {
-		target.append(memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id));
+		target.data('owlCarousel').addItem(memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id));
 		editMember.append(editMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
 		deleteMember.append(deleteMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
 	})
 
+	showIntro();
 };
 
 function deleteMemberFactor(ch_name, img, index){
@@ -292,7 +290,9 @@ function editMemberFactor(ch_name, img, index){
 
 function memberFactor(ch_name, en_name, job, head, index) {
 	return '<div id=' + index + ' class="mem item">' +
-				'<p>' +	'<img src="' + head + '" style="height: 250px;">' + '</p>' +
+				'<p style="height: 250px; width: 200px; overflow: hidden; margin: 0 auto;">' +	
+					'<img src="' + head + '" style="height: 250px;">' + 
+				'</p>' +
 				'<h2 class="font-semibold" style=" font-size: 30px; padding-bottom: 10px">' +
 					ch_name + '<br>' +
 					job + '<br>' +
@@ -307,13 +307,14 @@ function memberFactor(ch_name, en_name, job, head, index) {
 //media is mobile
 var mq = window.matchMedia( "(max-width: 750px)" );
 
-$(document).ready(function(e) {
+function showIntro(e) {
 	$('.mem').mouseenter(
 		function(){
-			changeMember(this.getAttribute('id'), this);
+			console.log(this);
+			changeMember(this.getAttribute('id')-1, this);
 		}
 	)
-});
+};
 
 
 function getEventTarget(e) {
@@ -330,7 +331,6 @@ function changeMember(num, mem){
 
 	if(lastmem === mem) return;
 	
-	// console.log(a);
 	document.getElementById('member').innerHTML = a[num].introduction;
 
 
@@ -363,7 +363,8 @@ $(document).ready(function(){
 
 
 //future page - article
-var d = [
+var d = [];
+var da = [
 	{
 		background: "img/future/f10.png",
 		title: "何謂隱現議題（emerging issue）",
@@ -438,7 +439,7 @@ var d = [
 (function() {
 	var target = $('#owl-future');
 	d.forEach(function(element, index, array) {
-		target.append(futureFactor(element.background, element.title, element.author, element.link));
+		target.data('owlCarousel').addItem(futureFactor(element.background, element.title, element.author, element.link));
 	})
 
 })();
@@ -492,7 +493,7 @@ function imgReload(input) {
             var reader = new FileReader();
 
             reader.onload = function(e) {
-                $('#imgShow').attr('src', e.target.result);
+                $(input).siblings('img').attr('src', e.target.result);
             }
 
             reader.readAsDataURL(input.files[0]);

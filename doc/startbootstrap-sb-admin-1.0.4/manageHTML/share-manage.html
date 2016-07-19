@@ -249,7 +249,7 @@
                     <div class="col-lg-12">
                          <div class="form-group">
                             <h3>姓名</h3>
-                            <input class="form-control">
+                            <input id="add_name" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -259,7 +259,7 @@
                     <div class="col-lg-12">
                          <div class="form-group">
                             <h3>頭銜</h3>
-                            <input class="form-control">
+                            <input id="add_job" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -269,15 +269,14 @@
                     <div class="col-lg-12">
                          <div class="form-group">
                             <h3>分享內容</h3>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea id="add_content" class="form-control" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
                 
                 <br><br>
-                <button type="submit" class="btn btn-default">送出 Submit</button>
-
+                <button type="submit" class="btn btn-default" onclick="formSubmit.message_add()">送出 Submit</button>
             </div>
         </div>
         <!-- /add-member -->
