@@ -174,9 +174,10 @@ function deleteShareFactor(ch_name, job, index){
 function shareFactor(content, author, job){
 	return '<div class="row subtitle-row">' +
 				'<div class="col-sm-1 hidden-sm">&nbsp;</div>' +
-				'<div class="col-12 col-sm-10 font-semibold content-font" style="font-size: 20px;">' +
+				'<div class="col-12 col-sm-10 font-semibold content-font" style="font-size: 20px; word-wrap:break-word;">' +
 					'<i class="fa fa-commenting-o fa-2x"></i><br>' +
-						content + '<br><br>' +
+						content +  
+						'<br><br>' +
 					'<p class="font-light" style="font-size: 18px; text-align: right; font-style: italic;">' +
 						author +
 						'<span style="font-size: 15px">' +

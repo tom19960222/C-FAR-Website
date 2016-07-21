@@ -8,7 +8,9 @@ var fn_list = {
 
 	image_get: 		{url: "http://cfar.hsexpert.net/image", method: "GET"},
 	image_add: 		{url: "http://cfar.hsexpert.net/image", method: "POST"},
-	image_update: 	{url: "http://cfar.hsexpert.net/image", method: "PUT"},
+	image_edit: function(image_id) {
+		return	{url: "http://cfar.hsexpert.net/image/" + image_id, method: "PUT"}		
+	},
 
 	member_get: 	{url: "http://cfar.hsexpert.net/member", method: "GET"},
 	member_add: 	{url: "http://cfar.hsexpert.net/member", method: "POST"},
@@ -18,7 +20,6 @@ var fn_list = {
 	message_get: 	{url: "http://cfar.hsexpert.net/message", method: "GET"},
 	message_add: 	{url: "http://cfar.hsexpert.net/message", method: "POST"},
 	message_edit: 	{url: "http://cfar.hsexpert.net/message", method: "PUT"},
-	message_delete: {url: "http://cfar.hsexpert.net/message", method: "DELETE"},
 
 	article_get: 	{url: "http://cfar.hsexpert.net/article", method: "GET"},
 	article_add: 	{url: "http://cfar.hsexpert.net/article", method: "POST"},
@@ -57,9 +58,14 @@ var fn_list = {
 	    				b = data;
 	    			break;
 
-	    			case fn_list.member_add:
-	    			case fn_list.message_add:
-	    			case fn_list.image_add:
+	    			// case fn_list.member_add:
+	    			// case fn_list.message_add:
+	    			// case fn_list.image_add:
+
+	    			// case fn_list.image_edit:
+	    			// case fn_list.message_edit:
+
+	    			default:
 	    				alert(status);
 	    				window.location.reload();
 	    			break;
@@ -94,7 +100,7 @@ var formSubmit = {
 				isFillBlank = true;
 		}
 		if(isFillBlank === true){
-			alert("清輸入完整資料!!");
+			alert("請輸入完整資料!!");
 			return;
 		}
 		else{
@@ -121,17 +127,11 @@ var formSubmit = {
 
 		}
 		
-		if(img.delete_img === true){
-
-		}
-		
-		else if(img.choose_img.img_src === "" && img.delete_img === false){
+		if(img.choose_img.img_src === "")
 			formSubmit.image_add();
-		}
-
-		else {
-
-		}
+		else 
+			formSubmit.image_edit();
+		
 
 	},
 
@@ -144,12 +144,21 @@ var formSubmit = {
 		fn_list.ajaxReq(fn_list.image_add, data);	
 	},
 
+	image_edit: function () {
+		var data = {
+			filename: img.update_img.filename,
+			content: img.update_img.content
+		}
+
+		fn_list.ajaxReq(fn_list.image_edit(img.choose_img.img_id), data);
+	},
+
 
 	message_add: function() {
 		var data = {
-			author: $('#add_name')[0].value,
+			author: $('#add_author')[0].value,
 			job_title: $('#add_job')[0].value,
-			content: $('#add_content')[0].value,
+			content: $('#add_content')[0].value
 		};
 
 		var isFillBlank = false;
@@ -158,12 +167,37 @@ var formSubmit = {
 				isFillBlank = true;
 		}
 		if(isFillBlank === true){
-			alert("清輸入完整資料!!");
+			alert("請輸入完整資料!!");
 			return;
 		}
 		else{
 			console.log(data);
 			fn_list.ajaxReq(fn_list.message_add, data);
+		}
+	},
+
+	message_edit: function () {
+		var data = [
+			{
+				message_id: message_id,
+				author: $('#edit_author')[0].value,
+				job_title: $('#edit_job')[0].value,
+				content: $('#edit_content')[0].value
+			}
+		];
+
+		var isFillBlank = false;
+		for(element in data) {
+			if(data[element] === "" || data[element] === window.location.href)
+				isFillBlank = true;
+		}
+		if(isFillBlank === true){
+			alert("請輸入完整資料!!");
+			return;
+		}
+		else{
+			console.log(data);
+			fn_list.ajaxReq(fn_list.message_edit, data);
 		}
 	}
 }

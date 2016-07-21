@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SB Admin - Bootstrap Admin Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/main/manageHTML/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/main/manageHTML/css/sb-admin.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <!-- <link href="assets/main/manageHTML/css/plugins/morris.css" rel="stylesheet"> -->
+    <!-- Custom Fonts -->
+    <link href="assets/main/manageHTML/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Owl-carousel -->
+    <link rel="stylesheet" type="text/css" href="assets/main/manageHTML/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="assets/main/manageHTML/owl-carousel/owl.theme.css">
+    <!-- Custom CSS Style By XDD -->
+    <link rel="stylesheet" type="text/css" href="assets/main/manageHTML/css/styleXDD.css">
+
+    <!-- Font style -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+
+
+
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">C-FAR 管理</a>
+            </div>
+
+
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> User <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
+
+
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="/member-manage"><i class="fa fa-fw fa-dashboard"></i> 故事。中心成員</a>
+                    </li>
+                    <li>
+                        <a href="/album-manage"><i class="fa fa-fw fa-bar-chart-o"></i> 本事。相簿編輯</a>
+                    </li>
+                    <li class="active">
+                        <a href="/share-manage"><i class="fa fa-fw fa-table"></i> 本事。學生分享</a>
+                    </li>
+                    <li>
+                        <a href="/article-manage"><i class="fa fa-fw fa-edit"></i> 未來事。文章分享</a>
+                    </li>
+                    <li>
+                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> 最新消息</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+
+
+
+
+
+
+
+
+
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            學生分享 <small>本事</small>
+                        </h1>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-plus fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">新增分享</div>
+                                        <div>Add new share</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" onclick="enableADD()">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Add New share</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-pencil fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">修改內容</div>
+                                        <div>Edit content</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" onclick="enableEDIT()">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Edit Content</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                
+
+
+                
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+
+
+
+
+        <!-- === Slide 4 - Student Share === -->
+        <div class="slide story" id="slide-4" data-slide="4"
+             style="text-align: left; padding-top: 0;">
+            <div class="container">
+        
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="page-header">
+                            預覽顯示 <small>學生分享</small>
+                        </h3>
+                    </div>
+                </div>
+                <!-- /.row -->
+            
+
+                <div id="owl-share" class="owl-carousel">
+                    <!-- dynamically generated -->
+                </div>
+                <!-- /container -->
+            </div>
+        </div>
+        <!-- /slide4 -->
+        
+
+
+        <!-- Show Edit Form -->
+        <div id="mask"></div>
+        
+        <div class="formMember">
+            <div class="container" id="addForm">
+                <div class="row">
+                    <div class="col-sm-11">
+                        <h1 class="page-header">
+                            新增分享 <small>ADD SHARE</small>
+                        </h1>
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="submit" class="btn btn-default" onclick="disableADD()">Cancel</button>                            
+                    </div>
+                </div>
+                <!-- /.row -->         
+                <br><br>
+                
+
+                <div class="row">
+                    <div class="col-lg-12">
+                         <div class="form-group">
+                            <h3>姓名</h3>
+                            <input id="add_author" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                         <div class="form-group">
+                            <h3>頭銜</h3>
+                            <input id="add_job" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                         <div class="form-group">
+                            <h3>分享內容</h3>
+                            <textarea id="add_content" class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+                
+                <br><br>
+                <button type="submit" class="btn btn-default" onclick="formSubmit.message_add()">送出 Submit</button>
+            </div>
+        </div>
+        <!-- /add-member -->
+
+
+
+        <div class="formMember">
+            <div class="container" id="editForm">
+                <div class="row">
+                    <div class="col-sm-11">
+                        <h1 class="page-header">
+                            修改內容 <small>EDIT CONTENT</small>
+                        </h1>
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="submit" class="btn btn-default" onclick="disableEDIT()">Cancel</button>                            
+                    </div>
+                </div>
+                <!-- /.row -->         
+                <br><br>
+
+                <div class="row" id="edit_share">
+                    <!-- Dynamical generated -->
+                </div>
+                <br><br>
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                         <div class="form-group">
+                            <h3>姓名</h3>
+                            <input id="edit_author" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                         <div class="form-group">
+                            <h3>頭銜</h3>
+                            <input id="edit_job" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                         <div class="form-group">
+                            <h3>分享內容</h3>
+                            <textarea id="edit_content" class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+
+                <br><br>
+                <button type="submit" class="btn btn-default" onclick="formSubmit.message_edit()">送出 Submit</button>
+
+            </div>
+        </div>
+
+
+    </div>
+    <!-- /#wrapper -->
+
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="assets/main/manageHTML/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/main/manageHTML/js/bootstrap.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <!-- <script src="assets/main/manageHTML/js/plugins/morris/raphael.min.js"></script>
+    <script src="assets/main/manageHTML/js/plugins/morris/morris.min.js"></script>
+    <script src="assets/main/manageHTML/js/plugins/morris/morris-data.js"></script>
+ -->
+
+    <!-- Owl-carousel JavaScript -->
+    <script src="assets/main/manageHTML/owl-carousel/owl.carousel.js"></script>
+    <!-- Setting Data By XDD -->
+    <script type="text/javascript" src="assets/main/manageHTML/js/scriptXDD.js"></script>
+    <script type="text/javascript" src="assets/main/manageHTML/js/get-post-XDD.js"></script>
+
+    <script type="text/javascript">
+        var message_id = -1;
+
+        $(function(){
+            fn_list.ajaxReq(fn_list.message_get).done(function() {
+                console.log(b);
+                initShare();
+            });
+        })
+
+        function enableADD() {
+            $('#mask').css('display', 'block');
+            $('.formMember').css('display', 'block');
+            $('#addForm').css('display', 'block');
+        }
+        function disableADD() {
+            $('#mask').css('display', 'none');
+            $('.formMember').css('display', 'none');
+            $('#addForm').css('display', 'none');
+        }
+        function enableDELETE() {
+            $('#mask').css('display', 'block');
+            $('.formMember').css('display', 'block');
+            $('#deleteForm').css('display', 'block');
+        }
+        function disableDELETE() {
+            $('#mask').css('display', 'none');
+            $('.formMember').css('display', 'none');
+            $('#deleteForm').css('display', 'none');
+        }
+        function enableEDIT() {
+            $('#mask').css('display', 'block');
+            $('.formMember').css('display', 'block');
+            $('#editForm').css('display', 'block');
+        }
+        function disableEDIT() {
+            $('#mask').css('display', 'none');
+            $('.formMember').css('display', 'none');
+            $('#editForm').css('display', 'none');
+        }
+
+
+        function chooseEdit(button) {
+            var btnClass = button.className;
+            message_id = button.value;
+
+            if(btnClass.includes('active')){
+                btnClass = btnClass.replace(' active', '');
+            }
+            else{
+                btnClass += ' active';
+                $('.choose_edit_share').removeClass('active');
+            }
+
+            button.className = btnClass;
+
+            //set view
+            $('#edit_author')[0].value =  b[button.value-1].author;
+            $('#edit_job')[0].value =  b[button.value-1].job_title;
+            $('#edit_content')[0].value =  b[button.value-1].content;
+        }
+
+
+
+        var deleteItem = [];
+
+        function chooseDelete(button) {
+            var btnClass = button.className;
+
+            if(btnClass.includes('active')){
+                btnClass = btnClass.replace(' active', '');
+
+                deleteItem.splice(deleteItem.indexOf(button.value), 1);
+                //from number button.value remove 1 item
+                console.log(deleteItem);
+            }
+            else{
+                btnClass += ' active';
+
+                deleteItem.push(button.value);
+                console.log(deleteItem);
+            }
+
+            button.className = btnClass;
+        }
+    </script>
+
+</body>
+
+</html>
