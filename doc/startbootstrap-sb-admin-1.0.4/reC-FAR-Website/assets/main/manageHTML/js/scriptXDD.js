@@ -1,4 +1,4 @@
-//work page - Photo Album 
+//work page - Photo Album  
 var a;
 var ab = [
 	{
@@ -363,8 +363,8 @@ $(document).ready(function(){
 
 
 //future page - article
-var d = [];
-var da = [
+var da = [];
+var d = [
 	{
 		background: "img/future/f10.png",
 		title: "何謂隱現議題（emerging issue）",
@@ -436,13 +436,14 @@ var da = [
 	}
 ];
 
-(function() {
+function initArticle() {
 	var target = $('#owl-future');
+	console.log(target);
 	d.forEach(function(element, index, array) {
 		target.data('owlCarousel').addItem(futureFactor(element.background, element.title, element.author, element.link));
 	})
 
-})();
+}
 
 function futureFactor(bg, title, author, link) {
 	return '<div class="item" style="padding-bottom: 10%">' +

@@ -241,6 +241,37 @@ var formSubmit = {
 			console.log(data);
 			fn_list.ajaxReq(fn_list.message_edit, data);
 		}
+	},
+
+	article_add: function () {
+		var data = {
+			author: $('#add_author')[0].value,
+			title: $('#add_title')[0].value,
+			background_data: $('#add_background_data')[0].src.split(',')[1],
+			background_filename: $('#add_background_file')[0].value.replace(/.*[\/\\]/, ''),
+			content:[]
+		};
+
+		$('#add-content > div').each(function() {
+			if($(this).attr('class') === "text"){
+				data.content.push({
+					type: "content",
+					content: $(this).find('textarea')[0].value
+				});
+			}
+			else if($(this).attr('class') === "img"){
+				data.content.push({
+					type: "image",
+					image_data: $(this).find('img')[0].src.split(',')[1],
+					image_filename: $(this).find('input')[0].value.replace(/.*[\/\\]/, '')
+				});
+			}
+			else
+				alert("解析錯誤");
+		});
+
+		console.log(JSON.stringify(data));
+
 	}
 }
 
@@ -301,8 +332,8 @@ function getData_album(){
    
     var fso = new ActiveXObject('Scripting.FileSystemObject');
 
-    var file='img_add_test.txt';
-    var folder ='F:\\work\\HTMLpackage\\C-FAR-Website\\doc\\startbootstrap-sb-admin-1.0.4\\manageHTML\\js\\';
+    var file='XDD.txt';
+    var folder ='E:\\work\\HTMLpackage\\C-FAR-Website\\doc\\startbootstrap-sb-admin-1.0.4\\manageHTML\\js\\';
     var f=folder+file;
 
     var s = fso.CreateTextFile(f, true);
