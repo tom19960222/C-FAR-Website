@@ -250,6 +250,20 @@ function changeMember(num, mem){
 //future page - article
 var d = [
 	{
+        article_id: 12,
+        background: "assets/main/page/images/future/f12.png",
+        title: "允諾一個綠色的未來：食物回收APP",
+        author: "李長潔",
+        link: "/twelve"
+	},
+	{
+        article_id: 11,
+        background: "assets/main/page/images/future/f11.png",
+        title: "未來共畫：看見我們的未來想像",
+        author: "李長潔",
+        link: "/eleven"
+	},
+	{
 		article_id: 10,
 		background: "assets/main/page/images/future/f10.png",
 		title: "何謂隱現議題（emerging issue）",

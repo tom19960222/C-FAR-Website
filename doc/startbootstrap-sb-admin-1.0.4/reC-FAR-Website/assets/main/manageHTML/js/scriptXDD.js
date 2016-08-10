@@ -363,73 +363,73 @@ $(document).ready(function(){
 
 
 //future page - article
-var da = [];
-var d = [
+var d = [];
+var da = [
 	{
-		background: "img/future/f10.png",
+		background_url: "img/future/f10.png",
 		title: "何謂隱現議題（emerging issue）",
 		author: "李長潔",
 		link: "/ten"
 	},
 
 	{
-		background: "img/future/f9.png",
+		background_url: "img/future/f9.png",
 		title: "台灣未來將邁向何處 公民願望大調查",
 		author: "李長潔",
 		link: "/nine"
 	},
 
 	{
-		background: "img/future/f8.png",
+		background_url: "img/future/f8.png",
 		title: "日劇裡的科技社會變遷 黑柳徹子的《荳荳電視台》",
 		author: "李長潔",
 		link: "/eight"
 	},
 
 	{
-		background: "img/future/f7.png",
+		background_url: "img/future/f7.png",
 		title: "規劃人生的十年",
 		author: "邱懷瑤",
 		link: "/seven"
 	},
 
 	{
-		background: "img/future/f6.png",
+		background_url: "img/future/f6.png",
 		title: "透過情境分析開創未來",
 		author: "",
 		link: "/six"
 	},
 
 	{
-		background: "img/future/f5.png",
+		background_url: "img/future/f5.png",
 		title: "何謂未來情境(scenarios)？",
 		author: "李長潔",
 		link: "/five"
 	},
 
 	{
-		background: "img/future/f4.png",
+		background_url: "img/future/f4.png",
 		title: "創新X創意：跳出框架思考",
 		author: "邱懷瑤",
 		link: "/four"
 	},
 
 	{
-		background: "img/future/f3.jpg",
+		background_url: "img/future/f3.jpg",
 		title: "香港作為一種未來城市想像",
 		author: "李長潔",
 		link: "/three"
 	},
 
 	{
-		background: "img/future/f2.jpg",
+		background_url: "img/future/f2.jpg",
 		title: "《回到未來》中的未來就是今天時，我們實現了什麼？",
 		author: "李長潔",
 		link: "/two"
 	},
 
 	{
-		background: "img/future/f1.jpg",
+		background_url: "img/future/f1.jpg",
 		title: "遠見預測真是無用？",
 		author: "李長潔",
 		link: "/one"
@@ -438,19 +438,27 @@ var d = [
 
 function initArticle() {
 	var target = $('#owl-future');
-	console.log(target);
+	var editArticle = $('#edit_article');
+	var deleteArticle = $('#delete_article');
+
+	d.reverse();
+	console.log(d);
+
 	d.forEach(function(element, index, array) {
-		target.data('owlCarousel').addItem(futureFactor(element.background, element.title, element.author, element.link));
+		target.data('owlCarousel').addItem(articleFactor(element.background_url, element.title, element.author, element.link));
+		editArticle.append(editArticleFactor(element.title, element.author, element.article_id));
+		deleteArticle.append(deleteArticleFactor(element.title, element.author, element.article_id));
+
 	})
 
 }
 
-function futureFactor(bg, title, author, link) {
+function articleFactor(bg, title, author, link) {
 	return '<div class="item" style="padding-bottom: 10%">' +
 				'<div class="demo-card-wide mdl-card mdl-shadow--4dp"' + 
 					' style="width: 90%;position: relative; margin: 2% 5% auto">' + 
 					'<div class="mdl-card__title"' +
-						'style="background-image: url(' + bg + '); height: 300px; color: white; padding: 0">' +
+						'style="background-image: url(' + bg + '); height: 300px; color: white; padding: 0; background-size: cover; background-position: 50% 50%;">' +
 						'<div style="background-color: rgba(0, 0, 0, 0.4); height: inherit; width: 100%; position: absolute"></div>' +
 						'<h2 class="mdl-card__title-text" style=" padding: 10px; text-align: left; z-index: 1;' +
 							'font-size: 35px; font-family: \'微軟正黑體 Light\';">' +
@@ -469,6 +477,25 @@ function futureFactor(bg, title, author, link) {
 				'</div>' +
 			'</div>';
 }
+
+function deleteArticleFactor(title, author, index){
+	return '<div class="col-sm-3">' +
+				'<button class="btn btn-default btn-lg" onclick="chooseDelete(this)" value="' + index + '">' +
+					title + '<br>' + 
+					author +
+				'</button>' +
+			'</div>';
+}
+
+function editArticleFactor(title, author, index){
+	return '<div class="col-sm-3">' +
+				'<button class="btn btn-default btn-lg choose_edit_member" onclick="chooseEdit(this)" value="' + index + '">' +
+					title + '<br>' + 
+					author +
+				'</button>' +
+			'</div>';
+}
+
 
 //animate
 $(document).ready(function() {

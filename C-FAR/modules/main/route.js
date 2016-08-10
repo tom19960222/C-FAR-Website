@@ -70,6 +70,14 @@ router.get('/ten', function(req, res){
     res.render('future10');
 });
 
+router.get('/eleven', function(req, res) {
+    res.render('future11');
+});
+
+router.get('/twelve', function(req, res) {
+    res.render('future12');
+});
+
 
 
 router.get('/error', function(req, res){

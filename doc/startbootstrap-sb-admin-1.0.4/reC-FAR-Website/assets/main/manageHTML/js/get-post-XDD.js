@@ -3,28 +3,31 @@
 
 var fn_list = {
 
-	user_login: 	{url: "http://cfar.hsexpert.net/user/login", method: "POST"},
-	user_add: 		{url: "http://cfar.hsexpert.net/user/add", method: "POST"},
+	user_login: 	{fn_name: "user_login", url: "http://cfar.hsexpert.net/user/login", method: "POST"},
+	user_add: 		{fn_name: "user_add", url: "http://cfar.hsexpert.net/user/add", method: "POST"},
 
-	image_get: 		{url: "http://cfar.hsexpert.net/image", method: "GET"},
-	image_add: 		{url: "http://cfar.hsexpert.net/image", method: "POST"},
+	image_get: 		{fn_name: "image_get", url: "http://cfar.hsexpert.net/image", method: "GET"},
+	image_add: 		{fn_name: "image_add", url: "http://cfar.hsexpert.net/image", method: "POST"},
 	image_edit: function(image_id) {
-		return	{url: "http://cfar.hsexpert.net/image/" + image_id, method: "PUT"}		
+		return	{fn_name: "image_edit", url: "http://cfar.hsexpert.net/image/" + image_id, method: "PUT"}		
 	},
 
-	member_get: 	{url: "http://cfar.hsexpert.net/member", method: "GET"},
-	member_add: 	{url: "http://cfar.hsexpert.net/member", method: "POST"},
-	member_edit: 	{url: "http://cfar.hsexpert.net/member", method: "PUT"},
-	member_delete: 	{url: "http://cfar.hsexpert.net/member", method: "DELETE"},
+	member_get: 	{fn_name: "member_get", url: "http://cfar.hsexpert.net/member", method: "GET"},
+	member_add: 	{fn_name: "member_add", url: "http://cfar.hsexpert.net/member", method: "POST"},
+	member_edit: 	{fn_name: "member_edit", url: "http://cfar.hsexpert.net/member", method: "PUT"},
+	member_delete: 	{fn_name: "member_delete", url: "http://cfar.hsexpert.net/member", method: "DELETE"},
 
-	message_get: 	{url: "http://cfar.hsexpert.net/message", method: "GET"},
-	message_add: 	{url: "http://cfar.hsexpert.net/message", method: "POST"},
-	message_edit: 	{url: "http://cfar.hsexpert.net/message", method: "PUT"},
+	message_get: 	{fn_name: "message_get", url: "http://cfar.hsexpert.net/message", method: "GET"},
+	message_add: 	{fn_name: "message_add", url: "http://cfar.hsexpert.net/message", method: "POST"},
+	message_edit: 	{fn_name: "message_edit", url: "http://cfar.hsexpert.net/message", method: "PUT"},
 
-	article_get: 	{url: "http://cfar.hsexpert.net/article", method: "GET"},
-	article_add: 	{url: "http://cfar.hsexpert.net/article", method: "POST"},
-	article_edit: 	{url: "http://cfar.hsexpert.net/article", method: "PUT"},
-	article_delete: {url: "http://cfar.hsexpert.net/article", method: "DELETE"},
+	article_get: 	{fn_name: "article_get", url: "http://cfar.hsexpert.net/article", method: "GET"},
+	article_get_one: function (article_id) {
+		return	{fn_name: "article_get_one", url: "http://cfar.hsexpert.net/article/" + article_id, method: "GET"}
+	},
+	article_add: 	{fn_name: "article_add", url: "http://cfar.hsexpert.net/article", method: "POST"},
+	article_edit: 	{fn_name: "article_edit", url: "http://cfar.hsexpert.net/article", method: "PUT"},
+	article_delete: {fn_name: "article_delete", url: "http://cfar.hsexpert.net/article", method: "DELETE"},
 
 	ajaxReq: function (doFn, data) {
 		var dfrd = $.Deferred();
@@ -39,31 +42,33 @@ var fn_list = {
 			success: function (data, status) {
 				console.log(status);
 
-				switch(doFn){
-					case fn_list.image_get:
+
+				switch(doFn.fn_name){
+					case "image_get":
 						data.forEach(function(element, index, array) {
 							element.path = "http://cfar.hsexpert.net" + element.path;
 						})
 						a = data;
 	    			break;
 
-	    			case fn_list.member_get:
+	    			case "member_get":
 	    				data.forEach(function(element, index, array) {
 	    					element.head_pic_url = "http://cfar.hsexpert.net" + element.head_pic_url;
 	    				})
 	    				c = data;
 	    			break;
 
-	    			case fn_list.message_get:
+	    			case "message_get":
 	    				b = data;
 	    			break;
 
-	    			// case fn_list.member_add:
-	    			// case fn_list.message_add:
-	    			// case fn_list.image_add:
-
-	    			// case fn_list.image_edit:
-	    			// case fn_list.message_edit:
+	    			case "article_get":
+	    				d = data;
+	    			break;
+    				
+    				case "article_get_one":
+    					chooseArticle = data;
+    				break;
 
 	    			default:
 	    				alert(status);
@@ -252,6 +257,17 @@ var formSubmit = {
 			content:[]
 		};
 
+		var isFillBlank = false;
+		for(element in data) {
+			if(data[element] === "" || data[element] === window.location.href)
+				isFillBlank = true;
+		}
+		if(isFillBlank === true){
+			alert("請輸入完整資料!!");
+			return;
+		}
+
+
 		$('#add-content > div').each(function() {
 			if($(this).attr('class') === "text"){
 				data.content.push({
@@ -270,8 +286,77 @@ var formSubmit = {
 				alert("解析錯誤");
 		});
 
-		console.log(JSON.stringify(data));
+		
+		fn_list.ajaxReq(fn_list.article_add, data);
+	},
 
+	article_edit: function () {
+		var data = [
+			{
+				article_id: chooseArticle.article_id,
+				author: $('#edit_author')[0].value,
+				title: $('#edit_title')[0].value,
+				content:[]
+			}
+		];
+
+		if($('#edit_background_file')[0].value !== ""){
+			data[0].head_pic_data = $('#edit_background_data')[0].src.split(',')[1];
+			data[0].head_pic_filename = $('#edit_background_file')[0].value.replace(/.*[\/\\]/, '');
+		}
+
+		var isFillBlank = false;
+		for(element in data[0]) {
+			if(data[0][element] === "" || data[0][element] === window.location.href)
+				isFillBlank = true;
+		}
+		if(isFillBlank === true){
+			alert("請輸入完整資料!!");
+			return;
+		}
+
+
+		$('#edit-content > div').each(function() {
+			if($(this).attr('class') === "text"){
+				data[0].content.push({
+					type: "content",
+					content: $(this).find('textarea')[0].value
+				});
+			}
+			else if($(this).attr('class') === "img"){
+
+				if($(this).find('input')[0].value === ""){
+					data[0].content.push({
+						type: "image",
+						image_url: $(this).find('img')[0].src
+					});
+				}
+
+				else{
+					data[0].content.push({
+						type: "image",
+						image_data: $(this).find('img')[0].src.split(',')[1],
+						image_filename: $(this).find('input')[0].value.replace(/.*[\/\\]/, '')
+					});
+				}
+			}
+			else
+				alert("解析錯誤");
+		});
+
+		console.log(data);
+		fn_list.ajaxReq(fn_list.article_edit, data);
+	},
+
+	article_delete: function () {
+		var data = {
+			article_id: deleteItem
+		};
+
+		if(data.article_id.length === 0)
+			alert("請選擇刪除的文章");
+		else
+			fn_list.ajaxReq(fn_list.article_delete, data);
 	}
 }
 
