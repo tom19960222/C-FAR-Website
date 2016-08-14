@@ -514,6 +514,145 @@ $(document).ready(function() {
 
 
 
+//new-things page news
+var e = [
+	{
+		news_id: 1,
+		title: "新國家政策未來,台灣準備好了嗎?",
+		background: "assets/main/page/images/news/news2.jpg",
+		content: "",
+		link: [
+			{
+				link_name: "連結",
+				link_url: "https://drive.google.com/file/d/0B2A6LVKlyGJ9NW5HMHppRm9IcjA/view"
+			}
+		]
+	},
+
+	{
+		news_id: 2,
+		title: "[2016年3月10-12日]：亞太未來學聯盟第二次會議及台灣企業變革與創新工作坊",
+		background: "assets/main/meeting/img/index-title.png",
+		content: "",
+		link: [
+			{
+				link_name: "cfar.tku.edu.tw/meeting",
+				link_url: "http://cfar.tku.edu.tw/meeting"
+			}
+		]
+	},
+
+	{
+		news_id: 3,
+		title: "[總統，這是關於未來的心願 X 徵話活動]",
+		background: "assets/main/page/images/news/news1.jpg",
+		content: "你/妳想跟新總統說些什麼嗎？尤其關於我們的未來。只要你/妳在活動網站裡留下你的心願，淡江大學CFAR中心的夥伴將彙整後，提供給新總統參考！",
+		link: [
+			{
+				link_name: "徵話活動宣傳影片",
+				link_url: "https://goo.gl/UOJiqJ"
+			},
+
+			{
+				link_name: "徵話活動網站",
+				link_url: "http://goo.gl/forms/6dI0QPG5Ry"
+			},
+
+			{
+				link_name: "策略遠見研究中心臉書",
+				link_url: "https://www.facebook.com/cfartku/"
+			}
+		]
+	}
+];
+
+
+function initNews() {
+	var target = $('#owl-newthing');
+	var editNews = $('#edit_news');
+	var deleteNews = $('#delete_news');
+
+	e.forEach(function(element, index, array) {
+		target.data('owlCarousel').addItem(newsFactor(element.title, element.background, element.content, element.link));
+		editNews.append(editNewsFactor(element.title, element.news_id));
+		deleteNews.append(deleteNewsFactor(element.title, element.news_id));
+	})
+
+}
+
+
+function newsFactor(title, bg, content, link){
+	var x = `
+		<div class="item" style="background-color: rgba(247,198,183,.5)">
+            <!-- /row -->
+            <div class="row subtitle-row" style="padding: 0; margin: 0;">
+                <div class="col-sm-1 hidden-sm">&nbsp;</div>
+                <div class="col-12 col-sm-10">
+                    <img src="` + bg + `" style="width: 100%; height: auto">
+                </div>
+                <div class="col-sm-1 hidden-sm">&nbsp;</div>
+            </div>
+            <div class="row subtitle-row">
+                <div class="col-sm-1 hidden-sm">&nbsp;</div>
+                <div class="col-12 col-sm-10 font-light content-font">
+                    <span class="font-semibold">` + title + `</span><br>
+					`
+					+ content + '<br>' + 
+					`
+                    <br>
+                    <span class="font-semibold">網站連結:</span><br>
+                    `;
+
+    link.forEach(function (element, index, array) {
+    	x += 
+    		'<a class="link" href="' + element.link_url + '">' +
+            	element.link_name +     
+            '</a><br>';
+    })       
+		
+    x += `                
+                </div>
+                <div class="col-sm-1 hidden-sm">&nbsp;</div>
+            </div> 
+        </div>
+
+        `;
+
+    return x;
+}
+
+function deleteNewsFactor(title, index){
+	return '<div class="col-sm-12" style="padding-bottom: 3px">' +
+				'<button class="btn btn-default btn-lg" onclick="chooseDelete(this)" value="' + index + '">' +
+					title + 
+				'</button>' +
+			'</div>';
+}
+
+function editNewsFactor(title, index){
+	return '<div class="col-sm-12" style="padding-bottom: 3px">' +
+				'<button class="btn btn-default btn-lg choose_edit_member" onclick="chooseEdit(this)" value="' + index + '">' +
+					title + 
+				'</button>' +
+			'</div>';
+}
+
+//animate
+$(document).ready(function() {
+
+	$("#owl-newthing").owlCarousel({
+		autoPlay: true,
+		items : 1,
+		itemsDesktop : [1199,1],
+		itemsDesktopSmall : [979,1],
+
+		navigation: true
+
+	});
+
+
+});
+
 
 
 function imgReload(input) {

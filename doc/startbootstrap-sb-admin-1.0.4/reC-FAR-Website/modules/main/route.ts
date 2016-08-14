@@ -28,7 +28,8 @@ let pages = {
     '/member-manage': 'member-manage',
     '/article-manage': 'article-manage',
     '/share-manage': 'share-manage',
-    '/album-manage': 'album-manage'
+    '/album-manage': 'album-manage',
+    '/news-manage': 'news-manage'
 }
 
 Object.keys(pages).forEach((route) => {

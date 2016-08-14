@@ -29,6 +29,11 @@ var fn_list = {
 	article_edit: 	{fn_name: "article_edit", url: "http://cfar.hsexpert.net/article", method: "PUT"},
 	article_delete: {fn_name: "article_delete", url: "http://cfar.hsexpert.net/article", method: "DELETE"},
 
+	news_get: 		{fn_name: "news_get", url: "http://cfar.hsexpert.net/news", method: "GET"},
+	news_add:  		{fn_name: "news_add", url: "http://cfar.hsexpert.net/news", method: "POST"},
+	news_edit: 		{fn_name: "news_edit", url: "http://cfar.hsexpert.net/news", method: "PUT"},
+	news_delete: 	{fn_name: "news_delete", url: "http://cfar.hsexpert.net/news", method: "DELETE"},
+
 	ajaxReq: function (doFn, data) {
 		var dfrd = $.Deferred();
 
@@ -68,6 +73,10 @@ var fn_list = {
     				
     				case "article_get_one":
     					chooseArticle = data;
+    				break;
+
+    				case "news_get":
+
     				break;
 
 	    			default:

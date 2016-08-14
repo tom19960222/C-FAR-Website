@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 
 <head>
     <meta charset="utf-8">
@@ -8,10 +8,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>SB Admin - Bootstrap Admin Template</title>
-    <!--mdl button-->
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-    
     <!-- Bootstrap Core CSS -->
     <link href="assets/main/manageHTML/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -20,8 +16,7 @@
     <!-- <link href="assets/main/manageHTML/css/plugins/morris.css" rel="stylesheet"> -->
     <!-- Custom Fonts -->
     <link href="assets/main/manageHTML/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
+    
     <!-- Owl-carousel -->
     <link rel="stylesheet" type="text/css" href="assets/main/manageHTML/owl-carousel/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="assets/main/manageHTML/owl-carousel/owl.theme.css">
@@ -36,12 +31,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <style type="text/css" media="screen">
-        small{
-            font-family: "Titillium Web", "微軟正黑體 Light", "微軟正黑體", sans-serif !important;
-        }
-    </style>
 </head>
 
 <body>
@@ -91,15 +80,15 @@
                         <a href="/member-manage"><i class="fa fa-fw fa-dashboard"></i> 故事。中心成員</a>
                     </li>
                     <li>
-                        <a href="/album-manage"><i class="fa fa-fw fa-bar-chart-o"></i> 本事。相簿編輯</a>
+                       <a href="/album-manage"><i class="fa fa-fw fa-bar-chart-o"></i> 本事。相簿編輯</a>
                     </li>
                     <li>
                         <a href="/share-manage"><i class="fa fa-fw fa-table"></i> 本事。學生分享</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="/article-manage"><i class="fa fa-fw fa-edit"></i> 未來事。文章分享</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="/news-manage"><i class="fa fa-fw fa-desktop"></i> 最新消息</a>
                     </li>
                 </ul>
@@ -123,7 +112,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            文章分享 <small>未來事</small>
+                            最新消息 <small>新鮮事</small>
                         </h1>
                     </div>
                 </div>
@@ -139,14 +128,14 @@
                                         <i class="fa fa-plus fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">新增文章</div>
-                                        <div>Add new article</div>
+                                        <div class="huge">新增消息</div>
+                                        <div>Add new news</div>
                                     </div>
                                 </div>
                             </div>
                             <a href="#" onclick="enableADD()">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Add New Article</span>
+                                    <span class="pull-left">Add New News</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -183,14 +172,14 @@
                                         <i class="fa fa-trash fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">刪除文章</div>
-                                        <div>Delete article</div>
+                                        <div class="huge">刪除消息</div>
+                                        <div>Delete news</div>
                                     </div>
                                 </div>
                             </div>
                             <a href="#" onclick="enableDELETE()">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Delete Article</span>
+                                    <span class="pull-left">Delete News</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -210,32 +199,28 @@
 
 
 
-        <!-- === Slide 2 - Center Introduction === -->
-        <div class="story" id="slide-2" data-slide="2" style="background-color: white">
+        <div class="slide story" id="slide-4" style="text-align: left; background-color: white; padding-top: 0">
             <div class="container">
-
-                 <div class="row">
+        
+                <div class="row">
                     <div class="col-lg-12">
                         <h3 class="page-header">
-                            預覽顯示 <small>文章分享</small>
+                            預覽顯示 <small>最新消息</small>
                         </h3>
                     </div>
                 </div>
                 <!-- /.row -->
 
 
-                <div id="owl-future" class="owl-carousel owl-theme" style="width: 100%">
-                <!-- dynamically generated -->
+                <!--member-->
+                <div id="owl-newthing" class="owl-carousel owl-theme">
+                    <!-- dynamically generated -->
                 </div>
+                <!-- /row -->
 
             </div>
-            <!-- /container -->
         </div>
-        <!-- /slide2 -->
-
-
-
-
+        <!-- /slide3 -->
         
 
 
@@ -247,7 +232,7 @@
                 <div class="row">
                     <div class="col-sm-11">
                         <h1 class="page-header">
-                            新增文章 <small>ADD ARTICLE</small>
+                            新增消息 <small>ADD NEWS</small>
                         </h1>
                     </div>
                     <div class="col-sm-1">
@@ -255,8 +240,21 @@
                     </div>
                 </div>
                 <!-- /.row -->         
+                <br><br>
                 
-                 <div class="row">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <img id="add_background_data" src="" alt="head image" height="250px">
+                            <br>
+                            <h3>上傳背景</h3>
+                            <input id="add_background_file" type="file" accept="image/*" onchange="imgReload(this)">
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+
+                <div class="row">
                     <div class="col-lg-12">
                          <div class="form-group">
                             <h3>標題</h3>
@@ -269,23 +267,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                          <div class="form-group">
-                            <h3>作者</h3>
-                            <input id="add_author" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <br><br>
-                
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <img id="add_background_data" src="" alt="head image" height="250px">
-                            <br>
-                            <h3>上傳一張背景</h3>
-                            <input id="add_background_file" type="file" accept="image/*" onchange="imgReload(this)">
-                            <p id="imgPath"></p>
+                            <h3>內容</h3>
+                            <textarea id="add_content" class="form-control" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
@@ -294,28 +277,33 @@
                 <div class="row">
                     <div class="col-lg-12">
                          <div class="form-group">
-                            <h3>文章內容</h3>
-                            <button class="fa fa-plus fa-1x" onclick="add_contentParagraph()" style="padding: 5px;"></button>
-                            <button class="fa fa-picture-o fa-1x" onclick="add_contentImage()" style="padding: 5px;"></button>
+                            <h3>連結</h3>
+                            <button class="fa fa-plus fa-1x" onclick="add_linkContent()" style="padding: 5px;"></button>
                             <br><br>
-
-
-                            <div id="add-content">
-                                <div class="text" style="height: 120px;">
-                                    <textarea class="form-control" rows="4" style="width: 90%; float: left;"></textarea>
-                                    <button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>
-                                    <br>
-                                </div>
+                            <div class="row">
+                                <div class="col-lg-4"><h4>命名</h4></div>
+                                <div class="col-lg-7"><h4>連結位置</h4></div>
                             </div>
+
+                            <div id="add_link">
+                                <div class="row" style="padding-bottom: 10px">
+                                    <div class="col-lg-4"><input show="link_name" class="form-control"></div>
+                                    <div class="col-lg-7"><input show="link_url" class="form-control"></div>
+
+                                    <button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>
+                                </div>
+
+
+                            </div>
+
 
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-               
                 
                 <br><br>
-                <button type="submit" class="btn btn-default" onclick="formSubmit.article_add()">送出 Submit</button>
+                <button type="submit" class="btn btn-default" onclick="">送出 Submit</button>
 
             </div>
         </div>
@@ -332,7 +320,7 @@
                 <div class="row">
                     <div class="col-sm-11">
                         <h1 class="page-header">
-                            刪除文章 <small>DELETE ARTICLE</small>
+                            刪除消息 <small>DELETE NEWS</small>
                         </h1>
                     </div>
                     <div class="col-sm-1">
@@ -342,12 +330,12 @@
                 <!-- /.row -->         
                 <br><br>
                 
-                <div class="row" id="delete_article">
-                    <!-- Dynamical generated -->
+                <div class="row" id="delete_news">
+                <!-- Dynamical generated -->
                 </div>
                                     
                 <br><br>
-                <button type="submit" class="btn btn-default" onclick="formSubmit.article_delete()">送出 Submit</button>
+                <button type="submit" class="btn btn-default" onclick="">送出 Submit</button>
 
             </div>
         </div>
@@ -360,7 +348,7 @@
                 <div class="row">
                     <div class="col-sm-11">
                         <h1 class="page-header">
-                            修改文章 <small>EDIT ARTICLE</small>
+                            修改內容 <small>EDIT CONTENT</small>
                         </h1>
                     </div>
                     <div class="col-sm-1">
@@ -370,12 +358,24 @@
                 <!-- /.row -->         
                 <br><br>
 
-                <div id="edit_article" class="row">
+                <div class="row" id="edit_news">
                     <!-- Dynamical generated -->
                 </div>
                 <br><br>
                 <hr>
                 <br><br>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <img id="edit_background_data" src="" alt="head image" height="250px">
+                            <br>
+                            <h3>上傳背景</h3>
+                            <input id="edit_background_file" type="file" accept="image/*" onchange="imgReload(this)">
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -390,23 +390,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                          <div class="form-group">
-                            <h3>作者</h3>
-                            <input id="edit_author" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-
-                <br><br>
-                
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <img id="edit_background_data" src="" alt="head image" height="250px">
-                            <br>
-                            <h3>上傳一張背景</h3>
-                            <input id="edit_background_file" type="file" accept="image/*" onchange="imgReload(this)">
-                            <p id="imgPath"></p>
+                            <h3>內容</h3>
+                            <textarea id="edit_content" class="form-control" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
@@ -415,19 +400,25 @@
                 <div class="row">
                     <div class="col-lg-12">
                          <div class="form-group">
-                            <h3>文章內容</h3>
-                            <button class="fa fa-plus fa-1x" onclick="edit_contentParagraph()" style="padding: 5px;"></button>
-                            <button class="fa fa-picture-o fa-1x" onclick="edit_contentImage()" style="padding: 5px;"></button>
+                            <h3>連結</h3>
+                            <button class="fa fa-plus fa-1x" onclick="edit_linkContent()" style="padding: 5px;"></button>
                             <br><br>
-
-
-                            <div id="edit-content">
-                                <div class="text" style="height: 120px;">
-                                    <textarea class="form-control" rows="4" style="width: 90%; float: left;"></textarea>
-                                    <button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>
-                                    <br>
-                                </div>
+                            <div class="row">
+                                <div class="col-lg-4"><h4>命名</h4></div>
+                                <div class="col-lg-7"><h4>連結位置</h4></div>
                             </div>
+
+                            <div id="edit_link">
+                                <div class="row" style="padding-bottom: 10px">
+                                    <div class="col-lg-4"><input show="link_name" class="form-control"></div>
+                                    <div class="col-lg-7"><input show="link_url" class="form-control"></div>
+
+                                    <button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>
+                                </div>
+
+
+                            </div>
+
 
                         </div>
                     </div>
@@ -435,7 +426,7 @@
                 <!-- /row -->
 
                 <br><br>
-                <button type="submit" class="btn btn-default" onclick="formSubmit.article_edit()">送出 Submit</button>
+                <button type="submit" class="btn btn-default" onclick="">送出 Submit</button>
 
             </div>
         </div>
@@ -466,14 +457,13 @@
     <script type="text/javascript" src="assets/main/manageHTML/js/scriptXDD.js"></script>
     <script type="text/javascript" src="assets/main/manageHTML/js/get-post-XDD.js"></script>
 
-
     <script type="text/javascript">
-
+        
 
         $(function(){
-            fn_list.ajaxReq(fn_list.article_get).done(function() {
-                console.log(d);
-                initArticle();
+            fn_list.ajaxReq(fn_list.news_get).done(function() {
+                console.log(e);
+                initNews();
             });
         })
 
@@ -509,7 +499,6 @@
         }
 
 
-        var chooseArticle;
 
         function chooseEdit(button) {
             var btnClass = button.className;
@@ -526,30 +515,22 @@
             button.className = btnClass;
             
 
-            $(function(){
-                fn_list.ajaxReq(fn_list.article_get_one(button.value)).done(function() {
-                    console.log(chooseArticle);
+            //find the data of target id
+            var a = $.grep(e, function(x){
+                return x.news_id == button.value;
+            }); 
+            console.log(a);
 
-                    // //set view
-                    $('#edit_background_data')[0].src = chooseArticle.background_url;
-                    $('#edit_title')[0].value = chooseArticle.title;
-                    $('#edit_author')[0].value = chooseArticle.author;
+            //set view
+            $('#edit_background_data')[0].src = a[0].background;
+            $('#edit_title')[0].value = a[0].title;
+            $('#edit_content')[0].value = a[0].content;
 
-                    chooseArticle.content = JSON.parse(chooseArticle.content);
-                    $('#edit-content')[0].innerHTML = "";
 
-                    chooseArticle.content.forEach(function(element, index, array) {
-                        if(element.type === "content")
-                            $('#edit-content').append(contentParagraphFactor(element.content));
-                        else if(element.type === "image")
-                            $('#edit-content').append(contentImageFactor(element.image_url));
-                        else alert("error");
-                    })
-                });
+            $('#edit_link')[0].innerHTML = "";
+            a[0].link.forEach(function (element, index, array) {
+                $('#edit_link').append(linkFactor(element.link_name, element.link_url));
             })
-
-            //GET req
-            
 
         }
 
@@ -574,43 +555,31 @@
 
         }
 
-        function add_contentParagraph() {
-            $('#add-content').append(contentParagraphFactor(""));
+
+
+        function add_linkContent() {
+            $('#add_link').append(linkFactor("", ""));
         }
 
-        function add_contentImage() {
-            $('#add-content').append(contentImageFactor(""));
+        function edit_linkContent() {
+            $('#edit_link').append(linkFactor("", ""));
         }
 
-        function edit_contentParagraph() {
-            $('#edit-content').append(contentParagraphFactor(""));
+        function linkFactor(link_name, link_url) {
+            return  `
+                <div class="row" style="padding-bottom: 10px">
+                    <div class="col-lg-4"><input show="link_name" class="form-control" value="` + link_name + `"></div>
+                    <div class="col-lg-7"><input show="link_url" class="form-control" value="` + link_url + `"></div>
+
+                    <button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>
+                </div>
+            `;
         }
 
-        function edit_contentImage() {
-            $('#edit-content').append(contentImageFactor(""));
-        }
-
-        function contentParagraphFactor(data) {
-            return  '<div class="text" style="height: 120px;">' +
-                        '<textarea class="form-control" rows="4" style="width: 90%; float: left;">' + data + '</textarea>' +
-                        '<button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>' + 
-                        '<br>' + 
-                    '</div>';
-        }
-
-        
-
-        function contentImageFactor(img){
-            return  '<div class="img" style="height: 300px;">' +
-                        '<img src="' + img + '" alt="head image" height="250px"  style="width:"90%"; float: left;">' + 
-                        '<button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>' +
-                        '<input type="file" accept="image/*" onchange="imgReload(this)">' +
-                        '<br>' +
-                    '</div>';
-        }
         function deleteContent(button){
             $(button).parent().remove();
         }
+
     </script>
 
 </body>
