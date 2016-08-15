@@ -172,3 +172,8 @@ body {
     padding-bottom: 40px;
     padding-top: 40px;
 }
+
+.content-font{
+    color: #494949;
+    font-size: 25px;
+}

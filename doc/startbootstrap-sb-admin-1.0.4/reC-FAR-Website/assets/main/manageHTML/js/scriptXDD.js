@@ -43,7 +43,8 @@ function initAlbum() {
 	console.log(a);
 	a.forEach(function(element, index, array) {
 		target.data('owlCarousel').addItem(photoFactor(element.path));
-		changeAlbum[element.image_id-1].setAttribute("src", element.path);
+		if(changeAlbum.length !== 0)
+			changeAlbum[element.image_id-1].setAttribute("src", element.path);
 	})
 
 };
@@ -583,7 +584,7 @@ function initNews() {
 
 function newsFactor(title, bg, content, link){
 	var x = `
-		<div class="item" style="background-color: rgba(247,198,183,.5)">
+		<div class="item">
             <!-- /row -->
             <div class="row subtitle-row" style="padding: 0; margin: 0;">
                 <div class="col-sm-1 hidden-sm">&nbsp;</div>
