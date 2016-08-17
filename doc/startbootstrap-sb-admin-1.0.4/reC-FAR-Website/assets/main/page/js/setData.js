@@ -460,5 +460,8 @@ function newsFactor(title, bg, content, link){
 
         `;
 
+
+    x = x.replace(/\r\n/g,"<br />");
+
     return x;
 }

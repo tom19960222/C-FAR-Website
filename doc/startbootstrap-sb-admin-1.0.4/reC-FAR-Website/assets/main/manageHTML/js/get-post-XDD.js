@@ -76,7 +76,7 @@ var fn_list = {
     				break;
 
     				case "news_get":
-
+    					e = data;
     				break;
 
 	    			default:
@@ -366,6 +366,89 @@ var formSubmit = {
 			alert("請選擇刪除的文章");
 		else
 			fn_list.ajaxReq(fn_list.article_delete, data);
+	},
+
+	news_add: function () {
+		var data = {
+			title: $('#add_title')[0].value,
+			content: $('#add_content')[0].value,
+			background_data: $('#add_background_data')[0].src.split(',')[1],
+			background_filename: $('#add_background_file')[0].value.replace(/.*[\/\\]/, ''),
+			link:[]
+		};
+
+		var isFillBlank = false;
+		for(element in data) {
+			if(data[element] === "" || data[element] === window.location.href)
+				isFillBlank = true;
+		}
+		if(isFillBlank === true){
+			alert("請輸入完整資料!!");
+			return;
+		}
+
+
+		$('#add_link > div').each(function() {
+			
+			data.link.push({
+				link_name: $(this).find('.link_name')[0].value,
+				link_url: $(this).find('.link_url')[0].value
+			});
+			
+		});
+
+		console.log(data);
+		fn_list.ajaxReq(fn_list.news_add, data);
+	},
+
+	news_edit: function () {
+		var data = [
+			{
+				news_id: news_id,
+				title: $('#edit_title')[0].value,
+				content: $('#edit_content')[0].value,
+				link:[]
+			}
+		];
+
+		if($('#edit_background_file')[0].value !== ""){
+			data[0].head_pic_data = $('#edit_background_data')[0].src.split(',')[1];
+			data[0].head_pic_filename = $('#edit_background_file')[0].value.replace(/.*[\/\\]/, '');
+		}
+
+		var isFillBlank = false;
+		for(element in data[0]) {
+			if(data[0][element] === "" || data[0][element] === window.location.href)
+				isFillBlank = true;
+		}
+		if(isFillBlank === true){
+			alert("請輸入完整資料!!");
+			return;
+		}
+
+
+		$('#edit_link > div').each(function() {
+			
+			data[0].link.push({
+				link_name: $(this).find('.link_name')[0].value,
+				link_url: $(this).find('.link_url')[0].value
+			});
+			
+		});
+
+		console.log(data);
+		fn_list.ajaxReq(fn_list.news_edit, data);
+	},
+
+	news_delete: function () {
+		var data = {
+			news_id: deleteItem
+		};
+
+		if(data.news_id.length === 0)
+			alert("請選擇刪除的文章");
+		else
+			fn_list.ajaxReq(fn_list.news_delete, data);
 	}
 }
 

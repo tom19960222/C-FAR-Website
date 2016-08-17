@@ -528,7 +528,11 @@ $(function(){
 
 $(function(){
     fn_list.ajaxReq(fn_list.news_get).done(function() {
+
+        e.reverse();
+        e.length = 3;
         console.log(e);
+
         initNews();
     });
 })

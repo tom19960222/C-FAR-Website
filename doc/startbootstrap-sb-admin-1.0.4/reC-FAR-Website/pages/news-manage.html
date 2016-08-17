@@ -287,8 +287,8 @@
 
                             <div id="add_link">
                                 <div class="row" style="padding-bottom: 10px">
-                                    <div class="col-lg-4"><input show="link_name" class="form-control"></div>
-                                    <div class="col-lg-7"><input show="link_url" class="form-control"></div>
+                                    <div class="col-lg-4"><input class="form-control link_name"></div>
+                                    <div class="col-lg-7"><input class="form-control link_url"></div>
 
                                     <button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>
                                 </div>
@@ -303,7 +303,7 @@
                 <!-- /row -->
                 
                 <br><br>
-                <button type="submit" class="btn btn-default" onclick="">送出 Submit</button>
+                <button type="submit" class="btn btn-default" onclick="formSubmit.news_add()">送出 Submit</button>
 
             </div>
         </div>
@@ -335,7 +335,7 @@
                 </div>
                                     
                 <br><br>
-                <button type="submit" class="btn btn-default" onclick="">送出 Submit</button>
+                <button type="submit" class="btn btn-default" onclick="formSubmit.news_delete()">送出 Submit</button>
 
             </div>
         </div>
@@ -426,7 +426,7 @@
                 <!-- /row -->
 
                 <br><br>
-                <button type="submit" class="btn btn-default" onclick="">送出 Submit</button>
+                <button type="submit" class="btn btn-default" onclick="formSubmit.news_edit()">送出 Submit</button>
 
             </div>
         </div>
@@ -458,10 +458,11 @@
     <script type="text/javascript" src="assets/main/manageHTML/js/get-post-XDD.js"></script>
 
     <script type="text/javascript">
-        
+        var news_id = -1;
 
         $(function(){
             fn_list.ajaxReq(fn_list.news_get).done(function() {
+                e.reverse();
                 console.log(e);
                 initNews();
             });
@@ -502,7 +503,7 @@
 
         function chooseEdit(button) {
             var btnClass = button.className;
-            member_id = button.value;
+            news_id = button.value;
 
             if(btnClass.includes('active')){
                 btnClass = btnClass.replace(' active', '');
@@ -528,6 +529,7 @@
 
 
             $('#edit_link')[0].innerHTML = "";
+            a[0].link = JSON.parse(a[0].link);
             a[0].link.forEach(function (element, index, array) {
                 $('#edit_link').append(linkFactor(element.link_name, element.link_url));
             })
@@ -568,8 +570,8 @@
         function linkFactor(link_name, link_url) {
             return  `
                 <div class="row" style="padding-bottom: 10px">
-                    <div class="col-lg-4"><input show="link_name" class="form-control" value="` + link_name + `"></div>
-                    <div class="col-lg-7"><input show="link_url" class="form-control" value="` + link_url + `"></div>
+                    <div class="col-lg-4"><input class="form-control link_name" value="` + link_name + `"></div>
+                    <div class="col-lg-7"><input class="form-control link_url" value="` + link_url + `"></div>
 
                     <button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>
                 </div>

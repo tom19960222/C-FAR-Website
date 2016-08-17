@@ -173,6 +173,8 @@ function deleteShareFactor(ch_name, job, index){
 }
 
 function shareFactor(content, author, job){
+	content = content.replace(/\n/g,"<br />");
+
 	return '<div class="row subtitle-row">' +
 				'<div class="col-sm-1 hidden-sm">&nbsp;</div>' +
 				'<div class="col-12 col-sm-10 font-semibold content-font" style="font-size: 20px; word-wrap:break-word;">' +
@@ -446,7 +448,7 @@ function initArticle() {
 	console.log(d);
 
 	d.forEach(function(element, index, array) {
-		target.data('owlCarousel').addItem(articleFactor(element.background_url, element.title, element.author, element.link));
+		target.data('owlCarousel').addItem(articleFactor(element.background_url, element.title, element.author, "http://cfar.hsexpert.net" + element.link));
 		editArticle.append(editArticleFactor(element.title, element.author, element.article_id));
 		deleteArticle.append(deleteArticleFactor(element.title, element.author, element.article_id));
 
@@ -471,7 +473,7 @@ function articleFactor(bg, title, author, link) {
 					'</div>' +
 					'<div class="mdl-card__actions mdl-card--border">' +
 						'<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect link"' +
-							'href="' + link + '">' +
+							'href="' + link + '" target="_blank">' +
 							'Read More' + 
 						'</a>' +
 					'</div>' +
@@ -489,7 +491,7 @@ function deleteArticleFactor(title, author, index){
 }
 
 function editArticleFactor(title, author, index){
-	return '<div class="col-sm-3">' +
+	return '<div class="col-sm-6">' +
 				'<button class="btn btn-default btn-lg choose_edit_member" onclick="chooseEdit(this)" value="' + index + '">' +
 					title + '<br>' + 
 					author +
@@ -516,7 +518,8 @@ $(document).ready(function() {
 
 
 //new-things page news
-var e = [
+var e = [];
+var ed = [
 	{
 		news_id: 1,
 		title: "新國家政策未來,台灣準備好了嗎?",
@@ -583,6 +586,8 @@ function initNews() {
 
 
 function newsFactor(title, bg, content, link){
+	content = content.replace(/\n/g,"<br />");
+
 	var x = `
 		<div class="item">
             <!-- /row -->
@@ -603,7 +608,7 @@ function newsFactor(title, bg, content, link){
                     <br>
                     <span class="font-semibold">網站連結:</span><br>
                     `;
-
+    link = JSON.parse(link);
     link.forEach(function (element, index, array) {
     	x += 
     		'<a class="link" href="' + element.link_url + '">' +
