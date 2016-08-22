@@ -473,7 +473,7 @@ function articleFactor(bg, title, author, link) {
 					'</div>' +
 					'<div class="mdl-card__actions mdl-card--border">' +
 						'<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect link"' +
-							'href="' + link + '" target="_blank">' +
+							'href="' + link + '">' +
 							'Read More' + 
 						'</a>' +
 					'</div>' +

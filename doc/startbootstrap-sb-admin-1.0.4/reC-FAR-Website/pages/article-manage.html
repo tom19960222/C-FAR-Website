@@ -542,7 +542,7 @@
                         if(element.type === "content")
                             $('#edit-content').append(contentParagraphFactor(element.content));
                         else if(element.type === "image")
-                            $('#edit-content').append(contentImageFactor(element.image_url));
+                            $('#edit-content').append(contentImageFactor(element.image_url, element.image_description));
                         else alert("error");
                     })
                 });
@@ -579,7 +579,7 @@
         }
 
         function add_contentImage() {
-            $('#add-content').append(contentImageFactor(""));
+            $('#add-content').append(contentImageFactor("", ""));
         }
 
         function edit_contentParagraph() {
@@ -587,7 +587,7 @@
         }
 
         function edit_contentImage() {
-            $('#edit-content').append(contentImageFactor(""));
+            $('#edit-content').append(contentImageFactor("", ""));
         }
 
         function contentParagraphFactor(data) {
@@ -600,12 +600,13 @@
 
         
 
-        function contentImageFactor(img){
-            return  '<div class="img" style="height: 300px;">' +
+        function contentImageFactor(img, description){
+            return  '<div class="img" style="height: 400px;">' +
                         '<img src="' + img + '" alt="head image" height="250px"  style="width:"90%"; float: left;">' + 
                         '<button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>' +
                         '<input type="file" accept="image/*" onchange="imgReload(this)">' +
                         '<br>' +
+                        '註解說明: <input type="text" class="form-control image_description" style="width: 90%" value="' + description + '">' + 
                     '</div>';
         }
         function deleteContent(button){

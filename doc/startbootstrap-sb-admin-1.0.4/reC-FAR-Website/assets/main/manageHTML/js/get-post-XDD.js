@@ -288,7 +288,8 @@ var formSubmit = {
 				data.content.push({
 					type: "image",
 					image_data: $(this).find('img')[0].src.split(',')[1],
-					image_filename: $(this).find('input')[0].value.replace(/.*[\/\\]/, '')
+					image_filename: $(this).find('input')[0].value.replace(/.*[\/\\]/, ''),
+					image_description: $(this).find('.image_description')[0].value
 				});
 			}
 			else
@@ -337,7 +338,8 @@ var formSubmit = {
 				if($(this).find('input')[0].value === ""){
 					data[0].content.push({
 						type: "image",
-						image_url: $(this).find('img')[0].src
+						image_url: $(this).find('img')[0].src,
+						image_description: $(this).find('.image_description')[0].value
 					});
 				}
 
@@ -345,7 +347,8 @@ var formSubmit = {
 					data[0].content.push({
 						type: "image",
 						image_data: $(this).find('img')[0].src.split(',')[1],
-						image_filename: $(this).find('input')[0].value.replace(/.*[\/\\]/, '')
+						image_filename: $(this).find('input')[0].value.replace(/.*[\/\\]/, ''),
+						image_description: $(this).find('.image_description')[0].value
 					});
 				}
 			}
