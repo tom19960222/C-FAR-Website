@@ -6,7 +6,7 @@ RUN useradd -m --uid 1000 c-far
 
 RUN npm install -g pm2 typescript typings concurrently
 
-USER massage
+USER c-far
 
 COPY web-start.sh /start.sh
 
