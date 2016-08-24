@@ -1,0 +1,36 @@
+version: '2'
+services:
+    web:
+        build:
+            context: ./Dockerfiles
+            dockerfile: web
+        image: zuhzu-dev-web
+        volumes:
+            - ./:/app
+            - /etc/localtime:/etc/localtime
+        ports:
+            - 3080:3080
+        links:
+            - mysql
+            - redis
+
+    redis:
+        build: 
+            context: ./Dockerfiles
+            dockerfile: redis
+        image: zuhzu-dev-redis
+        ports:
+            - 6379:6379
+
+    mysql:
+        build: 
+            context: ./Dockerfiles
+            dockerfile: mysql
+        image: zuhzu-dev-mysql
+        ports:
+            - 3306:3306
+        environment:
+            - MYSQL_ROOT_PASSWORD=zuhzu
+            - MYSQL_DATABASE=zuhzu
+            - MYSQL_USER=zuhzu
+            - MYSQL_PASSWORD=zuhzu

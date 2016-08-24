@@ -33,3 +33,9 @@ node_modules
 .vscode/launch.json
 .idea/workspace.xml
 .idea/workspace.xml
+
+*.js
+node_modules
+typings
+assets
+*.log
