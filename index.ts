@@ -44,7 +44,7 @@ appConfig.modules.forEach(moduleConfig => {
     }
 });
 
-app.db.sql.sync({force: true});
+app.db.sql.sync({force: false});
 
 app.listen(appConfig.listen.port, () => {
     console.log("Server started at port " + appConfig.listen.port);
