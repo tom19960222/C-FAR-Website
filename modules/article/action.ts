@@ -8,7 +8,7 @@ let sequelize: Sequelize.Connection = app.db.sql;
 
 /* Functions from JasonXDDD */
 function createContent(data: string){
-    data = data.replace(/\n/g,"<br />").replace(" ","&nbsp;");
+    data = data.replace(" ","&nbsp;").replace(/\n/g,"<br />");
     return `<div class="row content"><div class="col-12 font-thin">${data}</div></div><!--content-row-->`;
 }
 function createImage(imageURL: string, imageDescription: string){
