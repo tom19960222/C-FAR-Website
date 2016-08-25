@@ -37,5 +37,8 @@ node_modules
 *.js
 node_modules
 typings
-assets
-*.log
+
+# Keep files in assets/main tracked.
+!assets/
+assets/*
+!assets/main
