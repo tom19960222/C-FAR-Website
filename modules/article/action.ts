@@ -12,8 +12,8 @@ function createContent(data: string){
     return `<div class="row content"><div class="col-12 font-thin">${data}</div></div><!--content-row-->`;
 }
 function createImage(imageURL: string, imageDescription: string){
-	return `<div><img class="XDD-img" src="${imageURL}" width="80%"></div>
-            <div style="margin: 0 auto; width: 80%;">${imageDescription}</div>`;
+	return `<div><img class="XDD-img" src="${imageURL}" width="80%">
+            <div style="margin: 0 auto; width: 80%;">${imageDescription}</div></div>`;
 }
 function createTitle(data: string){
     return `<div class="row title"><div class="col-12 font-thin">${data}</div></div><!--title-row-->`;
