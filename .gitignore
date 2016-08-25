@@ -38,7 +38,10 @@ node_modules
 node_modules
 typings
 
+*.js
+
 # Keep files in assets/main tracked.
 !assets/
 assets/*
 !assets/main
+!assets/main/**
