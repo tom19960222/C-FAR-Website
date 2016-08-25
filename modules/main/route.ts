@@ -9,8 +9,10 @@ let pages = {
     '/story': 'story-page',
     '/new-things': 'new-things-page',
     '/future': 'future-page',
-    '/information': 'information-page',
+    
+    '/prototype': 'prototype-page',
     '/form': 'form-page',
+
     '/one': 'future1',
     '/two': 'future2',
     '/three': 'future3',
@@ -21,10 +23,11 @@ let pages = {
     '/eight': 'future8',
     '/nine': 'future9',
     '/ten': 'future10',
+
     '/error': 'error',
     '/login': 'login',
-    '/manage': 'manage',
     '/meeting': 'meeting',
+
     '/member-manage': 'member-manage',
     '/article-manage': 'article-manage',
     '/share-manage': 'share-manage',
