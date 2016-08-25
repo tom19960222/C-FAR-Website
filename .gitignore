@@ -45,3 +45,4 @@ typings
 assets/*
 !assets/main
 !assets/main/**
+.DS_Store
