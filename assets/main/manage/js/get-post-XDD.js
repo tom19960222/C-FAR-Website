@@ -522,7 +522,6 @@ var fn_list = {
 	            "Content-Type": 'application/json'
 	        },
 			success: function (data, status) {
-				console.log(status);
 
 
 				switch(doFn.fn_name){
@@ -565,7 +564,6 @@ var fn_list = {
 				dfrd.resolve();
 			},
 			error: function (jqXHR, textStatus, errorMessage) {
-				console.log(errorMessage);
 			}
 		})
 
@@ -595,7 +593,6 @@ var formSubmit = {
 			return;
 		}
 		else{
-			console.log(data);
 			fn_list.ajaxReq(fn_list.member_add, data);
 		}
 	},
@@ -626,7 +623,6 @@ var formSubmit = {
 			return;
 		}
 		else{
-			console.log(data);
 			fn_list.ajaxReq(fn_list.member_edit, data);
 		}
 	},
@@ -704,7 +700,6 @@ var formSubmit = {
 			return;
 		}
 		else{
-			console.log(data);
 			fn_list.ajaxReq(fn_list.message_add, data);
 		}
 	},
@@ -729,7 +724,6 @@ var formSubmit = {
 			return;
 		}
 		else{
-			console.log(data);
 			fn_list.ajaxReq(fn_list.message_edit, data);
 		}
 	},
@@ -833,7 +827,6 @@ var formSubmit = {
 				alert("解析錯誤");
 		});
 
-		console.log(data);
 		fn_list.ajaxReq(fn_list.article_edit, data);
 	},
 
@@ -877,7 +870,6 @@ var formSubmit = {
 			
 		});
 
-		console.log(data);
 		fn_list.ajaxReq(fn_list.news_add, data);
 	},
 
@@ -916,7 +908,6 @@ var formSubmit = {
 			
 		});
 
-		console.log(data);
 		fn_list.ajaxReq(fn_list.news_edit, data);
 	},
 
@@ -957,8 +948,6 @@ function restart(){
         url: 'http://cfar.tku.edu.tw/admin/action/restart',
         type: 'get',
         success: function (data, textStatus, xhr) {
-            console.log(data);
-            console.log(textStatus);
         }
     });
 >>>>>>> a5656ec87a6c32fafe5c4824c8e13aa24e37a144

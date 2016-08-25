@@ -899,14 +899,12 @@ $(document).ready(function(e) {
 // setData
 $(function() {
     fn_list.ajaxReq(fn_list.message_get).done(function() {
-        console.log(b);
         initShare();
     });
 })
 
 $(function() {
     fn_list.ajaxReq(fn_list.image_get).done(function() {
-        console.log(a);
         initAlbum();
     });
 })
@@ -916,7 +914,6 @@ $(function() {
 
         e.reverse();
         e.length = 3;
-        console.log(e);
 
         initNews();
     });
