@@ -7,7 +7,6 @@ function initAlbum() {
     var target = $('#owl-img');
     var changeAlbum = $('.change_album').children("img");
 
-    console.log(a);
     a.forEach(function(element, index, array) {
         target.data('owlCarousel').addItem(photoFactor(element.path));
         if (changeAlbum.length !== 0)
@@ -35,7 +34,7 @@ $(document).ready(function() {
 
     $("#owl-img").owlCarousel({
 
-        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        autoPlay: 5000, //Set AutoPlay to 3 seconds
 
         items: 5,
         itemsDesktop: [1199, 3],
@@ -105,7 +104,6 @@ function shareFactor(content, author, job) {
 $(document).ready(function() {
 
     $("#owl-share").owlCarousel({
-        autoPlay: 10000, //Set AutoPlay to 3 seconds
 
         items: 3,
         itemsDesktop: [1199, 3],
@@ -123,7 +121,6 @@ function initMember() {
     var editMember = $('#edit_member');
     var deleteMember = $('#delete_member');
 
-    console.log(c);
     c.forEach(function(element, index, array) {
         target.data('owlCarousel').addItem(memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id));
         editMember.append(editMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
@@ -173,7 +170,6 @@ var mq = window.matchMedia("(max-width: 750px)");
 function showIntro(e) {
     $('.mem').mouseenter(
         function() {
-            // console.log(this);
             changeMember(this);
         }
     )
@@ -233,7 +229,6 @@ function initArticle() {
     var deleteArticle = $('#delete_article');
 
     d.reverse();
-    console.log(d);
 
     d.forEach(function(element, index, array) {
         target.data('owlCarousel').addItem(articleFactor(element.background_url, element.title, element.author, "http://cfar.tku.edu.tw" + element.link));
