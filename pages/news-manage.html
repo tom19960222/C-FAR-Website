@@ -1,5 +1,6 @@
+<!-- Coding By JasonXDDD -->
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -7,22 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>C-FAR 後台管理</title>
     <!-- Bootstrap Core CSS -->
-    <link href="assets/main/manageHTML/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/main/manage/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="assets/main/manageHTML/css/sb-admin.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <!-- <link href="assets/main/manageHTML/css/plugins/morris.css" rel="stylesheet"> -->
+    <link href="assets/main/manage/css/sb-admin.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="assets/main/manageHTML/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    
+    <link href="assets/main/manage/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Owl-carousel -->
-    <link rel="stylesheet" type="text/css" href="assets/main/manageHTML/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="assets/main/manageHTML/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/main/manage/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="assets/main/manage/owl-carousel/owl.theme.css">
     <!-- Custom CSS Style By XDD -->
-    <link rel="stylesheet" type="text/css" href="assets/main/manageHTML/css/styleXDD.css">
-
+    <link rel="stylesheet" type="text/css" href="assets/main/manage/css/styleXDD.css">
     <!-- Font style -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -34,10 +31,6 @@
 </head>
 
 <body>
-
-
-
-
     <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -51,8 +44,6 @@
                 </button>
                 <a class="navbar-brand" href="/">C-FAR 管理</a>
             </div>
-
-
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
@@ -68,11 +59,6 @@
                     </ul>
                 </li>
             </ul>
-
-
-
-
-
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
@@ -80,7 +66,7 @@
                         <a href="/member-manage"><i class="fa fa-fw fa-dashboard"></i> 故事。中心成員</a>
                     </li>
                     <li>
-                       <a href="/album-manage"><i class="fa fa-fw fa-bar-chart-o"></i> 本事。相簿編輯</a>
+                        <a href="/album-manage"><i class="fa fa-fw fa-bar-chart-o"></i> 本事。相簿編輯</a>
                     </li>
                     <li>
                         <a href="/share-manage"><i class="fa fa-fw fa-table"></i> 本事。學生分享</a>
@@ -95,17 +81,6 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-
-
-
-
-
-
-
-
-
-
-
         <div id="page-wrapper">
             <div class="container-fluid">
                 <!-- Page Heading -->
@@ -117,8 +92,6 @@
                     </div>
                 </div>
                 <!-- /.row -->
-
-
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-primary">
@@ -188,20 +161,12 @@
                     </div>
                 </div>
                 <!-- /.row -->
-                
-
-
-                
             </div>
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
-
-
-
         <div class="slide story" id="slide-4" style="text-align: left; background-color: white; padding-top: 0">
             <div class="container">
-        
                 <div class="row">
                     <div class="col-lg-12">
                         <h3 class="page-header">
@@ -210,23 +175,16 @@
                     </div>
                 </div>
                 <!-- /.row -->
-
-
                 <!--member-->
                 <div id="owl-newthing" class="owl-carousel owl-theme">
                     <!-- dynamically generated -->
                 </div>
                 <!-- /row -->
-
             </div>
         </div>
         <!-- /slide3 -->
-        
-
-
         <!-- Show Edit Form -->
         <div id="mask"></div>
-        
         <div class="formMember">
             <div class="container" id="addForm">
                 <div class="row">
@@ -236,12 +194,12 @@
                         </h1>
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" class="btn btn-default" onclick="disableADD()">Cancel</button>                            
+                        <button type="submit" class="btn btn-default" onclick="disableADD()">Cancel</button>
                     </div>
                 </div>
-                <!-- /.row -->         
-                <br><br>
-                
+                <!-- /.row -->
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
@@ -253,68 +211,58 @@
                     </div>
                 </div>
                 <!-- /row -->
-
                 <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>標題</h3>
                             <input id="add_title" class="form-control">
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-
                 <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>內容</h3>
                             <textarea id="add_content" class="form-control" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-
                 <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>連結</h3>
                             <button class="fa fa-plus fa-1x" onclick="add_linkContent()" style="padding: 5px;"></button>
-                            <br><br>
+                            <br>
+                            <br>
                             <div class="row">
-                                <div class="col-lg-4"><h4>命名</h4></div>
-                                <div class="col-lg-7"><h4>連結位置</h4></div>
+                                <div class="col-lg-4">
+                                    <h4>命名</h4></div>
+                                <div class="col-lg-7">
+                                    <h4>連結位置</h4></div>
                             </div>
-
                             <div id="add_link">
                                 <div class="row" style="padding-bottom: 10px">
-                                    <div class="col-lg-4"><input class="form-control link_name"></div>
-                                    <div class="col-lg-7"><input class="form-control link_url"></div>
-
+                                    <div class="col-lg-4">
+                                        <input class="form-control link_name">
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <input class="form-control link_url">
+                                    </div>
                                     <button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>
                                 </div>
-
-
                             </div>
-
-
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-                
-                <br><br>
+                <br>
+                <br>
                 <button type="submit" class="btn btn-default" onclick="formSubmit.news_add()">送出 Submit</button>
-
             </div>
         </div>
         <!-- /add-member -->
-
-
-
-
-
-
-    
         <div class="formMember">
             <div class="container" id="deleteForm">
                 <div class="row">
@@ -324,25 +272,20 @@
                         </h1>
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" class="btn btn-default" onclick="disableDELETE()">Cancel</button>                            
+                        <button type="submit" class="btn btn-default" onclick="disableDELETE()">Cancel</button>
                     </div>
                 </div>
-                <!-- /.row -->         
-                <br><br>
-                
+                <!-- /.row -->
+                <br>
+                <br>
                 <div class="row" id="delete_news">
-                <!-- Dynamical generated -->
+                    <!-- Dynamical generated -->
                 </div>
-                                    
-                <br><br>
+                <br>
+                <br>
                 <button type="submit" class="btn btn-default" onclick="formSubmit.news_delete()">送出 Submit</button>
-
             </div>
         </div>
-
-
-
-
         <div class="formMember">
             <div class="container" id="editForm">
                 <div class="row">
@@ -352,19 +295,20 @@
                         </h1>
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" class="btn btn-default" onclick="disableEDIT()">Cancel</button>                            
+                        <button type="submit" class="btn btn-default" onclick="disableEDIT()">Cancel</button>
                     </div>
                 </div>
-                <!-- /.row -->         
-                <br><br>
-
+                <!-- /.row -->
+                <br>
+                <br>
                 <div class="row" id="edit_news">
                     <!-- Dynamical generated -->
                 </div>
-                <br><br>
+                <br>
+                <br>
                 <hr>
-                <br><br>
-
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
@@ -376,199 +320,146 @@
                     </div>
                 </div>
                 <!-- /row -->
-
                 <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>標題</h3>
                             <input id="edit_title" class="form-control">
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-
                 <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>內容</h3>
                             <textarea id="edit_content" class="form-control" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-
                 <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>連結</h3>
                             <button class="fa fa-plus fa-1x" onclick="edit_linkContent()" style="padding: 5px;"></button>
-                            <br><br>
+                            <br>
+                            <br>
                             <div class="row">
-                                <div class="col-lg-4"><h4>命名</h4></div>
-                                <div class="col-lg-7"><h4>連結位置</h4></div>
+                                <div class="col-lg-4">
+                                    <h4>命名</h4></div>
+                                <div class="col-lg-7">
+                                    <h4>連結位置</h4></div>
                             </div>
-
                             <div id="edit_link">
                                 <div class="row" style="padding-bottom: 10px">
-                                    <div class="col-lg-4"><input show="link_name" class="form-control"></div>
-                                    <div class="col-lg-7"><input show="link_url" class="form-control"></div>
-
+                                    <div class="col-lg-4">
+                                        <input show="link_name" class="form-control">
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <input show="link_url" class="form-control">
+                                    </div>
                                     <button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>
                                 </div>
-
-
                             </div>
-
-
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-
-                <br><br>
+                <br>
+                <br>
                 <button type="submit" class="btn btn-default" onclick="formSubmit.news_edit()">送出 Submit</button>
-
             </div>
         </div>
-
-
     </div>
     <!-- /#wrapper -->
-
-
-
-
-
-
-
     <!-- jQuery -->
-    <script src="assets/main/manageHTML/js/jquery.js"></script>
+    <script src="assets/main/manage/js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="assets/main/manageHTML/js/bootstrap.min.js"></script>
-    <!-- Morris Charts JavaScript -->
-    <!-- <script src="assets/main/manageHTML/js/plugins/morris/raphael.min.js"></script>
-    <script src="assets/main/manageHTML/js/plugins/morris/morris.min.js"></script>
-    <script src="assets/main/manageHTML/js/plugins/morris/morris-data.js"></script>
- -->
-
+    <script src="assets/main/manage/js/bootstrap.min.js"></script>
     <!-- Owl-carousel JavaScript -->
-    <script src="assets/main/manageHTML/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/main/manage/owl-carousel/owl.carousel.js"></script>
     <!-- Setting Data By XDD -->
-    <script type="text/javascript" src="assets/main/manageHTML/js/scriptXDD.js"></script>
-    <script type="text/javascript" src="assets/main/manageHTML/js/get-post-XDD.js"></script>
-
+    <script type="text/javascript" src="assets/main/manage/js/scriptXDD.js"></script>
+    <script type="text/javascript" src="assets/main/manage/js/get-post-XDD.js"></script>
     <script type="text/javascript">
-        var news_id = -1;
+    var news_id = -1;
 
-        $(function(){
-            fn_list.ajaxReq(fn_list.news_get).done(function() {
-                e.reverse();
-                console.log(e);
-                initNews();
-            });
+    //Get data
+    $(function() {
+        fn_list.ajaxReq(fn_list.news_get).done(function() {
+            e.reverse();
+            console.log(e);
+            initNews();
+        });
+    })
+
+    function chooseEdit(button) {
+        var btnClass = button.className;
+        news_id = button.value;
+
+        if (btnClass.includes('active')) {
+            btnClass = btnClass.replace(' active', '');
+        } else {
+            btnClass += ' active';
+            $('.choose_edit_member').removeClass('active');
+        }
+
+        button.className = btnClass;
+
+
+        //find the data of target id
+        var a = $.grep(e, function(x) {
+            return x.news_id == button.value;
+        });
+        console.log(a);
+
+        //set view
+        $('#edit_background_data')[0].src = a[0].background;
+        $('#edit_title')[0].value = a[0].title;
+        $('#edit_content')[0].value = a[0].content;
+
+
+        $('#edit_link')[0].innerHTML = "";
+        a[0].link = JSON.parse(a[0].link);
+        a[0].link.forEach(function(element, index, array) {
+            $('#edit_link').append(linkFactor(element.link_name, element.link_url));
         })
 
-        function enableADD() {
-            $('#mask').css('display', 'block');
-            $('.formMember').css('display', 'block');
-            $('#addForm').css('display', 'block');
-        }
-        function disableADD() {
-            $('#mask').css('display', 'none');
-            $('.formMember').css('display', 'none');
-            $('#addForm').css('display', 'none');
-        }
-        function enableDELETE() {
-            $('#mask').css('display', 'block');
-            $('.formMember').css('display', 'block');
-            $('#deleteForm').css('display', 'block');
-        }
-        function disableDELETE() {
-            $('#mask').css('display', 'none');
-            $('.formMember').css('display', 'none');
-            $('#deleteForm').css('display', 'none');
-        }
-        function enableEDIT() {
-            $('#mask').css('display', 'block');
-            $('.formMember').css('display', 'block');
-            $('#editForm').css('display', 'block');
-        }
-        function disableEDIT() {
-            $('#mask').css('display', 'none');
-            $('.formMember').css('display', 'none');
-            $('#editForm').css('display', 'none');
+    }
+
+
+    var deleteItem = [];
+
+    function chooseDelete(button) {
+        var btnClass = button.className;
+        if (btnClass.includes('active')) {
+            btnClass = btnClass.replace(' active', '');
+            deleteItem.splice(deleteItem.indexOf(button.value), 1);
+            //from number button.value remove 1 item
+            console.log(deleteItem);
+        } else {
+            btnClass += ' active';
+            deleteItem.push(button.value);
+            console.log(deleteItem);
         }
 
+        button.className = btnClass;
 
-
-        function chooseEdit(button) {
-            var btnClass = button.className;
-            news_id = button.value;
-
-            if(btnClass.includes('active')){
-                btnClass = btnClass.replace(' active', '');
-            }
-            else{
-                btnClass += ' active';
-                $('.choose_edit_member').removeClass('active');
-            }
-
-            button.className = btnClass;
-            
-
-            //find the data of target id
-            var a = $.grep(e, function(x){
-                return x.news_id == button.value;
-            }); 
-            console.log(a);
-
-            //set view
-            $('#edit_background_data')[0].src = a[0].background;
-            $('#edit_title')[0].value = a[0].title;
-            $('#edit_content')[0].value = a[0].content;
-
-
-            $('#edit_link')[0].innerHTML = "";
-            a[0].link = JSON.parse(a[0].link);
-            a[0].link.forEach(function (element, index, array) {
-                $('#edit_link').append(linkFactor(element.link_name, element.link_url));
-            })
-
-        }
-
-
-        var deleteItem = [];
-
-        function chooseDelete(button) {
-            var btnClass = button.className;            
-            if(btnClass.includes('active')){
-                btnClass = btnClass.replace(' active', '');
-                deleteItem.splice(deleteItem.indexOf(button.value), 1);
-                //from number button.value remove 1 item
-                console.log(deleteItem);
-            }
-            else{
-                btnClass += ' active';
-                deleteItem.push(button.value);
-                console.log(deleteItem);
-            }
-
-            button.className = btnClass;
-
-        }
+    }
 
 
 
-        function add_linkContent() {
-            $('#add_link').append(linkFactor("", ""));
-        }
+    function add_linkContent() {
+        $('#add_link').append(linkFactor("", ""));
+    }
 
-        function edit_linkContent() {
-            $('#edit_link').append(linkFactor("", ""));
-        }
+    function edit_linkContent() {
+        $('#edit_link').append(linkFactor("", ""));
+    }
 
-        function linkFactor(link_name, link_url) {
-            return  `
+    function linkFactor(link_name, link_url) {
+        return `
                 <div class="row" style="padding-bottom: 10px">
                     <div class="col-lg-4"><input class="form-control link_name" value="` + link_name + `"></div>
                     <div class="col-lg-7"><input class="form-control link_url" value="` + link_url + `"></div>
@@ -576,14 +467,12 @@
                     <button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>
                 </div>
             `;
-        }
+    }
 
-        function deleteContent(button){
-            $(button).parent().remove();
-        }
-
+    function deleteContent(button) {
+        $(button).parent().remove();
+    }
     </script>
-
 </body>
 
 </html>

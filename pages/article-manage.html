@@ -1,3 +1,4 @@
+<!-- Coding By JasonXDDD -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,27 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>C-FAR 後台管理</title>
     <!--mdl button-->
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-    
     <!-- Bootstrap Core CSS -->
-    <link href="assets/main/manageHTML/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/main/manage/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="assets/main/manageHTML/css/sb-admin.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <!-- <link href="assets/main/manageHTML/css/plugins/morris.css" rel="stylesheet"> -->
+    <link href="assets/main/manage/css/sb-admin.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="assets/main/manageHTML/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
+    <link href="assets/main/manage/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Owl-carousel -->
-    <link rel="stylesheet" type="text/css" href="assets/main/manageHTML/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="assets/main/manageHTML/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/main/manage/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="assets/main/manage/owl-carousel/owl.theme.css">
     <!-- Custom CSS Style By XDD -->
-    <link rel="stylesheet" type="text/css" href="assets/main/manageHTML/css/styleXDD.css">
-
+    <link rel="stylesheet" type="text/css" href="assets/main/manage/css/styleXDD.css">
     <!-- Font style -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -36,19 +31,14 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
     <style type="text/css" media="screen">
-        small{
-            font-family: "Titillium Web", "微軟正黑體 Light", "微軟正黑體", sans-serif !important;
-        }
+    small {
+        font-family: "Titillium Web", "微軟正黑體 Light", "微軟正黑體", sans-serif !important;
+    }
     </style>
 </head>
 
 <body>
-
-
-
-
     <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -62,8 +52,6 @@
                 </button>
                 <a class="navbar-brand" href="/">C-FAR 管理</a>
             </div>
-
-
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
@@ -79,11 +67,6 @@
                     </ul>
                 </li>
             </ul>
-
-
-
-
-
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
@@ -106,17 +89,6 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-
-
-
-
-
-
-
-
-
-
-
         <div id="page-wrapper">
             <div class="container-fluid">
                 <!-- Page Heading -->
@@ -128,8 +100,6 @@
                     </div>
                 </div>
                 <!-- /.row -->
-
-
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-primary">
@@ -199,22 +169,14 @@
                     </div>
                 </div>
                 <!-- /.row -->
-                
-
-
-                
             </div>
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
-
-
-
         <!-- === Slide 2 - Center Introduction === -->
         <div class="story" id="slide-2" data-slide="2" style="background-color: white">
             <div class="container">
-
-                 <div class="row">
+                <div class="row">
                     <div class="col-lg-12">
                         <h3 class="page-header">
                             預覽顯示 <small>文章分享</small>
@@ -222,26 +184,15 @@
                     </div>
                 </div>
                 <!-- /.row -->
-
-
                 <div id="owl-future" class="owl-carousel owl-theme" style="width: 100%">
-                <!-- dynamically generated -->
+                    <!-- dynamically generated -->
                 </div>
-
             </div>
             <!-- /container -->
         </div>
         <!-- /slide2 -->
-
-
-
-
-        
-
-
         <!-- Show Edit Form -->
         <div id="mask"></div>
-        
         <div class="formMember">
             <div class="container" id="addForm">
                 <div class="row">
@@ -251,33 +202,30 @@
                         </h1>
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" class="btn btn-default" onclick="disableADD()">Cancel</button>                            
+                        <button type="submit" class="btn btn-default" onclick="disableADD()">Cancel</button>
                     </div>
                 </div>
-                <!-- /.row -->         
-                
-                 <div class="row">
+                <!-- /.row -->
+                <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>標題</h3>
                             <input id="add_title" class="form-control">
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-
                 <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>作者</h3>
                             <input id="add_author" class="form-control">
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-
-                <br><br>
-                
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
@@ -290,16 +238,14 @@
                     </div>
                 </div>
                 <!-- /row -->
-
                 <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>文章內容</h3>
                             <button class="fa fa-plus fa-1x" onclick="add_contentParagraph()" style="padding: 5px;"></button>
                             <button class="fa fa-picture-o fa-1x" onclick="add_contentImage()" style="padding: 5px;"></button>
-                            <br><br>
-
-
+                            <br>
+                            <br>
                             <div id="add-content">
                                 <div class="text" style="height: 120px;">
                                     <textarea class="form-control" rows="4" style="width: 90%; float: left;"></textarea>
@@ -307,26 +253,16 @@
                                     <br>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-               
-                
-                <br><br>
+                <br>
+                <br>
                 <button type="submit" class="btn btn-default" onclick="formSubmit.article_add()">送出 Submit</button>
-
             </div>
         </div>
         <!-- /add-member -->
-
-
-
-
-
-
-    
         <div class="formMember">
             <div class="container" id="deleteForm">
                 <div class="row">
@@ -336,25 +272,20 @@
                         </h1>
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" class="btn btn-default" onclick="disableDELETE()">Cancel</button>                            
+                        <button type="submit" class="btn btn-default" onclick="disableDELETE()">Cancel</button>
                     </div>
                 </div>
-                <!-- /.row -->         
-                <br><br>
-                
+                <!-- /.row -->
+                <br>
+                <br>
                 <div class="row" id="delete_article">
                     <!-- Dynamical generated -->
                 </div>
-                                    
-                <br><br>
+                <br>
+                <br>
                 <button type="submit" class="btn btn-default" onclick="formSubmit.article_delete()">送出 Submit</button>
-
             </div>
         </div>
-
-
-
-
         <div class="formMember">
             <div class="container" id="editForm">
                 <div class="row">
@@ -364,41 +295,40 @@
                         </h1>
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" class="btn btn-default" onclick="disableEDIT()">Cancel</button>                            
+                        <button type="submit" class="btn btn-default" onclick="disableEDIT()">Cancel</button>
                     </div>
                 </div>
-                <!-- /.row -->         
-                <br><br>
-
+                <!-- /.row -->
+                <br>
+                <br>
                 <div id="edit_article" class="row">
                     <!-- Dynamical generated -->
                 </div>
-                <br><br>
+                <br>
+                <br>
                 <hr>
-                <br><br>
-
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>標題</h3>
                             <input id="edit_title" class="form-control">
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-
                 <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>作者</h3>
                             <input id="edit_author" class="form-control">
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-
-                <br><br>
-                
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
@@ -411,16 +341,14 @@
                     </div>
                 </div>
                 <!-- /row -->
-
                 <div class="row">
                     <div class="col-lg-12">
-                         <div class="form-group">
+                        <div class="form-group">
                             <h3>文章內容</h3>
                             <button class="fa fa-plus fa-1x" onclick="edit_contentParagraph()" style="padding: 5px;"></button>
                             <button class="fa fa-picture-o fa-1x" onclick="edit_contentImage()" style="padding: 5px;"></button>
-                            <br><br>
-
-
+                            <br>
+                            <br>
                             <div id="edit-content">
                                 <div class="text" style="height: 120px;">
                                     <textarea class="form-control" rows="4" style="width: 90%; float: left;"></textarea>
@@ -428,192 +356,139 @@
                                     <br>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
                 <!-- /row -->
-
-                <br><br>
+                <br>
+                <br>
                 <button type="submit" class="btn btn-default" onclick="formSubmit.article_edit()">送出 Submit</button>
-
             </div>
         </div>
-
-
     </div>
     <!-- /#wrapper -->
-
-
-
-
-
-
-
     <!-- jQuery -->
-    <script src="assets/main/manageHTML/js/jquery.js"></script>
+    <script src="assets/main/manage/js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="assets/main/manageHTML/js/bootstrap.min.js"></script>
-    <!-- Morris Charts JavaScript -->
-    <!-- <script src="assets/main/manageHTML/js/plugins/morris/raphael.min.js"></script>
-    <script src="assets/main/manageHTML/js/plugins/morris/morris.min.js"></script>
-    <script src="assets/main/manageHTML/js/plugins/morris/morris-data.js"></script>
- -->
-
+    <script src="assets/main/manage/js/bootstrap.min.js"></script>
     <!-- Owl-carousel JavaScript -->
-    <script src="assets/main/manageHTML/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/main/manage/owl-carousel/owl.carousel.js"></script>
     <!-- Setting Data By XDD -->
-    <script type="text/javascript" src="assets/main/manageHTML/js/scriptXDD.js"></script>
-    <script type="text/javascript" src="assets/main/manageHTML/js/get-post-XDD.js"></script>
-
-
+    <script type="text/javascript" src="assets/main/manage/js/scriptXDD.js"></script>
+    <script type="text/javascript" src="assets/main/manage/js/get-post-XDD.js"></script>
     <script type="text/javascript">
 
+    //Get data
+    $(function() {
+        fn_list.ajaxReq(fn_list.article_get).done(function() {
+            console.log(d);
+            initArticle();
+        });
+    })
 
-        $(function(){
-            fn_list.ajaxReq(fn_list.article_get).done(function() {
-                console.log(d);
-                initArticle();
+    var chooseArticle;
+
+    function chooseEdit(button) {
+        var btnClass = button.className;
+        member_id = button.value;
+
+        if (btnClass.includes('active')) {
+            btnClass = btnClass.replace(' active', '');
+        } else {
+            btnClass += ' active';
+            $('.choose_edit_member').removeClass('active');
+        }
+
+        button.className = btnClass;
+
+
+        $(function() {
+            fn_list.ajaxReq(fn_list.article_get_one(button.value)).done(function() {
+                console.log(chooseArticle);
+
+                // //set view
+                $('#edit_background_data')[0].src = chooseArticle.background_url;
+                $('#edit_title')[0].value = chooseArticle.title;
+                $('#edit_author')[0].value = chooseArticle.author;
+
+                chooseArticle.content = JSON.parse(chooseArticle.content);
+                $('#edit-content')[0].innerHTML = "";
+
+                chooseArticle.content.forEach(function(element, index, array) {
+                    if (element.type === "content")
+                        $('#edit-content').append(contentParagraphFactor(element.content));
+                    else if (element.type === "image")
+                        $('#edit-content').append(contentImageFactor(element.image_url, element.image_description));
+                    else alert("error");
+                })
             });
         })
 
-        function enableADD() {
-            $('#mask').css('display', 'block');
-            $('.formMember').css('display', 'block');
-            $('#addForm').css('display', 'block');
-        }
-        function disableADD() {
-            $('#mask').css('display', 'none');
-            $('.formMember').css('display', 'none');
-            $('#addForm').css('display', 'none');
-        }
-        function enableDELETE() {
-            $('#mask').css('display', 'block');
-            $('.formMember').css('display', 'block');
-            $('#deleteForm').css('display', 'block');
-        }
-        function disableDELETE() {
-            $('#mask').css('display', 'none');
-            $('.formMember').css('display', 'none');
-            $('#deleteForm').css('display', 'none');
-        }
-        function enableEDIT() {
-            $('#mask').css('display', 'block');
-            $('.formMember').css('display', 'block');
-            $('#editForm').css('display', 'block');
-        }
-        function disableEDIT() {
-            $('#mask').css('display', 'none');
-            $('.formMember').css('display', 'none');
-            $('#editForm').css('display', 'none');
+        //GET req
+
+
+    }
+
+
+    var deleteItem = [];
+
+    function chooseDelete(button) {
+        var btnClass = button.className;
+        if (btnClass.includes('active')) {
+            btnClass = btnClass.replace(' active', '');
+            deleteItem.splice(deleteItem.indexOf(button.value), 1);
+            //from number button.value remove 1 item
+            console.log(deleteItem);
+        } else {
+            btnClass += ' active';
+            deleteItem.push(button.value);
+            console.log(deleteItem);
         }
 
+        button.className = btnClass;
 
-        var chooseArticle;
+    }
 
-        function chooseEdit(button) {
-            var btnClass = button.className;
-            member_id = button.value;
+    function add_contentParagraph() {
+        $('#add-content').append(contentParagraphFactor(""));
+    }
 
-            if(btnClass.includes('active')){
-                btnClass = btnClass.replace(' active', '');
-            }
-            else{
-                btnClass += ' active';
-                $('.choose_edit_member').removeClass('active');
-            }
+    function add_contentImage() {
+        $('#add-content').append(contentImageFactor("", ""));
+    }
 
-            button.className = btnClass;
-            
+    function edit_contentParagraph() {
+        $('#edit-content').append(contentParagraphFactor(""));
+    }
 
-            $(function(){
-                fn_list.ajaxReq(fn_list.article_get_one(button.value)).done(function() {
-                    console.log(chooseArticle);
+    function edit_contentImage() {
+        $('#edit-content').append(contentImageFactor("", ""));
+    }
 
-                    // //set view
-                    $('#edit_background_data')[0].src = chooseArticle.background_url;
-                    $('#edit_title')[0].value = chooseArticle.title;
-                    $('#edit_author')[0].value = chooseArticle.author;
-
-                    chooseArticle.content = JSON.parse(chooseArticle.content);
-                    $('#edit-content')[0].innerHTML = "";
-
-                    chooseArticle.content.forEach(function(element, index, array) {
-                        if(element.type === "content")
-                            $('#edit-content').append(contentParagraphFactor(element.content));
-                        else if(element.type === "image")
-                            $('#edit-content').append(contentImageFactor(element.image_url, element.image_description));
-                        else alert("error");
-                    })
-                });
-            })
-
-            //GET req
-            
-
-        }
+    function contentParagraphFactor(data) {
+        return '<div class="text" style="height: 120px;">' +
+            '<textarea class="form-control" rows="4" style="width: 90%; float: left;">' + data + '</textarea>' +
+            '<button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>' +
+            '<br>' +
+            '</div>';
+    }
 
 
-        var deleteItem = [];
 
-        function chooseDelete(button) {
-            var btnClass = button.className;            
-            if(btnClass.includes('active')){
-                btnClass = btnClass.replace(' active', '');
-                deleteItem.splice(deleteItem.indexOf(button.value), 1);
-                //from number button.value remove 1 item
-                console.log(deleteItem);
-            }
-            else{
-                btnClass += ' active';
-                deleteItem.push(button.value);
-                console.log(deleteItem);
-            }
+    function contentImageFactor(img, description) {
+        return '<div class="img" style="height: 400px;">' +
+            '<img src="' + img + '" alt="head image" height="250px"  style="width:"90%"; float: left;">' +
+            '<button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>' +
+            '<input type="file" accept="image/*" onchange="imgReload(this)">' +
+            '<br>' +
+            '註解說明: <input type="text" class="form-control image_description" style="width: 90%" value="' + description + '">' +
+            '</div>';
+    }
 
-            button.className = btnClass;
-
-        }
-
-        function add_contentParagraph() {
-            $('#add-content').append(contentParagraphFactor(""));
-        }
-
-        function add_contentImage() {
-            $('#add-content').append(contentImageFactor("", ""));
-        }
-
-        function edit_contentParagraph() {
-            $('#edit-content').append(contentParagraphFactor(""));
-        }
-
-        function edit_contentImage() {
-            $('#edit-content').append(contentImageFactor("", ""));
-        }
-
-        function contentParagraphFactor(data) {
-            return  '<div class="text" style="height: 120px;">' +
-                        '<textarea class="form-control" rows="4" style="width: 90%; float: left;">' + data + '</textarea>' +
-                        '<button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>' + 
-                        '<br>' + 
-                    '</div>';
-        }
-
-        
-
-        function contentImageFactor(img, description){
-            return  '<div class="img" style="height: 400px;">' +
-                        '<img src="' + img + '" alt="head image" height="250px"  style="width:"90%"; float: left;">' + 
-                        '<button class="fa fa-times fa-1x" onclick="deleteContent(this)" style="padding: 5px; color: #b00000;"></button>' +
-                        '<input type="file" accept="image/*" onchange="imgReload(this)">' +
-                        '<br>' +
-                        '註解說明: <input type="text" class="form-control image_description" style="width: 90%" value="' + description + '">' + 
-                    '</div>';
-        }
-        function deleteContent(button){
-            $(button).parent().remove();
-        }
+    function deleteContent(button) {
+        $(button).parent().remove();
+    }
     </script>
-
 </body>
 
 </html>
