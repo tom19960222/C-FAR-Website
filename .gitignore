@@ -34,7 +34,7 @@ node_modules
 .idea/workspace.xml
 .idea/workspace.xml
 
-*.js
+
 node_modules
 typings
 
