@@ -13,16 +13,16 @@ export let appConfig: AppConfig = {
         resave: false,
         saveUninitialized: true,
         cookie: {},
-        name: 'zuhzu-session'
+        name: 'cfar-session'
     },
     database: {
         sql: {
             type: 'mysql',
             host: 'mysql',
             port: 3306,
-            username: 'root',
-            password: 'zuhzu',
-            dbname: 'zuhzu'
+            username: 'cfar',
+            password: 'fd38947243b3cae762282bf1a5f48ea817e9f9957c05c8f8483f0cdbfa9dde163c582bf9f6468f070bbfc7481c279179cab4b9ed28a5abb17c0c770bcb8c77f2',
+            dbname: 'cfar'
         }
     },
     staticStorage: path.normalize(path.join(__dirname, 'assets')),
