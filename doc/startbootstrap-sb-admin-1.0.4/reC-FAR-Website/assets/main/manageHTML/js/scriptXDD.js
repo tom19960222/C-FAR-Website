@@ -266,11 +266,11 @@ function initMember() {
 
 	console.log(c);
 	c.forEach(function(element, index, array) {
-		target.data('owlCarousel').addItem(memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id));
+		memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id, array);
 		editMember.append(editMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
 		deleteMember.append(deleteMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
 	})
-
+	target.append(memberData);
 	showIntro();
 };
 
@@ -292,19 +292,51 @@ function editMemberFactor(ch_name, img, index){
 			'</div>';
 }
 
-function memberFactor(ch_name, en_name, job, head, index) {
-	return '<div id=' + index + ' class="mem item">' +
-				'<p style="height: 250px; width: 200px; overflow: hidden; margin: 0 auto;">' +	
-					'<img src="' + head + '" style="height: 250px;">' + 
-				'</p>' +
-				'<h2 class="font-semibold" style=" font-size: 30px; padding-bottom: 10px">' +
-					ch_name + '<br>' +
-					job + '<br>' +
-					'<span style="font-size: 20px">' +
+var memberData = "";
+function memberFactor(ch_name, en_name, job, head, index, array){
+	if(index%4 === 1){
+		memberData += `<div class="row member_term_` + index%4 + `">`;
+		memberData += memberElementFactor(ch_name, en_name, job, head, index);
+	}
+	else if(index%4 === 0){
+		memberData += memberElementFactor(ch_name, en_name, job, head, index);
+		memberData +=
+			`<div class="col-lg-12 subtitle-row">
+                <div class="col-12 font-thin member_intro" style="font-size: 25px; height: 200px">
+                </div>
+            </div>
+        </div>
+        <!-- /row -->`;
+	}
+	else{
+		memberData += memberElementFactor(ch_name, en_name, job, head, index);
+	}
+
+
+	if(index === array.length && index%4 !== 0){
+		memberData +=
+			`<div class="col-lg-12 subtitle-row">
+                <div class="col-12 font-thin member_intro" style="font-size: 25px; height: 200px">
+                </div>
+            </div>
+        </div>
+        <!-- /row -->`;
+	}
+
+}
+
+function memberElementFactor(ch_name, en_name, job, head, index) {
+	return `<div id=` + index + ` class="mem col-lg-3">
+				<p style="height: 250px; width: 200px; overflow: hidden; margin: 0 auto;">	
+					<img src="` + head + `" style="height: 250px;"> 
+				</p>
+				<h2 class="font-semibold" style=" font-size: 30px; padding-bottom: 10px">` +
+					ch_name + `<br>` + job + `<br>
+					<span style="font-size: 20px">` +
 						en_name +
-					'</span>' +
-				'</h2>' +
-			'</div> <!-- /col12 -->';
+					`</span>
+				</h2>
+			</div> <!-- /col12 -->`;
 }
 
 
@@ -314,7 +346,7 @@ var mq = window.matchMedia( "(max-width: 750px)" );
 function showIntro(e) {
 	$('.mem').mouseenter(
 		function(){
-			// console.log(this);
+			console.log(typeof(this));
 			changeMember(this);
 		}
 	)
@@ -328,8 +360,8 @@ function getEventTarget(e) {
 
 function changeMember(target) {
 	if(typeof(target) === 'number') return;
-
-	$('.mem.item').css('opacity', 1);
+	//reset all style
+	$('.mem').css('opacity', 1);
 
 	if(target === undefined	|| target === 0) return;
 	target.style.opacity = .6;
@@ -339,28 +371,29 @@ function changeMember(target) {
 		return e.member_id == target.getAttribute('id');
 	});
 
-	$('#member')[0].innerHTML = a[0].introduction;
+	console.log($(target).parent());
+	$(target).parent().find(".member_intro")[0].innerHTML = a[0].introduction;
 
 }
 
 //animate
-$(document).ready(function(){
+// $(document).ready(function(){
 
-	$("#member-owl").owlCarousel({
+// 	$("#member-owl").owlCarousel({
 
-		autoPlay: true,
-		items : 4,
-		itemsDesktop : [1199,3],
-		itemsDesktopSmall : [979,1],
+// 		autoPlay: true,
+// 		items : 4,
+// 		itemsDesktop : [1199,3],
+// 		itemsDesktopSmall : [979,1],
 
-		//navigation: true,
-		afterAction: XDD
-	});
+// 		//navigation: true,
+// 		afterAction: XDD
+// 	});
 
-	function XDD(){
-		changeMember(this.owl.currentItem, null);
-	}
-});
+// 	function XDD(){
+// 		changeMember(this.owl.currentItem, null);
+// 	}
+// });
 
 
 
