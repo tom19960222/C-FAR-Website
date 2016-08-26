@@ -8,7 +8,7 @@ services:
         volumes:
             - /etc/localtime:/etc/localtime
         ports:
-            - 3082:3080
+            - 3080:3080
         links:
             - mysql
             - redis
