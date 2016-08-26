@@ -34,7 +34,6 @@ $(document).ready(function() {
 
     $("#owl-img").owlCarousel({
 
-        autoPlay: 5000, //Set AutoPlay to 3 seconds
 
         items: 5,
         itemsDesktop: [1199, 3],
@@ -122,11 +121,11 @@ function initMember() {
     var deleteMember = $('#delete_member');
 
     c.forEach(function(element, index, array) {
-        target.data('owlCarousel').addItem(memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id));
+        memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id, array);
         editMember.append(editMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
         deleteMember.append(deleteMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
     })
-
+    target.append(memberData);
     showIntro();
 };
 
@@ -148,28 +147,60 @@ function editMemberFactor(ch_name, img, index) {
         '</div>';
 }
 
-function memberFactor(ch_name, en_name, job, head, index) {
-    return '<div id=' + index + ' class="mem item">' +
-        '<p style="height: 250px; width: 200px; overflow: hidden; margin: 0 auto;">' +
-        '<img src="' + head + '" style="height: 250px;">' +
-        '</p>' +
-        '<h2 class="font-semibold" style=" font-size: 30px; padding-bottom: 10px">' +
-        ch_name + '<br>' +
-        job + '<br>' +
-        '<span style="font-size: 20px">' +
-        en_name +
-        '</span>' +
-        '</h2>' +
-        '</div> <!-- /col12 -->';
+var memberData = "";
+function memberFactor(ch_name, en_name, job, head, index, array){
+    if(index%4 === 1){
+        memberData += `<div class="row member_term_` + index%4 + `">`;
+        memberData += memberElementFactor(ch_name, en_name, job, head, index);
+    }
+    else if(index%4 === 0){
+        memberData += memberElementFactor(ch_name, en_name, job, head, index);
+        memberData +=
+            `<div class="col-lg-12 subtitle-row">
+                <div class="col-12 font-thin member_intro" style="font-size: 25px; height: 200px">
+                </div>
+            </div>
+        </div>
+        <!-- /row -->`;
+    }
+    else{
+        memberData += memberElementFactor(ch_name, en_name, job, head, index);
+    }
+
+
+    if(index === array.length && index%4 !== 0){
+        memberData +=
+            `<div class="col-lg-12 subtitle-row">
+                <div class="col-12 font-thin member_intro" style="font-size: 25px; height: 200px">
+                </div>
+            </div>
+        </div>
+        <!-- /row -->`;
+    }
+
+}
+
+function memberElementFactor(ch_name, en_name, job, head, index) {
+    return `<div id=` + index + ` class="mem col-lg-3">
+                <p style="height: 250px; width: 200px; overflow: hidden; margin: 0 auto;">  
+                    <img src="` + head + `" style="height: 250px;"> 
+                </p>
+                <h2 class="font-semibold" style=" font-size: 30px; padding-bottom: 10px">` +
+                    ch_name + `<br>` + job + `<br>
+                    <span style="font-size: 20px">` +
+                        en_name +
+                    `</span>
+                </h2>
+            </div> <!-- /col12 -->`;
 }
 
 
 //media is mobile
-var mq = window.matchMedia("(max-width: 750px)");
+var mq = window.matchMedia( "(max-width: 750px)" );
 
 function showIntro(e) {
     $('.mem').mouseenter(
-        function() {
+        function(){
             changeMember(this);
         }
     )
@@ -182,43 +213,21 @@ function getEventTarget(e) {
 }
 
 function changeMember(target) {
-    if (typeof(target) === 'number') return;
+    if(typeof(target) === 'number') return;
+    //reset all style
+    $('.mem').css('opacity', 1);
 
-    $('.mem.item').css('opacity', 1);
-
-    if (target === undefined || target === 0) return;
+    if(target === undefined || target === 0) return;
     target.style.opacity = .6;
 
     //find the data of target id
-    var a = $.grep(c, function(e) {
+    var a = $.grep(c, function(e){
         return e.member_id == target.getAttribute('id');
     });
 
-    $('#member')[0].innerHTML = a[0].introduction;
+    $(target).parent().find(".member_intro")[0].innerHTML = a[0].introduction;
 
 }
-
-//animate
-$(document).ready(function() {
-
-    $("#member-owl").owlCarousel({
-
-        autoPlay: true,
-        items: 4,
-        itemsDesktop: [1199, 3],
-        itemsDesktopSmall: [979, 1],
-
-        //navigation: true,
-        afterAction: XDD
-    });
-
-    function XDD() {
-        changeMember(this.owl.currentItem, null);
-    }
-});
-
-
-
 
 //future page - article
 var d;
@@ -380,6 +389,7 @@ $(document).ready(function() {
 
     $("#owl-newthing").owlCarousel({
         autoPlay: true,
+        stopOnHover: true,
         items: 1,
         itemsDesktop: [1199, 1],
         itemsDesktopSmall: [979, 1],
