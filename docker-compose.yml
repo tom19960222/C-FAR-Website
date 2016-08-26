@@ -1,0 +1,27 @@
+version: '2'
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfiles/web
+        image: cfar-web
+        volumes:
+            - /etc/localtime:/etc/localtime
+        ports:
+            - 3082:3080
+        links:
+            - mysql
+            - redis
+        environment:
+            - NODE_ENV=production
+
+    redis:
+        image: redis:3
+
+    mysql:
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=fd38947243b3cae762282bf1a5f48ea817e9f9957c05c8f8483f0cdbfa9dde163c582bf9f6468f070bbfc7481c279179cab4b9ed28a5abb17c0c770bcb8c77f2
+            - MYSQL_DATABASE=cfar
+            - MYSQL_USER=cfar
+            - MYSQL_PASSWORD=fd38947243b3cae762282bf1a5f48ea817e9f9957c05c8f8483f0cdbfa9dde163c582bf9f6468f070bbfc7481c279179cab4b9ed28a5abb17c0c770bcb8c77f2
