@@ -33,7 +33,7 @@ function postUser(){
 
     //jQuery post
     $.ajax({
-        url: 'http://cfar.hsexpert.net/user/login',
+        url: 'http://cfar.tku.edu.tw/user/login',
         type: 'post',
         data: JSON.stringify(data),
         headers: {
