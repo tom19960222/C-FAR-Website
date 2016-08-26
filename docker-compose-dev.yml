@@ -3,7 +3,7 @@ services:
     web:
         build:
             context: ./Dockerfiles
-            dockerfile: web
+            dockerfile: web-dev
         image: zuhzu-dev-web
         volumes:
             - ./:/app
@@ -15,18 +15,12 @@ services:
             - redis
 
     redis:
-        build: 
-            context: ./Dockerfiles
-            dockerfile: redis
-        image: zuhzu-dev-redis
+        image: redis:3
         ports:
             - 6379:6379
 
     mysql:
-        build: 
-            context: ./Dockerfiles
-            dockerfile: mysql
-        image: zuhzu-dev-mysql
+        image: mysql:5.7
         ports:
             - 3306:3306
         environment:
