@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN useradd -m --uid 1000 cfar
 
-RUN npm install -g pm2 typescript typings
+RUN npm install -g pm2 typescript@1.8.10 typings
 
 COPY Dockerfiles/web-start.sh /start.sh
 
