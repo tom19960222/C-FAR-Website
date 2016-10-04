@@ -1,6 +1,6 @@
 /// <reference path="../../typings/index.d.ts" />
 import {articleModel, articleInstance, articleAttributes} from './models';
-import * as Promise from 'bluebird';
+import * as BluebirdPromise from 'bluebird';
 import * as Sequelize from 'sequelize';
 import {fileAPI} from './';
 import {app} from "../../app";
@@ -38,7 +38,7 @@ export function renderBackgroundHTML(background_url: string): string{
 }
 
 export async function combineContentHTML(content: any): Promise<string>{
-    return new Promise<string>(async(resolve) => {
+    return new BluebirdPromise<string>(async(resolve) => {
         let fullHTML = '';
 
         for (let i = 0; i < content.length; i++) {
@@ -76,11 +76,11 @@ export function rebuildAllArticleHTML(){
             articleList[i].rendered_HTML = await combineContentHTML(JSON.parse(articleList[i].content));
             promiseList.push(articleList[i].save());
         }
-        return Promise.all(promiseList);
+        return BluebirdPromise.all(promiseList);
     })
 }
 
-export function addArticle(creatorID: number, data: articleAttributes, t?: Sequelize.Transaction): Promise<articleInstance>{
+export function addArticle(creatorID: number, data: articleAttributes, t?: Sequelize.Transaction): BluebirdPromise<articleInstance>{
     let article: articleInstance;
     let fullHTML = "";
     if(t != null){
@@ -133,17 +133,17 @@ export function addArticle(creatorID: number, data: articleAttributes, t?: Seque
     }
 }
 
-export function getArticleList(): Promise<articleInstance[]>{
+export function getArticleList(): BluebirdPromise<articleInstance[]>{
     return articleModel.findAll({
         attributes: ['title', 'author', 'background_url', 'article_id']
     });
 }
 
-export function getArticle(id: number): Promise<articleInstance>{
+export function getArticle(id: number): BluebirdPromise<articleInstance>{
     return articleModel.findById(id);
 }
 
-export function updateArticle(articleID: number, data: articleAttributes, t?: Sequelize.Transaction): Promise<articleInstance>{
+export function updateArticle(articleID: number, data: articleAttributes, t?: Sequelize.Transaction): BluebirdPromise<articleInstance>{
     if(t != null) {
         let article: articleInstance;
         return articleModel.findById(articleID)
@@ -194,7 +194,7 @@ export function updateArticle(articleID: number, data: articleAttributes, t?: Se
 
 }
 
-export function bulkUpdateArticle(articleList: articleAttributes[]): Promise<any>{
+export function bulkUpdateArticle(articleList: articleAttributes[]): BluebirdPromise<any>{
     return sequelize.transaction((t) => {
         let promiseList = [];
         articleList.forEach((article) => {
@@ -207,11 +207,11 @@ export function bulkUpdateArticle(articleList: articleAttributes[]): Promise<any
                 background_data: article.background_data,
                 background_filename: article.background_filename }, t));
         });
-        return Promise.all(promiseList);
+        return BluebirdPromise.all(promiseList);
     })
 }
 
-export function deleteArticle(articleID: number, t?: Sequelize.Transaction): Promise<void>{
+export function deleteArticle(articleID: number, t?: Sequelize.Transaction): BluebirdPromise<void>{
     if(t != null){
         return articleModel.findById(articleID)
         .then((article) => {

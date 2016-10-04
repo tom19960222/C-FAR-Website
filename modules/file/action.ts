@@ -60,12 +60,12 @@ export function register(mountPath: string, moduleName: string): FileAPIInstance
                         let result: FileAPIResult = {
                             URI: path.join('/assets', mountPath, filename[0], filename[1], filename),
                             filename: filename
-                        }
+                        };
                         return resolve(result);
                     })
                 })
             })
         }
-    }
+    };
     return APIInstance;
 }

@@ -1,12 +1,12 @@
 /// <reference path="../../typings/index.d.ts" />
 import {newsModel, newsInstance, newsAttributes} from './models';
-import * as Promise from 'bluebird';
+import * as BluebirdPromise from 'bluebird';
 import * as Sequelize from 'sequelize';
 import {fileAPI} from './';
 import {app} from "../../app";
 let sequelize: Sequelize.Connection = app.db.sql;
 
-export function addNews(creatorID: number, data: newsAttributes, t?: Sequelize.Transaction): Promise<newsInstance>{
+export function addNews(creatorID: number, data: newsAttributes, t?: Sequelize.Transaction): BluebirdPromise<newsInstance>{
     if(t != null){
         return newsModel.create({
             title: data.title,
@@ -47,11 +47,11 @@ export function addNews(creatorID: number, data: newsAttributes, t?: Sequelize.T
     }
 }
 
-export function getNewsList(): Promise<newsInstance[]>{
+export function getNewsList(): BluebirdPromise<newsInstance[]>{
     return newsModel.findAll();
 }
 
-export function updateNews(newsID: number, data: newsAttributes, t?: Sequelize.Transaction): Promise<newsInstance>{
+export function updateNews(newsID: number, data: newsAttributes, t?: Sequelize.Transaction): BluebirdPromise<newsInstance>{
     if(t != null) {
         return newsModel.findById(newsID)
         .then(async(news) => {
@@ -91,7 +91,7 @@ export function updateNews(newsID: number, data: newsAttributes, t?: Sequelize.T
 
 }
 
-export function bulkUpdateNews(newsList: newsAttributes[]): Promise<any>{
+export function bulkUpdateNews(newsList: newsAttributes[]): BluebirdPromise<any>{
     return sequelize.transaction((t) => {
         let promiseList = [];
         newsList.forEach((news) => {
@@ -102,11 +102,11 @@ export function bulkUpdateNews(newsList: newsAttributes[]): Promise<any>{
                 content: news.content,
                 link: news.link }, t));
         });
-        return Promise.all(promiseList);
+        return BluebirdPromise.all(promiseList);
     })
 }
 
-export function deleteNews(newsID: number, t?: Sequelize.Transaction): Promise<void>{
+export function deleteNews(newsID: number, t?: Sequelize.Transaction): BluebirdPromise<void>{
     if(t != null){
         return newsModel.findById(newsID)
         .then((news) => {
