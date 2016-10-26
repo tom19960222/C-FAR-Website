@@ -56,7 +56,7 @@ export function Article (sequelize: Sequelize.Connection): Sequelize.Model<artic
         _Article = sequelize.define('article', {
             /* Required fields. */
             title: {
-                type: Sequelize.STRING
+                type: Sequelize.TEXT
             },
             author: {
                 type: Sequelize.STRING
@@ -74,7 +74,7 @@ export function Article (sequelize: Sequelize.Connection): Sequelize.Model<artic
                 type: Sequelize.STRING
             },
             rendered_HTML: {
-                type: Sequelize.TEXT
+                type: Sequelize.TEXT('medium')
             },
             article_id: {
                 type: Sequelize.INTEGER,
