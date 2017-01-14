@@ -132,15 +132,20 @@
                 <div class="col-12 font-thin title-font">未來思考與策略發展工作坊</div>
             </div>
             <!-- Accent-colored raised button with ripple -->
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect work-1" style="">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect work-1" style=""
+                    onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSckYtAzvfnuqo_Ge6n0_gUF0h3w8rP5aHIdNX91GI__t3ooMA/viewform'">
                 我要報名 <i class="fa fa-chevron-right"></i>
             </button>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect work-2" style="">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect work-2" style=""
+                    onclick="location.href='http://cfar.tku.edu.tw/new-things'">
                 更多資訊
             </button>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect work-3" style="">
+            
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect work-3" style="" 
+                    onclick="location.href='mailto:tdkx@oa.tku.edu.tw'">
                 我想問問題
             </button>
+          
             <!-- /row -->
             <div class="row subtitle-row" style="padding-bottom: 10px; padding-top: 0px">
                 <div class="col-12 col-sm-9 font-thin" style="font-size: 25px;">
@@ -358,7 +363,7 @@
             <div class="row subtitle-row" style="font-size: 25px; padding: 0px;">
                 <div class="col-sm-1 hidden-sm">&nbsp;</div>
                 <div class="col-12 col-sm-10 font-light">
-                    地址：&nbsp;&nbsp;新北市25137淡水區英專路151號&nbsp;&nbsp;
+                    地址：&nbsp;&nbsp;25137新北市淡水區英專路151號&nbsp;&nbsp;
                     <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
                     淡江大學策略遠見研究中心
                     <br> 信箱：&nbsp;&nbsp;tdkx@oa.tku.edu.tw
@@ -413,8 +418,7 @@
 <script src="assets/main/page/js/html5shiv.js"></script>
 <script src="assets/main/page/js/jquery-1.10.2.min.js"></script>
 <script src="assets/main/page/js/jquery-migrate-1.2.1.min.js"></script>
-<!--angry for this preventDefault() before I set event fn on it!!!-->
-<script src="assets/main/page/js/bootstrap.min.js"></script>
+
 <script src="assets/main/page/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="assets/main/page/fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
 <script src="assets/main/page/owl-carousel/owl-carousel/owl.carousel.js"></script>
@@ -449,21 +453,6 @@ $(function() {
 
 
 
-
-$(document).ready(function(e) {
-    var lis = $('.nav > li');
-    menu_focus(lis[0], 1);
-
-    $(".fancybox").fancybox({
-        padding: 10,
-        helpers: {
-            overlay: {
-                locked: false
-            }
-        }
-    });
-
-});
 </script>
 <% include google-ga.ejs %>
 

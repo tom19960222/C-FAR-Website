@@ -145,7 +145,7 @@ header .intro-text .skills {
 
     .navbar-fixed-top.navbar-shrink {
         padding: 10px 0;
-        background-color: #7575CE;
+        background-color: #ffa865;
         transition: .5s;
     }
 
@@ -232,7 +232,7 @@ section#admission {
 
 section#sponsor{
     color: white;
-    background-color: white;;
+    background-color: #EFF3F7;
 }
 section h2 {
     margin: 0;
@@ -241,7 +241,7 @@ section h2 {
 
 section.success {
     color:#FFF;
-    background: #EFF3F7;
+    background: #FFF;
 }
 
 section.success a{
@@ -818,7 +818,11 @@ section#sponsor .img-responsive{
     height: 200px !important;
 }
 
-
+.topicSpeaker{
+    color: #823f05;
+    position: absolute;
+    left: 9em;
+}
 
 
 /*Using C-FAR page footer style*/

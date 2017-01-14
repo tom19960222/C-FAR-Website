@@ -94,6 +94,29 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-pencil fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">修改相片</div>
+                                        <div>Change photo</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <a href="#" onclick="enableCHANGE()">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Change Photo</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
                         <div class="panel panel-yellow">
                             <div class="panel-heading">
                                 <div class="row">
@@ -101,14 +124,14 @@
                                         <i class="fa fa-trash fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">修改相片</div>
-                                        <div>Change photo</div>
+                                        <div class="huge">刪除相片</div>
+                                        <div>Delete photo</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" onclick="enableCHANGE()">
+                            <a href="#" onclick="enableDELETE()">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Change Photo</span>
+                                    <span class="pull-left">Delete Photo</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -330,6 +353,30 @@
             </div>
         </div>
         <!-- changeForm -->
+
+        <div class="formMember">
+            <div class="container" id="deleteForm">
+                <div class="row">
+                    <div class="col-sm-11">
+                        <h1 class="page-header">
+                            刪除相片 <small>DELETE PHOTO</small>
+                        </h1>
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="submit" class="btn btn-default" onclick="disableDELETE()">Cancel</button>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <br>
+                <br>
+                <div class="row" id="delete_album">
+                    <!-- Dynamical generated -->
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-default" onclick="formSubmit.image_delete()">送出 Submit</button>
+            </div>
+        </div>
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
@@ -386,6 +433,25 @@
             $('#imgShow')[0].src = a[button.value - 1].path;
             img.choose_img.img_src = a[button.value - 1].path;
         }
+    }
+
+    var deleteItem = [];
+
+    function chooseDelete(button) {
+        var btnClass = button.className;
+        if (btnClass.includes('active')) {
+            btnClass = btnClass.replace(' active', '');
+            deleteItem.splice(deleteItem.indexOf(button.value), 1);
+            //from number button.value remove 1 item
+            console.log(deleteItem);
+        } else {
+            btnClass += ' active';
+            deleteItem.push(button.value);
+            console.log(deleteItem);
+        }
+
+        button.className = btnClass;
+
     }
     </script>
 </body>

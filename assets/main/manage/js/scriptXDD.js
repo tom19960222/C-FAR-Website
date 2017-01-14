@@ -6,9 +6,13 @@ var a;
 function initAlbum() {
     var target = $('#owl-img');
     var changeAlbum = $('.change_album').children("img");
+    var deleteAlbum = $('#delete_album');
 
     a.forEach(function(element, index, array) {
         target.data('owlCarousel').addItem(photoFactor(element.path));
+
+        deleteAlbum.append(deletePhotoFactor(element.path, element.image_id));
+
         if (changeAlbum.length !== 0)
             changeAlbum[element.image_id - 1].setAttribute("src", element.path);
     })
@@ -26,6 +30,14 @@ function photoFactor(src) {
         "height: 100%; " +
         "width: 100%; " +
         '"></div>' +
+        '</div>';
+}
+
+function deletePhotoFactor(src, index) {
+    return '<div class="col-sm-6">' +
+        '<button class="btn btn-default btn-lg" onclick="chooseDelete(this)" value="' + index + '">' +
+        '<img src="' + src + '" height="200px" width="auto">' +
+        '</button>' +
         '</div>';
 }
 
@@ -121,7 +133,7 @@ function initMember() {
     var deleteMember = $('#delete_member');
 
     c.forEach(function(element, index, array) {
-        memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id, array);
+        memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id, array, index+1);
         editMember.append(editMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
         deleteMember.append(deleteMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
     })
@@ -148,13 +160,13 @@ function editMemberFactor(ch_name, img, index) {
 }
 
 var memberData = "";
-function memberFactor(ch_name, en_name, job, head, index, array){
+function memberFactor(ch_name, en_name, job, head, id, array, index){
     if(index%4 === 1){
         memberData += `<div class="row member_term_` + index%4 + `">`;
-        memberData += memberElementFactor(ch_name, en_name, job, head, index);
+        memberData += memberElementFactor(ch_name, en_name, job, head, id);
     }
     else if(index%4 === 0){
-        memberData += memberElementFactor(ch_name, en_name, job, head, index);
+        memberData += memberElementFactor(ch_name, en_name, job, head, id);
         memberData +=
             `<div class="col-lg-12 subtitle-row">
                 <div class="col-12 font-thin member_intro" style="font-size: 25px; height: 200px">
@@ -164,7 +176,7 @@ function memberFactor(ch_name, en_name, job, head, index, array){
         <!-- /row -->`;
     }
     else{
-        memberData += memberElementFactor(ch_name, en_name, job, head, index);
+        memberData += memberElementFactor(ch_name, en_name, job, head, id);
     }
 
 
@@ -352,7 +364,7 @@ function newsFactor(title, bg, content, link) {
     link = JSON.parse(link);
     link.forEach(function(element, index, array) {
         x +=
-            '<a class="link" href="' + element.link_url + '">' +
+            '<a href="' + element.link_url + '" style="word-break: break-all;">' +
             element.link_name +
             '</a><br>';
     })
@@ -391,8 +403,7 @@ $(document).ready(function() {
         autoPlay: true,
         stopOnHover: true,
         items: 1,
-        itemsDesktop: [1199, 1],
-        itemsDesktopSmall: [979, 1],
+        
 
         navigation: true
 

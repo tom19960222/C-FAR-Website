@@ -11,6 +11,7 @@ var fn_list = {
 	image_edit: function(image_id) {
 		return	{fn_name: "image_edit", url: "http://cfar.tku.edu.tw/image/" + image_id, method: "PUT"}		
 	},
+	image_delete: 	{fn_name: "image_delete", url: "http://cfar.tku.edu.tw/image", method: "DELETE"},
 
 	member_get: 	{fn_name: "member_get", url: "http://cfar.tku.edu.tw/member", method: "GET"},
 	member_add: 	{fn_name: "member_add", url: "http://cfar.tku.edu.tw/member", method: "POST"},
@@ -20,6 +21,7 @@ var fn_list = {
 	message_get: 	{fn_name: "message_get", url: "http://cfar.tku.edu.tw/message", method: "GET"},
 	message_add: 	{fn_name: "message_add", url: "http://cfar.tku.edu.tw/message", method: "POST"},
 	message_edit: 	{fn_name: "message_edit", url: "http://cfar.tku.edu.tw/message", method: "PUT"},
+	message_delete: {fn_name: "message_delete", url: "http://cfar.tku.edu.tw/message", method: "DELETE"},
 
 	article_get: 	{fn_name: "article_get", url: "http://cfar.tku.edu.tw/article", method: "GET"},
 	article_get_one: function (article_id) {
@@ -205,6 +207,17 @@ var formSubmit = {
 		fn_list.ajaxReq(fn_list.image_edit(img.choose_img.img_id), data);
 	},
 
+	image_delete: function () {
+		var data = {
+			image_id: deleteItem
+		};
+
+		if(data.image_id.length === 0)
+			alert("請選擇刪除的照片");
+		else
+			fn_list.ajaxReq(fn_list.image_delete, data);
+	},
+
 
 	message_add: function() {
 		var data = {
@@ -250,6 +263,19 @@ var formSubmit = {
 			fn_list.ajaxReq(fn_list.message_edit, data);
 		}
 	},
+
+	message_delete: function () {
+		var data = {
+			message_id: deleteItem
+		};
+
+		if(data.message_id.length === 0)
+			alert("請選擇刪除的分享");
+		else
+			fn_list.ajaxReq(fn_list.message_delete, data);
+	},
+
+
 
 	article_add: function () {
 		var data = {
