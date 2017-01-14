@@ -32,7 +32,7 @@ export function Message (sequelize: Sequelize.Connection): Sequelize.Model<messa
         _Message = sequelize.define('message', {
             /* Required fields. */
             content: {
-                type: Sequelize.STRING,
+                type: Sequelize.TEXT,
             },
             author: {
                 type: Sequelize.STRING

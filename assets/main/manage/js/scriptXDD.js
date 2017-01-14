@@ -131,7 +131,6 @@ function initMember() {
     var target = $('#member-owl');
     var editMember = $('#edit_member');
     var deleteMember = $('#delete_member');
-
     c.forEach(function(element, index, array) {
         memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id, array, index+1);
         editMember.append(editMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
@@ -158,14 +157,13 @@ function editMemberFactor(ch_name, img, index) {
         '</button>' +
         '</div>';
 }
-
 var memberData = "";
-function memberFactor(ch_name, en_name, job, head, id, array, index){
-    if(index%4 === 1){
-        memberData += `<div class="row member_term_` + index%4 + `">`;
+
+function memberFactor(ch_name, en_name, job, head, id, array, index) {
+    if (index % 4 === 1) {
+        memberData += `<div class="row member_term_` + index % 4 + `">`;
         memberData += memberElementFactor(ch_name, en_name, job, head, id);
-    }
-    else if(index%4 === 0){
+    } else if (index % 4 === 0) {
         memberData += memberElementFactor(ch_name, en_name, job, head, id);
         memberData +=
             `<div class="col-lg-12 subtitle-row">
@@ -174,13 +172,10 @@ function memberFactor(ch_name, en_name, job, head, id, array, index){
             </div>
         </div>
         <!-- /row -->`;
-    }
-    else{
+    } else {
         memberData += memberElementFactor(ch_name, en_name, job, head, id);
     }
-
-
-    if(index === array.length && index%4 !== 0){
+    if (index === array.length && index % 4 !== 0) {
         memberData +=
             `<div class="col-lg-12 subtitle-row">
                 <div class="col-12 font-thin member_intro" style="font-size: 25px; height: 200px">
@@ -189,7 +184,6 @@ function memberFactor(ch_name, en_name, job, head, id, array, index){
         </div>
         <!-- /row -->`;
     }
-
 }
 
 function memberElementFactor(ch_name, en_name, job, head, index) {
@@ -198,26 +192,23 @@ function memberElementFactor(ch_name, en_name, job, head, index) {
                     <img src="` + head + `" style="height: 250px;"> 
                 </p>
                 <h2 class="font-semibold" style=" font-size: 30px; padding-bottom: 10px">` +
-                    ch_name + `<br>` + job + `<br>
+        ch_name + `<br>` + job + `<br>
                     <span style="font-size: 20px">` +
-                        en_name +
-                    `</span>
+        en_name +
+        `</span>
                 </h2>
             </div> <!-- /col12 -->`;
 }
-
-
 //media is mobile
-var mq = window.matchMedia( "(max-width: 750px)" );
+var mq = window.matchMedia("(max-width: 750px)");
 
 function showIntro(e) {
     $('.mem').mouseenter(
-        function(){
+        function() {
             changeMember(this);
         }
     )
 };
-
 
 function getEventTarget(e) {
     e = e || window.event;
@@ -225,20 +216,16 @@ function getEventTarget(e) {
 }
 
 function changeMember(target) {
-    if(typeof(target) === 'number') return;
+    if (typeof(target) === 'number') return;
     //reset all style
-    $('.mem').css('opacity', 1);
-
-    if(target === undefined || target === 0) return;
-    target.style.opacity = .6;
-
+    $('.mem').css('opacity', .6);
+    if (target === undefined || target === 0) return;
+    target.style.opacity = 1;
     //find the data of target id
-    var a = $.grep(c, function(e){
+    var a = $.grep(c, function(e) {
         return e.member_id == target.getAttribute('id');
     });
-
     $(target).parent().find(".member_intro")[0].innerHTML = a[0].introduction;
-
 }
 
 //future page - article
@@ -343,7 +330,7 @@ function newsFactor(title, bg, content, link) {
     content = content.replace(/\n/g, "<br />");
 
     var x = `
-		<div class="item">
+        <div class="item">
             <!-- /row -->
             <div class="row subtitle-row" style="padding: 0; margin: 0;">
                 <div class="col-sm-1 hidden-sm">&nbsp;</div>
@@ -356,7 +343,7 @@ function newsFactor(title, bg, content, link) {
                 <div class="col-sm-1 hidden-sm">&nbsp;</div>
                 <div class="col-12 col-sm-10 font-light content-font">
                     <span class="font-semibold">` + title + `</span><br>
-					` + content + '<br>' +
+                    ` + content + '<br>' +
         `
                     <br>
                     <span class="font-semibold">網站連結:</span><br>
@@ -473,5 +460,3 @@ function disableCHANGE() {
     $('.formMember').css('display', 'none');
     $('#changeForm').css('display', 'none');
 }
-
-

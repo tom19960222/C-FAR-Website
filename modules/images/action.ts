@@ -1,13 +1,10 @@
 /// <reference path="../../typings/index.d.ts" />
 import {imageModel, imageInstance, imageAttributes} from './models';
-import {router} from './route';
-import * as fs from 'fs';
-import * as path from 'path';
 import * as Promise from 'bluebird';
-import {EventEmitter} from 'events';
-import * as Express from 'express';
 import {fileAPI} from './';
-import {FileAPIResult} from '../file';
+import {Transaction} from "~sequelize/index";
+import {app} from "../../app";
+let sequelize = app.db.sql;
 
 
 export function addImage(filename: string, content: string): Promise<imageInstance>{
@@ -44,28 +41,33 @@ export function updateImage(fileID: number, originalFilename:string, content: st
     })
 }
 
-export function deleteImage(fileID: number): Promise<void>{
-    return imageModel.findById(fileID)
-    .then((file) => {
-        return file.destroy();
-    })
+export function deleteImage(fileID: number, t?: Transaction): Promise<void>{
+    if(t != null)
+        return imageModel.findById(fileID, {transaction: t})
+            .then((file) => {
+                return file.destroy({transaction: t});
+            });
+    else
+        return sequelize.transaction(t => {
+            return imageModel.findById(fileID, {transaction: t})
+                .then((file) => {
+                    return file.destroy({transaction: t});
+                });
+        })
+
 }
 
 export function isImageExist(IdOrFilename: number|string): Promise<boolean>{
     if (typeof IdOrFilename == 'string'){
         return imageModel.findOne({where: {filename: IdOrFilename}})
         .then((result) => {
-            if (result != null)
-                return true;
-            return false;
+            return result != null;
         })
     }
     else if (typeof IdOrFilename == 'number'){
         return imageModel.findById(IdOrFilename)
         .then((result) => {
-            if (result != null)
-                return true;
-            return false;
+            return result != null;
         })
     }
     else return new Promise<boolean>((resolve, reject) => {resolve(false)});

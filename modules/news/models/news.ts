@@ -43,7 +43,7 @@ export function News (sequelize: Sequelize.Connection): Sequelize.Model<newsInst
                 type: Sequelize.STRING
             },
             content: {
-                type: Sequelize.STRING,
+                type: Sequelize.TEXT,
             },
             link: {
                 type: Sequelize.TEXT('medium') // JSON String

@@ -113,7 +113,7 @@ export function bulkUpdateMember(memberList: memberAttributes[]): Promise<any>{
                 head_pic_data: member.head_pic_data,
                 head_pic_filename: member.head_pic_filename
             }, t));
-        })
+        });
         return Promise.all(promiseList);
     })
 }

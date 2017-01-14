@@ -47,7 +47,7 @@ export function Member (sequelize: Sequelize.Connection): Sequelize.Model<member
                 type: Sequelize.STRING,
             },
             introduction: {
-                type: Sequelize.STRING
+                type: Sequelize.TEXT
             },
             head_pic_url: {
                 type: Sequelize.STRING
