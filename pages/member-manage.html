@@ -6,8 +6,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="C-FAR">
+    <meta name="author" content="C-FAR">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/main/index/img/cfar-logo.png" />
+    <link rel="icon" type="image/png" href="/assets/main/index/img/cfar-logo.png" />
+
     <title>C-FAR 後台管理</title>
     <!-- Bootstrap Core CSS -->
     <link href="/assets/main/manage/css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +29,8 @@
     <!-- Custom CSS Style By XDD -->
     <link rel="stylesheet" type="text/css" href="/assets/main/manage/css/styleXDD.css">
     <!-- Font style -->
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet'
+        type='text/css'>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -47,14 +56,19 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> User <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-user"></i> User
+                        <b class="caret"></b>
+                    </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                            <a href="#">
+                                <i class="fa fa-fw fa-gear"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="#">
+                                <i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -63,19 +77,24 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="/member-manage"><i class="fa fa-fw fa-dashboard"></i> 故事。中心成員</a>
+                        <a href="/member-manage">
+                            <i class="fa fa-fw fa-dashboard"></i> 故事。中心成員</a>
                     </li>
                     <li>
-                        <a href="/album-manage"><i class="fa fa-fw fa-bar-chart-o"></i> 本事。相簿編輯</a>
+                        <a href="/album-manage">
+                            <i class="fa fa-fw fa-bar-chart-o"></i> 本事。相簿編輯</a>
                     </li>
                     <li>
-                        <a href="/share-manage"><i class="fa fa-fw fa-table"></i> 本事。學生分享</a>
+                        <a href="/share-manage">
+                            <i class="fa fa-fw fa-table"></i> 本事。學生分享</a>
                     </li>
                     <li>
-                        <a href="/article-manage"><i class="fa fa-fw fa-edit"></i> 未來事。文章分享</a>
+                        <a href="/article-manage">
+                            <i class="fa fa-fw fa-edit"></i> 未來事。文章分享</a>
                     </li>
                     <li>
-                        <a href="/news-manage"><i class="fa fa-fw fa-desktop"></i> 最新消息</a>
+                        <a href="/news-manage">
+                            <i class="fa fa-fw fa-desktop"></i> 最新消息</a>
                     </li>
                 </ul>
             </div>
@@ -87,7 +106,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            中心成員 <small>故事</small>
+                            中心成員
+                            <small>故事</small>
                         </h1>
                     </div>
                 </div>
@@ -109,7 +129,9 @@
                             <a href="#" onclick="enableADD()">
                                 <div class="panel-footer">
                                     <span class="pull-left">Add New Member</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-right">
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
@@ -131,7 +153,9 @@
                             <a href="#" onclick="enableEDIT()">
                                 <div class="panel-footer">
                                     <span class="pull-left">Edit Content</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-right">
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
@@ -153,7 +177,9 @@
                             <a href="#" onclick="enableDELETE()">
                                 <div class="panel-footer">
                                     <span class="pull-left">Delete Member</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-right">
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
@@ -170,7 +196,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h3 class="page-header">
-                            預覽顯示 <small>中心成員</small>
+                            預覽顯示
+                            <small>中心成員</small>
                         </h3>
                     </div>
                 </div>
@@ -190,7 +217,8 @@
                 <div class="row">
                     <div class="col-sm-11">
                         <h1 class="page-header">
-                            新增成員 <small>ADD MEMBER</small>
+                            新增成員
+                            <small>ADD MEMBER</small>
                         </h1>
                     </div>
                     <div class="col-sm-1">
@@ -258,7 +286,8 @@
                 <div class="row">
                     <div class="col-sm-11">
                         <h1 class="page-header">
-                            刪除成員 <small>DELETE MEMBER</small>
+                            刪除成員
+                            <small>DELETE MEMBER</small>
                         </h1>
                     </div>
                     <div class="col-sm-1">
@@ -281,7 +310,8 @@
                 <div class="row">
                     <div class="col-sm-11">
                         <h1 class="page-header">
-                            修改內容 <small>EDIT CONTENT</small>
+                            修改內容
+                            <small>EDIT CONTENT</small>
                         </h1>
                     </div>
                     <div class="col-sm-1">
@@ -364,65 +394,65 @@
     <script type="text/javascript" src="/assets/main/manage/js/scriptXDD.js"></script>
     <script type="text/javascript" src="/assets/main/manage/js/get-post-XDD.js"></script>
     <script type="text/javascript">
-    var member_id = -1;
+        var member_id = -1;
 
-    //Get data
-    $(function() {
-        fn_list.ajaxReq(fn_list.member_get).done(function() {
-            console.log(c);
-            initMember();
-        });
-    })
+        //Get data
+        $(function () {
+            fn_list.ajaxReq(fn_list.member_get).done(function () {
+                console.log(c);
+                initMember();
+            });
+        })
 
 
 
-    function chooseEdit(button) {
-        var btnClass = button.className;
-        member_id = button.value;
+        function chooseEdit(button) {
+            var btnClass = button.className;
+            member_id = button.value;
 
-        if (btnClass.includes('active')) {
-            btnClass = btnClass.replace(' active', '');
-        } else {
-            btnClass += ' active';
-            $('.choose_edit_member').removeClass('active');
+            if (btnClass.includes('active')) {
+                btnClass = btnClass.replace(' active', '');
+            } else {
+                btnClass += ' active';
+                $('.choose_edit_member').removeClass('active');
+            }
+
+            button.className = btnClass;
+
+
+            //find the data of target id
+            var a = $.grep(c, function (e) {
+                return e.member_id == button.value;
+            });
+
+            //set view
+            $('#edit_img_data')[0].src = a[0].head_pic_url;
+            $('#edit_chname')[0].value = a[0].ch_name;
+            $('#edit_job')[0].value = a[0].job_title;
+            $('#edit_enname')[0].value = a[0].en_name;
+            $('#edit_intro')[0].value = a[0].introduction;
+
         }
 
-        button.className = btnClass;
 
+        var deleteItem = [];
 
-        //find the data of target id
-        var a = $.grep(c, function(e) {
-            return e.member_id == button.value;
-        });
+        function chooseDelete(button) {
+            var btnClass = button.className;
+            if (btnClass.includes('active')) {
+                btnClass = btnClass.replace(' active', '');
+                deleteItem.splice(deleteItem.indexOf(button.value), 1);
+                //from number button.value remove 1 item
+                console.log(deleteItem);
+            } else {
+                btnClass += ' active';
+                deleteItem.push(button.value);
+                console.log(deleteItem);
+            }
 
-        //set view
-        $('#edit_img_data')[0].src = a[0].head_pic_url;
-        $('#edit_chname')[0].value = a[0].ch_name;
-        $('#edit_job')[0].value = a[0].job_title;
-        $('#edit_enname')[0].value = a[0].en_name;
-        $('#edit_intro')[0].value = a[0].introduction;
+            button.className = btnClass;
 
-    }
-
-
-    var deleteItem = [];
-
-    function chooseDelete(button) {
-        var btnClass = button.className;
-        if (btnClass.includes('active')) {
-            btnClass = btnClass.replace(' active', '');
-            deleteItem.splice(deleteItem.indexOf(button.value), 1);
-            //from number button.value remove 1 item
-            console.log(deleteItem);
-        } else {
-            btnClass += ' active';
-            deleteItem.push(button.value);
-            console.log(deleteItem);
         }
-
-        button.className = btnClass;
-
-    }
     </script>
 </body>
 
