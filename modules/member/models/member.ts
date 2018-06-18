@@ -9,6 +9,7 @@ export interface memberAttributes {
     job_title: string;
     en_name: string;
     introduction: string;
+    order: number;
     head_pic_url?: string;
     head_pic_filename? : string;
     head_pic_data?: string;
@@ -51,6 +52,9 @@ export function Member (sequelize: Sequelize.Connection): Sequelize.Model<member
             },
             head_pic_url: {
                 type: Sequelize.STRING
+            },
+            order: {
+                type: Sequelize.INTEGER,
             },
             member_id: {
                 type: Sequelize.INTEGER,

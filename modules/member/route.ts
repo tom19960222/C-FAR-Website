@@ -26,7 +26,8 @@ router.post('/', needLogin, jsonParser, (req, res) => {
         introduction: req.body.introduction,
         head_pic_url: req.body.head_pic_url,
         head_pic_data: req.body.head_pic_data,
-        head_pic_filename: req.body.head_pic_filename
+        head_pic_filename: req.body.head_pic_filename,
+        order: req.body.order,
     })
     .then((member) => {
         return action.getMemberList();
@@ -47,8 +48,11 @@ router.put('/', jsonParser, (req, res) => {
     .catch((err: Error) => {
         if(err.message == "Member not found!")
             res.status(404).end();
-        else
+        else{
+            console.error(err);
             res.status(500).end();
+        }
+            
     })
 })
 

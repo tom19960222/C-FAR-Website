@@ -13,12 +13,17 @@ let sequelize: Sequelize.Connection = app.db.sql;
 export function addMember(creatorID: number, data: memberAttributes, t?: Sequelize.Transaction): Promise<memberInstance>{
     let member: memberInstance;
     if(t != null){
-        return memberModel.create({
-            ch_name: data.ch_name,
-            job_title: data.job_title,
-            en_name: data.en_name,
-            introduction: data.introduction,
-        }, {transaction: t})
+        return getMemberList()
+        .then(existedMemberList => {
+            const lastMember = existedMemberList.length > 0 ? existedMemberList[existedMemberList.length - 1] : null;
+            return memberModel.create({
+                ch_name: data.ch_name,
+                job_title: data.job_title,
+                en_name: data.en_name,
+                introduction: data.introduction,
+                order: lastMember ? lastMember.order : data.order,
+            }, {transaction: t})
+        })
         .then((_member) => {
             member = _member;
             return fileAPI.saveFile(data.head_pic_filename, new Buffer(data.head_pic_data, 'base64'))
@@ -30,12 +35,17 @@ export function addMember(creatorID: number, data: memberAttributes, t?: Sequeli
     }
     else{
         return sequelize.transaction((t) => {
-            return memberModel.create({
-                ch_name: data.ch_name,
-                job_title: data.job_title,
-                en_name: data.en_name,
-                introduction: data.introduction,
-            }, {transaction: t})
+            return getMemberList()
+            .then(existedMemberList => {
+                const lastMember = existedMemberList.length > 0 ? existedMemberList[existedMemberList.length - 1] : null;
+                return memberModel.create({
+                    ch_name: data.ch_name,
+                    job_title: data.job_title,
+                    en_name: data.en_name,
+                    introduction: data.introduction,
+                    order: lastMember ? lastMember.order : data.order,
+                }, {transaction: t})
+            })
             .then((_member) => {
                 member = _member;
                 return fileAPI.saveFile(data.head_pic_filename, new Buffer(data.head_pic_data, 'base64'))
@@ -49,7 +59,10 @@ export function addMember(creatorID: number, data: memberAttributes, t?: Sequeli
 }
 
 export function getMemberList(): Promise<memberInstance[]>{
-    return memberModel.findAll();
+    return memberModel.findAll()
+    .then(memberList => {
+        return Promise.resolve(memberList.sort((member1, member2) => (member1.order - member2.order)));
+    })
 }
 
 export function updateMember(memberID: number, data: memberAttributes, t?: Sequelize.Transaction): Promise<memberInstance>{
@@ -64,6 +77,7 @@ export function updateMember(memberID: number, data: memberAttributes, t?: Seque
             if(data.en_name != null)   member.en_name = data.en_name;
             if(data.introduction != null) member.introduction = data.introduction;
             if(data.head_pic_url != null) member.head_pic_url = data.head_pic_url;
+            if(data.order != null) member.order = data.order;
             return member.save({transaction: t});
         })
         .then(() => {
@@ -86,6 +100,7 @@ export function updateMember(memberID: number, data: memberAttributes, t?: Seque
             if(data.en_name != null)   member.en_name = data.en_name;
             if(data.introduction != null) member.introduction = data.introduction;
             if(data.head_pic_url != null) member.head_pic_url = data.head_pic_url;
+            if(data.order != null) member.order = data.order;
             return member.save({transaction: t});
         })
         .then(() => {
@@ -111,7 +126,8 @@ export function bulkUpdateMember(memberList: memberAttributes[]): Promise<any>{
                 introduction: member.introduction,
                 head_pic_url: member.head_pic_url,
                 head_pic_data: member.head_pic_data,
-                head_pic_filename: member.head_pic_filename
+                head_pic_filename: member.head_pic_filename,
+                order: member.order,
             }, t));
         });
         return Promise.all(promiseList);
