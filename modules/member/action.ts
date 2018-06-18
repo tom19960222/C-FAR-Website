@@ -21,7 +21,7 @@ export function addMember(creatorID: number, data: memberAttributes, t?: Sequeli
                 job_title: data.job_title,
                 en_name: data.en_name,
                 introduction: data.introduction,
-                order: lastMember ? lastMember.order : data.order,
+                order: lastMember ? lastMember.order : data.order || 0,
             }, {transaction: t})
         })
         .then((_member) => {
@@ -43,7 +43,7 @@ export function addMember(creatorID: number, data: memberAttributes, t?: Sequeli
                     job_title: data.job_title,
                     en_name: data.en_name,
                     introduction: data.introduction,
-                    order: lastMember ? lastMember.order : data.order,
+                    order: lastMember ? lastMember.order : data.order || 0,
                 }, {transaction: t})
             })
             .then((_member) => {
