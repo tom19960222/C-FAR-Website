@@ -52,14 +52,14 @@ var fn_list = {
 				switch(doFn.fn_name){
 					case "image_get":
 						data.forEach(function(element, index, array) {
-							element.path = "http://cfar.tku.edu.tw" + element.path;
+							element.path = "http://cfar.tku.edu.tw:3081" + element.path;
 						})
 						a = data;
 	    			break;
 
 	    			case "member_get":
 	    				data.forEach(function(element, index, array) {
-	    					element.head_pic_url = "http://cfar.tku.edu.tw" + element.head_pic_url;
+	    					element.head_pic_url = "http://cfar.tku.edu.tw:3081" + element.head_pic_url;
 	    				})
 	    				c = data;
 	    			break;
@@ -495,7 +495,7 @@ function restart(){
 
     //jQuery post
     $.ajax({
-        url: 'http://cfar.tku.edu.tw/admin/action/restart',
+        url: 'http://cfar.tku.edu.tw:3081/admin/action/restart',
         type: 'get',
         success: function (data, textStatus, xhr) {
         }
