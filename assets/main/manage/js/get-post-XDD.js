@@ -129,7 +129,8 @@ var formSubmit = {
 			ch_name: $('#edit_chname')[0].value,
 			job_title: $('#edit_job')[0].value,
 			en_name: $('#edit_enname')[0].value,
-			introduction: $('#edit_intro')[0].value
+			introduction: $('#edit_intro')[0].value,
+			order: $('#edit_order')[0].value
 		}];
 
 			
