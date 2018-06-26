@@ -3,38 +3,38 @@
 
 var fn_list = {
 
-	user_login: 	{fn_name: "user_login", url: "http://cfar.tku.edu.tw/user/login", method: "POST"},
-	user_add: 		{fn_name: "user_add", url: "http://cfar.tku.edu.tw/user/add", method: "POST"},
+	user_login: 	{fn_name: "user_login", url: "http://cfar.tku.edu.tw:3081/user/login", method: "POST"},
+	user_add: 		{fn_name: "user_add", url: "http://cfar.tku.edu.tw:3081/user/add", method: "POST"},
 
-	image_get: 		{fn_name: "image_get", url: "http://cfar.tku.edu.tw/image", method: "GET"},
-	image_add: 		{fn_name: "image_add", url: "http://cfar.tku.edu.tw/image", method: "POST"},
+	image_get: 		{fn_name: "image_get", url: "http://cfar.tku.edu.tw:3081/image", method: "GET"},
+	image_add: 		{fn_name: "image_add", url: "http://cfar.tku.edu.tw:3081/image", method: "POST"},
 	image_edit: function(image_id) {
-		return	{fn_name: "image_edit", url: "http://cfar.tku.edu.tw/image/" + image_id, method: "PUT"}		
+		return	{fn_name: "image_edit", url: "http://cfar.tku.edu.tw:3081/image/" + image_id, method: "PUT"}		
 	},
-	image_delete: 	{fn_name: "image_delete", url: "http://cfar.tku.edu.tw/image", method: "DELETE"},
+	image_delete: 	{fn_name: "image_delete", url: "http://cfar.tku.edu.tw:3081/image", method: "DELETE"},
 
-	member_get: 	{fn_name: "member_get", url: "http://cfar.tku.edu.tw/member", method: "GET"},
-	member_add: 	{fn_name: "member_add", url: "http://cfar.tku.edu.tw/member", method: "POST"},
-	member_edit: 	{fn_name: "member_edit", url: "http://cfar.tku.edu.tw/member", method: "PUT"},
-	member_delete: 	{fn_name: "member_delete", url: "http://cfar.tku.edu.tw/member", method: "DELETE"},
+	member_get: 	{fn_name: "member_get", url: "http://cfar.tku.edu.tw:3081/member", method: "GET"},
+	member_add: 	{fn_name: "member_add", url: "http://cfar.tku.edu.tw:3081/member", method: "POST"},
+	member_edit: 	{fn_name: "member_edit", url: "http://cfar.tku.edu.tw:3081/member", method: "PUT"},
+	member_delete: 	{fn_name: "member_delete", url: "http://cfar.tku.edu.tw:3081/member", method: "DELETE"},
 
-	message_get: 	{fn_name: "message_get", url: "http://cfar.tku.edu.tw/message", method: "GET"},
-	message_add: 	{fn_name: "message_add", url: "http://cfar.tku.edu.tw/message", method: "POST"},
-	message_edit: 	{fn_name: "message_edit", url: "http://cfar.tku.edu.tw/message", method: "PUT"},
-	message_delete: {fn_name: "message_delete", url: "http://cfar.tku.edu.tw/message", method: "DELETE"},
+	message_get: 	{fn_name: "message_get", url: "http://cfar.tku.edu.tw:3081/message", method: "GET"},
+	message_add: 	{fn_name: "message_add", url: "http://cfar.tku.edu.tw:3081/message", method: "POST"},
+	message_edit: 	{fn_name: "message_edit", url: "http://cfar.tku.edu.tw:3081/message", method: "PUT"},
+	message_delete: {fn_name: "message_delete", url: "http://cfar.tku.edu.tw:3081/message", method: "DELETE"},
 
-	article_get: 	{fn_name: "article_get", url: "http://cfar.tku.edu.tw/article", method: "GET"},
+	article_get: 	{fn_name: "article_get", url: "http://cfar.tku.edu.tw:3081/article", method: "GET"},
 	article_get_one: function (article_id) {
-		return	{fn_name: "article_get_one", url: "http://cfar.tku.edu.tw/article/" + article_id, method: "GET"}
+		return	{fn_name: "article_get_one", url: "http://cfar.tku.edu.tw:3081/article/" + article_id, method: "GET"}
 	},
-	article_add: 	{fn_name: "article_add", url: "http://cfar.tku.edu.tw/article", method: "POST"},
-	article_edit: 	{fn_name: "article_edit", url: "http://cfar.tku.edu.tw/article", method: "PUT"},
-	article_delete: {fn_name: "article_delete", url: "http://cfar.tku.edu.tw/article", method: "DELETE"},
+	article_add: 	{fn_name: "article_add", url: "http://cfar.tku.edu.tw:3081/article", method: "POST"},
+	article_edit: 	{fn_name: "article_edit", url: "http://cfar.tku.edu.tw:3081/article", method: "PUT"},
+	article_delete: {fn_name: "article_delete", url: "http://cfar.tku.edu.tw:3081/article", method: "DELETE"},
 
-	news_get: 		{fn_name: "news_get", url: "http://cfar.tku.edu.tw/news", method: "GET"},
-	news_add:  		{fn_name: "news_add", url: "http://cfar.tku.edu.tw/news", method: "POST"},
-	news_edit: 		{fn_name: "news_edit", url: "http://cfar.tku.edu.tw/news", method: "PUT"},
-	news_delete: 	{fn_name: "news_delete", url: "http://cfar.tku.edu.tw/news", method: "DELETE"},
+	news_get: 		{fn_name: "news_get", url: "http://cfar.tku.edu.tw:3081/news", method: "GET"},
+	news_add:  		{fn_name: "news_add", url: "http://cfar.tku.edu.tw:3081/news", method: "POST"},
+	news_edit: 		{fn_name: "news_edit", url: "http://cfar.tku.edu.tw:3081/news", method: "PUT"},
+	news_delete: 	{fn_name: "news_delete", url: "http://cfar.tku.edu.tw:3081/news", method: "DELETE"},
 
 	ajaxReq: function (doFn, data) {
 		var dfrd = $.Deferred();
@@ -52,14 +52,14 @@ var fn_list = {
 				switch(doFn.fn_name){
 					case "image_get":
 						data.forEach(function(element, index, array) {
-							element.path = "http://cfar.tku.edu.tw" + element.path;
+							element.path = "http://cfar.tku.edu.tw:3081" + element.path;
 						})
 						a = data;
 	    			break;
 
 	    			case "member_get":
 	    				data.forEach(function(element, index, array) {
-	    					element.head_pic_url = "http://cfar.tku.edu.tw" + element.head_pic_url;
+	    					element.head_pic_url = "http://cfar.tku.edu.tw:3081" + element.head_pic_url;
 	    				})
 	    				c = data;
 	    			break;
@@ -129,7 +129,8 @@ var formSubmit = {
 			ch_name: $('#edit_chname')[0].value,
 			job_title: $('#edit_job')[0].value,
 			en_name: $('#edit_enname')[0].value,
-			introduction: $('#edit_intro')[0].value
+			introduction: $('#edit_intro')[0].value,
+			order: $('#edit_order')[0].value
 		}];
 
 			
@@ -494,7 +495,7 @@ function restart(){
 
     //jQuery post
     $.ajax({
-        url: 'http://cfar.tku.edu.tw/admin/action/restart',
+        url: 'http://cfar.tku.edu.tw:3081/admin/action/restart',
         type: 'get',
         success: function (data, textStatus, xhr) {
         }
