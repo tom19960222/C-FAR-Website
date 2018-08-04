@@ -133,7 +133,7 @@ function initMember() {
     var deleteMember = $('#delete_member');
     c.forEach(function(element, index, array) {
         memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id, array, index+1);
-        editMember.append(editMemberFactor(element.ch_name, element.head_pic_url, element.member_id, index));
+        editMember.append(editMemberFactor(element.ch_name, element.head_pic_url, element.member_id, index+1));
         deleteMember.append(deleteMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
     })
     target.append(memberData);
