@@ -133,7 +133,7 @@ function initMember() {
     var deleteMember = $('#delete_member');
     c.forEach(function(element, index, array) {
         memberFactor(element.ch_name, element.en_name, element.job_title, element.head_pic_url, element.member_id, array, index+1);
-        editMember.append(editMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
+        editMember.append(editMemberFactor(element.ch_name, element.head_pic_url, element.member_id, index));
         deleteMember.append(deleteMemberFactor(element.ch_name, element.head_pic_url, element.member_id));
     })
     target.append(memberData);
@@ -149,10 +149,10 @@ function deleteMemberFactor(ch_name, img, index) {
         '</div>';
 }
 
-function editMemberFactor(ch_name, img, index) {
-    return '<div class="col-sm-3">' +
+function editMemberFactor(ch_name, img, id, index) {
+    return '<div class="col-sm-3"> 排序位置' + index + ': ' +
         ch_name +
-        '<button class="btn btn-default btn-lg choose_edit_member" onclick="chooseEdit(this)" value="' + index + '">' +
+        '<button class="btn btn-default btn-lg choose_edit_member" onclick="chooseEdit(this)" value="' + id + '">' +
         '<img src="' + img + '" height="200px" width="auto">' +
         '</button>' +
         '</div>';
