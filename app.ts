@@ -3,6 +3,7 @@
 import * as Sequelize from "sequelize";
 import {appConfig} from "./config";
 import * as Express from "express";
+import * as cors from "cors";
 
 function App(): Express.Application {
     let _app: any = Express();
@@ -28,6 +29,8 @@ function App(): Express.Application {
 
     _app.config = appConfig;
     let app: Express.Application = _app;
+
+    _app.use(cors());
     return app;
 }
 
