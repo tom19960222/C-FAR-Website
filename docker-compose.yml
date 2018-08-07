@@ -1,0 +1,30 @@
+version: '2'
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfiles/web
+        image: cfar-web
+        volumes:
+            - /etc/localtime:/etc/localtime
+        ports:
+            - 3080:3080
+        links:
+            - mysql
+            - redis
+        environment:
+            - NODE_ENV=production
+
+    redis:
+        image: redis:3
+
+    mysql:
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=cfar
+            - MYSQL_DATABASE=cfar
+            - MYSQL_USER=cfar
+            - MYSQL_PASSWORD=cfar
+        # Uncomment if you want to import old data.
+        #volumes:
+        #    - ./c-far.sql:/docker-entrypoint-initdb.d/c-far.sql

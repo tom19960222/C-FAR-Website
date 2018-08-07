@@ -33,3 +33,16 @@ node_modules
 .vscode/launch.json
 .idea/workspace.xml
 .idea/workspace.xml
+
+
+node_modules
+typings
+
+*.js
+
+# Keep files in assets/main tracked.
+!assets/
+assets/*
+!assets/main
+!assets/main/**
+.DS_Store

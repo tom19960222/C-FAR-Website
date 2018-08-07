@@ -1,0 +1,12 @@
+.restart {
+    display: block;
+    width: 5em;
+    height: 2em;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 2% 5% auto;
+    left: 10%;
+    top: 25%;
+    text-align: center;
+}

@@ -1,0 +1,17 @@
+# Ignore all compiled JS file, expect files in assets.
+*.js
+!assets/**
+
+# Ignore files only for development.
+doc
+C-FAR_not_use
+test
+tslint.json
+docker-compose.yml
+Dockerfiles
+
+# Include start script.
+!Dockerfiles/web-start.sh
+
+# Don't include database files.
+*.sql

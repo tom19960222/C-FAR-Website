@@ -1,0 +1,25 @@
+{
+  "name": "rezuhzu",
+  "globalDependencies": {
+    "body-parser": "registry:dt/body-parser#0.0.0+20160619023215",
+    "connect-redis": "registry:dt/connect-redis#0.0.0+20160305170114",
+    "express": "registry:dt/express#4.0.0+20160708185218",
+    "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20160715232503",
+    "express-session": "registry:dt/express-session#0.0.0+20160331200931",
+    "helmet": "registry:dt/helmet#0.0.0+20160512043842",
+    "mime": "github:DefinitelyTyped/DefinitelyTyped/mime/mime.d.ts#e0abafb1a6ff652f7ff967120e312d5c1916eaef",
+    "morgan": "registry:dt/morgan#1.7.0+20160524142355",
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#e0abafb1a6ff652f7ff967120e312d5c1916eaef",
+    "passport": "registry:dt/passport#0.2.0+20160720063208",
+    "passport-local": "registry:dt/passport-local#0.0.0+20160316155526",
+    "serve-static": "github:DefinitelyTyped/DefinitelyTyped/serve-static/serve-static.d.ts#e0abafb1a6ff652f7ff967120e312d5c1916eaef",
+    "validator": "registry:dt/validator#4.5.1+20160316155526"
+  },
+  "dependencies": {
+    "bluebird": "registry:npm/bluebird#3.3.4+20160723033700",
+    "lodash": "registry:npm/lodash#4.0.0+20160723033700",
+    "mkdirp": "registry:npm/mkdirp#0.5.0+20160723033700",
+    "redis": "registry:npm/redis#0.12.1+20160729031738",
+    "sequelize": "registry:npm/sequelize#3.0.0+20160721171120"
+  }
+}
